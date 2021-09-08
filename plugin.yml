@@ -1,0 +1,64 @@
+name: ArkuzMC
+main: Main.Main
+author: [nukopon]
+version: 1.0
+commands:
+  teleport:
+    aliases: [tp]
+  gm:
+  gamemode:
+  givekit:
+  givepermission:
+  givevip:
+  broadcast:
+    aliases: [aviso]
+  bc:
+    aliases: [aviso]
+  head:
+  fly:
+  ajuda:
+  sc:
+  limpar:
+  cc:
+  inv:
+  chat:
+  rank:
+  tpall:
+  admin:
+  autosoup:
+  report:
+  build:
+  suicide:
+    aliases: [morrer]
+    aliases: [kill]
+  vis:
+  lojakits:
+  rkit:
+  tag:
+  pvp:
+  removervip:
+  removepermission:
+  regras:
+  aplicar:
+  clicktest:
+  kit:
+  manutencao:
+  setarena:
+  setspawn:
+  tell:
+  set:
+  fake:
+  warp:
+  spawn:
+  ping:
+  permissionslist:
+  score:
+  youtuber:
+    aliases: [yt]
+  mp:
+    aliases: [xp]
+  gratis:
+  caixas:
+  skit:
+  Sortearvip:
+  sortearkit:
