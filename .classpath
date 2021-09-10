@@ -6,8 +6,8 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/pc/Desktop/PL&apos;s/Spigot.jar"/>
-	<classpathentry kind="lib" path="C:/Users/pc/Desktop/PL&apos;s/WorldGuard.jar"/>
-	<classpathentry kind="lib" path="C:/Users/pc/Desktop/PL&apos;s/WorldEdit.jar"/>
+	<classpathentry kind="lib" path="/APIs/PaperSpigot-1.7.10-R0.1-SNAPSHOT-latest.jar"/>
+	<classpathentry kind="lib" path="/APIs/worldedit-bukkit-6.1.jar"/>
+	<classpathentry kind="lib" path="/APIs/worldguard-6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
