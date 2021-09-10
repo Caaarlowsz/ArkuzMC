@@ -1,312 +1,330 @@
 package Score;
 
+import java.util.Random;
+
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.DisplaySlot;
-import Eventos.Habilidade;
-import Coins.XpM;
-import java.util.Random;
-import org.bukkit.Bukkit;
-import net.md_5.bungee.api.ChatColor;
-import org.bukkit.entity.Player;
-import Main.Main;
-import org.bukkit.event.Listener;
 
-public class ScoreBoarding implements Listener
-{
-    public static Main plugin;
-    
-    public static String Rank(final Player p) {
-        final double a = Status.getKills(p);
-        if (a <= 100.0) {
-            return "§f\u268a";
-        }
-        if (a <= 200.0) {
-            return ChatColor.GREEN + "\u268c";
-        }
-        if (a <= 300.0) {
-            return ChatColor.YELLOW + "\u2630";
-        }
-        if (a <= 400.0) {
-            return "§1\u2725";
-        }
-        if (a <= 500.0) {
-            return "§7\u272f";
-        }
-        if (a <= 600.0) {
-            return "§6\u272a";
-        }
-        if (a <= 700.0) {
-            return ChatColor.AQUA + "§b\u2748";
-        }
-        if (a <= 800.0) {
-            return "§2\u2738";
-        }
-        if (a <= 900.0) {
-            return ChatColor.RED + "\u2739";
-        }
-        if (a <= 1000.0) {
-            return "§3\u2737";
-        }
-        if (a <= 1500.0) {
-            return "§4\u2742";
-        }
-        return "§4\u2742";
-    }
-    
-    public static String getRankConfig(final Player p) {
-        final double a = Status.getKills(p);
-        if (a <= 100.0) {
-            return "§fUNRANKED";
-        }
-        if (a <= 200.0) {
-            return "§aINICIANTE";
-        }
-        if (a <= 300.0) {
-            return "§eAPRENDIZ";
-        }
-        if (a <= 400.0) {
-            return "§1EXPERT";
-        }
-        if (a <= 500.0) {
-            return "§7SILVER";
-        }
-        if (a <= 600.0) {
-            return "§6GOLD";
-        }
-        if (a <= 700.0) {
-            return "§bDIAMOND";
-        }
-        if (a <= 800.0) {
-            return "§2EMERALD";
-        }
-        if (a <= 900.0) {
-            return "§cRUBY";
-        }
-        if (a <= 1000.0) {
-            return "§3SAFIRA";
-        }
-        if (a <= 1500.0) {
-            return "§4LENDARIO";
-        }
-        return "§4LENDARIO";
-    }
-    
-    public static String getNomeRank(final Player p) {
-        final double a = Status.getKills(p);
-        if (a <= 100.0) {
-            return "§fUNRANKED";
-        }
-        if (a <= 200.0) {
-            return "§aINICIANTE";
-        }
-        if (a <= 300.0) {
-            return "§eAPRENDIZ";
-        }
-        if (a <= 400.0) {
-            return "§1EXPERT";
-        }
-        if (a <= 500.0) {
-            return "§7SILVER";
-        }
-        if (a <= 600.0) {
-            return "§6GOLD";
-        }
-        if (a <= 700.0) {
-            return "§bDIAMOND";
-        }
-        if (a <= 800.0) {
-            return "§2EMERALD";
-        }
-        if (a <= 900.0) {
-            return "§CRUBY";
-        }
-        if (a <= 1000.0) {
-            return "§3SAFIRA";
-        }
-        if (a <= 1500.0) {
-            return "§4LENDARIO";
-        }
-        return "§4LENDARIO";
-    }
-    
-    public static String Liga(final Player p) {
-        final double a = Status.getKills(p);
-        if (a <= 100.0) {
-            return "§fUNRANKED";
-        }
-        if (a <= 200.0) {
-            return "§aINICIANTE";
-        }
-        if (a <= 300.0) {
-            return "§eAPRENDIZ";
-        }
-        if (a <= 400.0) {
-            return "§1EXPERT";
-        }
-        if (a <= 500.0) {
-            return "§7SILVER";
-        }
-        if (a <= 600.0) {
-            return "§6GOLD";
-        }
-        if (a <= 700.0) {
-            return "§bDIAMOND";
-        }
-        if (a <= 800.0) {
-            return "§2EMERALD";
-        }
-        if (a <= 900.0) {
-            return "§cRUBY";
-        }
-        if (a <= 1000.0) {
-            return "§3SAFIRA";
-        }
-        if (a <= 1500.0) {
-            return "§4LENDARIO";
-        }
-        return "§4LENDARIO";
-    }
-    
-    public static void setScoreBoard(final Player p) {
-        final String jogadoronline = String.valueOf(String.valueOf(Bukkit.getServer().getOnlinePlayers().length)) + "§7/§f" + Bukkit.getServer().getMaxPlayers();
-        final Random r = new Random();
-        final int animar = r.nextInt(12);
-        if (animar == 1) {
-            final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-            scoreboard.add("   " + Main.loja);
-            scoreboard.blankLine();
-            scoreboard.add("§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
-            scoreboard.add("§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
-            scoreboard.blankLine();
-            scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-            scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-            scoreboard.add("§fJogadores: §7" + jogadoronline);
-            scoreboard.add("§fRank: " + Rank(p));
-            scoreboard.add("§fLiga: " + Liga(p));
-            scoreboard.blankLine();
-            scoreboard.build();
-            scoreboard.send(p);
-        }
-        if (animar == 2) {
-            final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-            scoreboard.add("   " + Main.loja);
-            scoreboard.blankLine();
-            scoreboard.add("§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
-            scoreboard.add("§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
-            scoreboard.blankLine();
-            scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-            scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-            scoreboard.add("§fJogadores: §7" + jogadoronline);
-            scoreboard.add("§fRank: " + Rank(p));
-            scoreboard.add("§fLiga: " + Liga(p));
-            scoreboard.blankLine();
-            scoreboard.build();
-            scoreboard.send(p);
-        }
-        if (animar == 3) {
-            final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-            scoreboard.add("   " + Main.loja);
-            scoreboard.blankLine();
-            scoreboard.add("§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
-            scoreboard.add("§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
-            scoreboard.blankLine();
-            scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-            scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-            scoreboard.add("§fJogadores: §7" + jogadoronline);
-            scoreboard.add("§fRank: " + Rank(p));
-            scoreboard.add("§fLiga: " + Liga(p));
-            scoreboard.blankLine();
-            scoreboard.build();
-            scoreboard.send(p);
-        }
-        if (animar == 4) {
-            final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-            scoreboard.add("   " + Main.loja);
-            scoreboard.blankLine();
-            scoreboard.add("§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
-            scoreboard.add("§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
-            scoreboard.blankLine();
-            scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-            scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-            scoreboard.add("§fJogadores: §7" + jogadoronline);
-            scoreboard.add("§fRank: " + Rank(p));
-            scoreboard.add("§fLiga: " + Liga(p));
-            scoreboard.blankLine();
-            scoreboard.build();
-            scoreboard.send(p);
-        }
-        if (animar == 5) {
-            final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-            scoreboard.add("   " + Main.loja);
-            scoreboard.blankLine();
-            scoreboard.add("§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
-            scoreboard.add("§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
-            scoreboard.blankLine();
-            scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-            scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-            scoreboard.add("§fJogadores: §7" + jogadoronline);
-            scoreboard.add("§fRank: " + Rank(p));
-            scoreboard.add("§fLiga: " + Liga(p));
-            scoreboard.blankLine();
-            scoreboard.build();
-            scoreboard.send(p);
-        }
-        if (animar == 6) {
-            final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-            scoreboard.add("   " + Main.loja);
-            scoreboard.blankLine();
-            scoreboard.add("§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
-            scoreboard.add("§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
-            scoreboard.blankLine();
-            scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-            scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-            scoreboard.add("§fJogadores: §7" + jogadoronline);
-            scoreboard.add("§fRank: " + Rank(p));
-            scoreboard.add("§fLiga: " + Liga(p));
-            scoreboard.blankLine();
-            scoreboard.build();
-            scoreboard.send(p);
-        }
-        if (animar == 7) {
-            final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-            scoreboard.add("   " + Main.loja);
-            scoreboard.blankLine();
-            scoreboard.add("§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
-            scoreboard.add("§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
-            scoreboard.blankLine();
-            scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-            scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-            scoreboard.add("§fJogadores: §7" + jogadoronline);
-            scoreboard.add("§fRank: " + Rank(p));
-            scoreboard.add("§fLiga: " + Liga(p));
-            scoreboard.blankLine();
-            scoreboard.build();
-            scoreboard.send(p);
-        }
-        if (animar == 8) {
-            final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-            scoreboard.add("   " + Main.loja);
-            scoreboard.blankLine();
-            scoreboard.add("§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
-            scoreboard.add("§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
-            scoreboard.blankLine();
-            scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-            scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-            scoreboard.add("§fJogadores: §7" + jogadoronline);
-            scoreboard.add("§fRank: " + Rank(p));
-            scoreboard.add("§fLiga: " + Liga(p));
-            scoreboard.blankLine();
-            scoreboard.build();
-            scoreboard.send(p);
-        }
-    }
-    
-    public static void removeScoreBoard(final Player p) {
-        final Scoreboard score = Bukkit.getScoreboardManager().getNewScoreboard();
-        final Objective o = score.registerNewObjective("tuts", "PvP");
-        o.setDisplaySlot(DisplaySlot.SIDEBAR);
-        o.setDisplayName("");
-        p.setScoreboard(score);
-    }
+import Coins.XpM;
+import Eventos.Habilidade;
+import Main.Main;
+import net.md_5.bungee.api.ChatColor;
+
+public class ScoreBoarding implements Listener {
+	public static Main plugin;
+
+	public static String Rank(final Player p) {
+		final double a = Status.getKills(p);
+		if (a <= 100.0) {
+			return "§f\u268a";
+		}
+		if (a <= 200.0) {
+			return ChatColor.GREEN + "\u268c";
+		}
+		if (a <= 300.0) {
+			return ChatColor.YELLOW + "\u2630";
+		}
+		if (a <= 400.0) {
+			return "§1\u2725";
+		}
+		if (a <= 500.0) {
+			return "§7\u272f";
+		}
+		if (a <= 600.0) {
+			return "§6\u272a";
+		}
+		if (a <= 700.0) {
+			return ChatColor.AQUA + "§b\u2748";
+		}
+		if (a <= 800.0) {
+			return "§2\u2738";
+		}
+		if (a <= 900.0) {
+			return ChatColor.RED + "\u2739";
+		}
+		if (a <= 1000.0) {
+			return "§3\u2737";
+		}
+		if (a <= 1500.0) {
+			return "§4\u2742";
+		}
+		return "§4\u2742";
+	}
+
+	public static String getRankConfig(final Player p) {
+		final double a = Status.getKills(p);
+		if (a <= 100.0) {
+			return "§fUNRANKED";
+		}
+		if (a <= 200.0) {
+			return "§aINICIANTE";
+		}
+		if (a <= 300.0) {
+			return "§eAPRENDIZ";
+		}
+		if (a <= 400.0) {
+			return "§1EXPERT";
+		}
+		if (a <= 500.0) {
+			return "§7SILVER";
+		}
+		if (a <= 600.0) {
+			return "§6GOLD";
+		}
+		if (a <= 700.0) {
+			return "§bDIAMOND";
+		}
+		if (a <= 800.0) {
+			return "§2EMERALD";
+		}
+		if (a <= 900.0) {
+			return "§cRUBY";
+		}
+		if (a <= 1000.0) {
+			return "§3SAFIRA";
+		}
+		if (a <= 1500.0) {
+			return "§4LENDARIO";
+		}
+		return "§4LENDARIO";
+	}
+
+	public static String getNomeRank(final Player p) {
+		final double a = Status.getKills(p);
+		if (a <= 100.0) {
+			return "§fUNRANKED";
+		}
+		if (a <= 200.0) {
+			return "§aINICIANTE";
+		}
+		if (a <= 300.0) {
+			return "§eAPRENDIZ";
+		}
+		if (a <= 400.0) {
+			return "§1EXPERT";
+		}
+		if (a <= 500.0) {
+			return "§7SILVER";
+		}
+		if (a <= 600.0) {
+			return "§6GOLD";
+		}
+		if (a <= 700.0) {
+			return "§bDIAMOND";
+		}
+		if (a <= 800.0) {
+			return "§2EMERALD";
+		}
+		if (a <= 900.0) {
+			return "§CRUBY";
+		}
+		if (a <= 1000.0) {
+			return "§3SAFIRA";
+		}
+		if (a <= 1500.0) {
+			return "§4LENDARIO";
+		}
+		return "§4LENDARIO";
+	}
+
+	public static String Liga(final Player p) {
+		final double a = Status.getKills(p);
+		if (a <= 100.0) {
+			return "§fUNRANKED";
+		}
+		if (a <= 200.0) {
+			return "§aINICIANTE";
+		}
+		if (a <= 300.0) {
+			return "§eAPRENDIZ";
+		}
+		if (a <= 400.0) {
+			return "§1EXPERT";
+		}
+		if (a <= 500.0) {
+			return "§7SILVER";
+		}
+		if (a <= 600.0) {
+			return "§6GOLD";
+		}
+		if (a <= 700.0) {
+			return "§bDIAMOND";
+		}
+		if (a <= 800.0) {
+			return "§2EMERALD";
+		}
+		if (a <= 900.0) {
+			return "§cRUBY";
+		}
+		if (a <= 1000.0) {
+			return "§3SAFIRA";
+		}
+		if (a <= 1500.0) {
+			return "§4LENDARIO";
+		}
+		return "§4LENDARIO";
+	}
+
+	public static void setScoreBoard(final Player p) {
+		final String jogadoronline = String.valueOf(String.valueOf(Bukkit.getServer().getOnlinePlayers().length))
+				+ "§7/§f" + Bukkit.getServer().getMaxPlayers();
+		final Random r = new Random();
+		final int animar = r.nextInt(12);
+		if (animar == 1) {
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			scoreboard.add("   " + Main.loja);
+			scoreboard.blankLine();
+			scoreboard.add(
+					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+			scoreboard.add(
+					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+			scoreboard.blankLine();
+			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
+			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
+			scoreboard.add("§fJogadores: §7" + jogadoronline);
+			scoreboard.add("§fRank: " + Rank(p));
+			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.blankLine();
+			scoreboard.build();
+			scoreboard.send(p);
+		}
+		if (animar == 2) {
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			scoreboard.add("   " + Main.loja);
+			scoreboard.blankLine();
+			scoreboard.add(
+					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+			scoreboard.add(
+					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+			scoreboard.blankLine();
+			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
+			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
+			scoreboard.add("§fJogadores: §7" + jogadoronline);
+			scoreboard.add("§fRank: " + Rank(p));
+			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.blankLine();
+			scoreboard.build();
+			scoreboard.send(p);
+		}
+		if (animar == 3) {
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			scoreboard.add("   " + Main.loja);
+			scoreboard.blankLine();
+			scoreboard.add(
+					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+			scoreboard.add(
+					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+			scoreboard.blankLine();
+			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
+			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
+			scoreboard.add("§fJogadores: §7" + jogadoronline);
+			scoreboard.add("§fRank: " + Rank(p));
+			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.blankLine();
+			scoreboard.build();
+			scoreboard.send(p);
+		}
+		if (animar == 4) {
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			scoreboard.add("   " + Main.loja);
+			scoreboard.blankLine();
+			scoreboard.add(
+					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+			scoreboard.add(
+					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+			scoreboard.blankLine();
+			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
+			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
+			scoreboard.add("§fJogadores: §7" + jogadoronline);
+			scoreboard.add("§fRank: " + Rank(p));
+			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.blankLine();
+			scoreboard.build();
+			scoreboard.send(p);
+		}
+		if (animar == 5) {
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			scoreboard.add("   " + Main.loja);
+			scoreboard.blankLine();
+			scoreboard.add(
+					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+			scoreboard.add(
+					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+			scoreboard.blankLine();
+			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
+			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
+			scoreboard.add("§fJogadores: §7" + jogadoronline);
+			scoreboard.add("§fRank: " + Rank(p));
+			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.blankLine();
+			scoreboard.build();
+			scoreboard.send(p);
+		}
+		if (animar == 6) {
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			scoreboard.add("   " + Main.loja);
+			scoreboard.blankLine();
+			scoreboard.add(
+					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+			scoreboard.add(
+					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+			scoreboard.blankLine();
+			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
+			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
+			scoreboard.add("§fJogadores: §7" + jogadoronline);
+			scoreboard.add("§fRank: " + Rank(p));
+			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.blankLine();
+			scoreboard.build();
+			scoreboard.send(p);
+		}
+		if (animar == 7) {
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			scoreboard.add("   " + Main.loja);
+			scoreboard.blankLine();
+			scoreboard.add(
+					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+			scoreboard.add(
+					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+			scoreboard.blankLine();
+			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
+			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
+			scoreboard.add("§fJogadores: §7" + jogadoronline);
+			scoreboard.add("§fRank: " + Rank(p));
+			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.blankLine();
+			scoreboard.build();
+			scoreboard.send(p);
+		}
+		if (animar == 8) {
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
+			scoreboard.add("   " + Main.loja);
+			scoreboard.blankLine();
+			scoreboard.add(
+					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+			scoreboard.add(
+					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+			scoreboard.blankLine();
+			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
+			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
+			scoreboard.add("§fJogadores: §7" + jogadoronline);
+			scoreboard.add("§fRank: " + Rank(p));
+			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.blankLine();
+			scoreboard.build();
+			scoreboard.send(p);
+		}
+	}
+
+	public static void removeScoreBoard(final Player p) {
+		final Scoreboard score = Bukkit.getScoreboardManager().getNewScoreboard();
+		final Objective o = score.registerNewObjective("tuts", "PvP");
+		o.setDisplaySlot(DisplaySlot.SIDEBAR);
+		o.setDisplayName("");
+		p.setScoreboard(score);
+	}
 }
