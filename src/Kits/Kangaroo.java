@@ -2,6 +2,7 @@ package Kits;
 
 import java.util.ArrayList;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -18,13 +19,12 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
 import Essencial.KitAPI;
-import Main.Main;
 
 public class Kangaroo implements Listener {
 	ArrayList<String> tempo;
 	ArrayList<String> naofugir;
 
-	public Kangaroo(final Main main) {
+	public Kangaroo() {
 		this.tempo = new ArrayList<String>();
 		this.naofugir = new ArrayList<String>();
 	}
@@ -58,8 +58,8 @@ public class Kangaroo implements Listener {
 				p.setVelocity(vector);
 			}
 			if (this.naofugir.contains(p.getName())) {
-				p.sendMessage(String.valueOf(Main.prefix)
-						+ " �4\u27bc �7Voc\u00ea N\u00e3o Pode Utilizar Seu Kit Em Combate");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+						+ " §4➼ §7Você Não Pode Utilizar Seu Kit Em Combate");
 			}
 		}
 	}
@@ -98,7 +98,7 @@ public class Kangaroo implements Listener {
 			if (kangaroo instanceof Player && p instanceof Player
 					&& kangaroo.getInventory().contains(Material.FIREWORK)) {
 				this.naofugir.add(kangaroo.getName());
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(),
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {

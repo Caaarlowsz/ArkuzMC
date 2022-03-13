@@ -1,5 +1,6 @@
 package Comandos;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -9,8 +10,6 @@ import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
-
 public class Ping implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command command, final String c, final String[] args) {
 		if (sender instanceof Player) {
@@ -18,13 +17,13 @@ public class Ping implements CommandExecutor, Listener {
 			final int ping = ((CraftPlayer) p).getHandle().ping;
 			if (c.equalsIgnoreCase("ping")) {
 				if (args.length == 0) {
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Seu Ping e de: งc" + ping + " ง7Ms");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Seu Ping e de: ยงc" + ping + " ยง7Ms");
 				} else if (p.getServer().getPlayer(args[0]) != null) {
 					final String player2 = args[0];
 					final Player target = Bukkit.getServer().getPlayer(args[0]);
 					final int ping2 = ((CraftPlayer) target).getHandle().ping;
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7O Player: งc" + player2
-							+ " ง7Tem Um Ping De: งc" + ChatColor.WHITE + ping2 + ChatColor.GREEN + " ms!");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7O Player: ยงc" + player2
+							+ " ยง7Tem Um Ping De: ยงc" + ChatColor.WHITE + ping2 + ChatColor.GREEN + " ms!");
 				} else {
 					final String player2 = args[0];
 					p.sendMessage(String.valueOf(player2) + " Nao esta Online!");

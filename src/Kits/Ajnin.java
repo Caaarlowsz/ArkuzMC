@@ -2,6 +2,7 @@ package Kits;
 
 import java.util.HashMap;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,7 +16,6 @@ import org.bukkit.plugin.Plugin;
 import Essencial.Cooldown;
 import Essencial.KitUtil;
 import Eventos.Habilidade;
-import Main.Main;
 
 public class Ajnin implements Listener {
 	public HashMap<Player, Player> ajinhash;
@@ -33,7 +33,7 @@ public class Ajnin implements Listener {
 			final Player t = (Player) e.getEntity();
 			if (Habilidade.getAbility(p).equalsIgnoreCase("Ajnin")) {
 				this.ajinhash.put(p, t);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(),
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {
@@ -58,18 +58,18 @@ public class Ajnin implements Listener {
 				if (p.getLocation().distance(t.getLocation()) < 200.0) {
 					t.teleport(p.getLocation());
 					p.sendMessage(
-							String.valueOf(Main.prefix) + " �4\u27bc �7O Player Foi Teleportado At\u00e9 Voc\u00ea");
+							String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Player Foi Teleportado Até Você");
 					Cooldown.add(p, 3);
-					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(),
+					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
-									p.sendMessage(String.valueOf(Main.prefix) + " �4\u27bc �7Seu Cooldown Acabou");
+									p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
 								}
 							}, 140L);
 				} else {
 					p.sendMessage(
-							String.valueOf(Main.prefix) + " �4\u27bc �7O Ultimo Player Hitado Est\u00e1 Loge Demais");
+							String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Ultimo Player Hitado Está Loge Demais");
 				}
 			}
 		}

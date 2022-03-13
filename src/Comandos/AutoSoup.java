@@ -2,6 +2,7 @@ package Comandos;
 
 import java.util.HashMap;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -14,8 +15,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-
-import Main.Main;
 
 public class AutoSoup implements CommandExecutor, Listener {
 	public static HashMap<String, ItemStack[]> saveinv;
@@ -32,7 +31,7 @@ public class AutoSoup implements CommandExecutor, Listener {
 		AutoSoup.armadura = new HashMap<String, ItemStack[]>();
 	}
 
-	public AutoSoup(final Main main) {
+	public AutoSoup() {
 		this.sopa = new ItemStack(Material.MUSHROOM_SOUP);
 		this.msopa = this.sopa.getItemMeta();
 		this.sopa1 = new ItemStack(Material.MUSHROOM_SOUP);
@@ -45,7 +44,7 @@ public class AutoSoup implements CommandExecutor, Listener {
 		final Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("autosoup")) {
 			if (!p.hasPermission("arkuz.admin")) {
-				p.sendMessage(String.valueOf(Main.prefix) + " �4\u27bc �7Sem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissão");
 				return true;
 			}
 			final Player testando = p.getServer().getPlayer(args[0]);
@@ -55,7 +54,7 @@ public class AutoSoup implements CommandExecutor, Listener {
 			testando.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 70, 999));
 			testando.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 70, 999));
 			this.sopa.setItemMeta(this.msopa);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					testando.getInventory().clear();
@@ -65,7 +64,7 @@ public class AutoSoup implements CommandExecutor, Listener {
 					testando.getInventory().setItem(12, AutoSoup.this.sopa2);
 				}
 			}, 20L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					testando.getInventory().clear();

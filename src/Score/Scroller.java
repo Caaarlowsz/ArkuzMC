@@ -27,7 +27,7 @@ public class Scroller {
 		if (spaceBetween < 0) {
 			spaceBetween = 0;
 		}
-		if (colourChar != '§') {
+		if (colourChar != '&') {
 			message = ChatColor.translateAlternateColorCodes(colourChar, message);
 		}
 		for (int i = 0; i < message.length() - width; ++i) {
@@ -55,10 +55,10 @@ public class Scroller {
 
 	public String next() {
 		StringBuilder sb = this.getNext();
-		if (sb.charAt(sb.length() - 1) == '§') {
+		if (sb.charAt(sb.length() - 1) == '&') {
 			sb.setCharAt(sb.length() - 1, ' ');
 		}
-		if (sb.charAt(0) == '§') {
+		if (sb.charAt(0) == '&') {
 			final ChatColor c = ChatColor.getByChar(sb.charAt(1));
 			if (c != null) {
 				this.colour = c;

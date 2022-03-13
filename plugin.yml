@@ -1,5 +1,5 @@
 name: ArkuzMC
-main: Main.Main
+main: com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP
 author: [nukopon]
 version: 1.0
 commands:
@@ -29,7 +29,6 @@ commands:
   report:
   build:
   suicide:
-    aliases: [morrer]
     aliases: [kill]
   vis:
   lojakits:

@@ -13,10 +13,10 @@ public class ChatForm implements Listener {
 	public void chat(final PlayerChatEvent e) {
 		final Player p = e.getPlayer();
 		if (!p.hasPermission("arkuz.cor")) {
-			e.setFormat("ง7{" + ScoreBoarding.Rank(p) + "ง7} " + p.getDisplayName() + " ง7 " + e.getMessage());
+			e.setFormat("ยง7{" + ScoreBoarding.Rank(p) + "ยง7} " + p.getDisplayName() + " ยง7 " + e.getMessage());
 		} else {
-			e.setFormat("ง7{" + ScoreBoarding.Rank(p) + "ง7} " + p.getDisplayName() + " งf "
-					+ e.getMessage().replace("&", "ง"));
+			e.setFormat("ยง7{" + ScoreBoarding.Rank(p) + "ยง7} " + p.getDisplayName() + " ยงf "
+					+ e.getMessage().replace("&", "ยง"));
 		}
 	}
 }

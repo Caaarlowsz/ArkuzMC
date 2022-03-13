@@ -18,8 +18,6 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-import Main.Main;
-
 public class Jump implements Listener {
 	public static ArrayList<String> jump;
 	ArrayList<String> nofalldamage;
@@ -29,7 +27,7 @@ public class Jump implements Listener {
 		Jump.jump = new ArrayList<String>();
 	}
 
-	public Jump(final Main main) {
+	public Jump() {
 		this.nofalldamage = new ArrayList<String>();
 		this.nofalldamagewait = new ArrayList<String>();
 	}

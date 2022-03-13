@@ -16,7 +16,7 @@ public class Bot implements Listener {
 				|| jogador.getName().contains("99") || jogador.getName().contains("50")
 				|| jogador.getName().contains("49") || jogador.getName().contains("Tower")) {
 			e.disallow(PlayerLoginEvent.Result.KICK_OTHER,
-					"§cVoc\u00ea foi listado como um BOT. \n \n §7Caso isso seja um engano, basta trocar o seu nick sem as palavras: \n §eTower,beach,lp,49,99,50,crazy,hydra,super,beach,worms... ");
+					"Â§cVocÃª foi listado como um BOT. \n \n Â§7Caso isso seja um engano, basta trocar o seu nick sem as palavras: \n Â§eTower,beach,lp,49,99,50,crazy,hydra,super,beach,worms... ");
 		}
 	}
 }

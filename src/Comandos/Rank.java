@@ -10,17 +10,17 @@ public class Rank implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		final Player jogador = (Player) sender;
 		if (label.equalsIgnoreCase("rank")) {
-			jogador.sendMessage("ง4งlLENDARIO ง7(ง4\u272aง7) งa500+ Kills");
-			jogador.sendMessage("ง3งlSAFIRA ง7(งc\u2730ง7) งa450-500 Kills");
-			jogador.sendMessage("งCงlRUBY ง7(ง5\u2739ง7) งa400-450 Kills");
-			jogador.sendMessage("ง2งlEMERALD ง7(ง6\u2738ง7) งa350-400 Kills");
-			jogador.sendMessage("งBงlDIAMOND ง7(ง7\u2734ง7) งa300-350 Kills");
-			jogador.sendMessage("ง6งlGOLD ง7(งe\u2637ง7) งa250-300 Kills");
-			jogador.sendMessage("ง7งlSILVER ง7(งe\u2633ง7) งa200-250 Kills");
-			jogador.sendMessage("ง1งlEXPERT ง7(งe\u2631ง7) งa150-200 Kills");
-			jogador.sendMessage("งaงlAPRENDIZ ง7(งa\u2630ง7) งa100-150 Kills");
-			jogador.sendMessage("งaงlINICIANTE ง7(งf=ง7) งa50-100 Kills");
-			jogador.sendMessage("ง7งlSem rank ง7(งf-ง7) งa- de 50 Kills");
+			jogador.sendMessage("ยง4ยงlLENDARIO ยง7(ยง4โยง7) ยงa500+ Kills");
+			jogador.sendMessage("ยง3ยงlSAFIRA ยง7(ยง3โทยง7) ยงa450-500 Kills");
+			jogador.sendMessage("ยงCยงlRUBY ยง7(ยงcโฆยง7) ยงa400-450 Kills");
+			jogador.sendMessage("ยง2ยงlEMERALD ยง7(ยง2โธยง7) ยงa350-400 Kills");
+			jogador.sendMessage("ยงBยงlDIAMOND ยง7(ยงbโยง7) ยงa300-350 Kills");
+			jogador.sendMessage("ยง6ยงlGOLD ยง7(ยง6โชยง7) ยงa250-300 Kills");
+			jogador.sendMessage("ยง7ยงlSILVER ยง7(ยง7โฏยง7) ยงa200-250 Kills");
+			jogador.sendMessage("ยง1ยงlEXPERT ยง7(ยง1โฅยง7) ยงa150-200 Kills");
+			jogador.sendMessage("ยงeยงlAPRENDIZ ยง7(ยงeโฟยง7) ยงa100-150 Kills");
+			jogador.sendMessage("ยงaยงlINICIANTE ยง7(ยงaโพยง7) ยงa50-100 Kills");
+			jogador.sendMessage("ยง7ยงlSem rank ยง7(ยงf-ยง7) ยงa- de 50 Kills");
 		}
 		return false;
 	}

@@ -1,8 +1,7 @@
 package Kits;
 
-import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
-
+import Essencial.KitAPI;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -18,8 +17,8 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-import Essencial.KitAPI;
-import Main.Main;
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 public class Thresh implements Listener {
 	public static HashMap<String, Long> cooldown;
@@ -28,9 +27,6 @@ public class Thresh implements Listener {
 	static {
 		Thresh.cooldown = new HashMap<String, Long>();
 		Thresh.tiros = new HashMap<String, Snowball>();
-	}
-
-	public Thresh(final Main main) {
 	}
 
 	@EventHandler
@@ -48,10 +44,10 @@ public class Thresh implements Listener {
 				Thresh.tiros.put(p.getName(), tiro);
 				Thresh.cooldown.put(p.getName(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(15L));
 				p.playSound(p.getLocation(), Sound.GLASS, 1.0f, 1.0f);
-				p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Voc\u00ea Usou Seu Thresh!");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7VocÃª Usou Seu Thresh!");
 				return;
 			}
-			p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Aguarde o CoolDown Acabar");
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7Aguarde o CoolDown Acabar");
 		}
 	}
 
@@ -72,7 +68,7 @@ public class Thresh implements Listener {
 					hit.teleport(ploc);
 					hit.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 1));
 					hit.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 1));
-					hit.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Voc\u00ea Foi Pego Por Um Thresh");
+					hit.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7VocÃª Foi Pego Por Um Thresh");
 				}
 			}
 		}

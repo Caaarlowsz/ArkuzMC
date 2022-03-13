@@ -1,13 +1,12 @@
 package Comandos;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-
-import Main.Main;
 
 public class PvP implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
@@ -18,12 +17,12 @@ public class PvP implements CommandExecutor, Listener {
 		if (p.getWorld().getPVP()) {
 			p.getWorld().setPVP(false);
 			Bukkit.getServer()
-					.broadcastMessage(String.valueOf(Main.prefix) + " §4\u27bc §7O PvP Do Servidor Foi §cDesabilitado");
+					.broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7O PvP Do Servidor Foi Â§cDesabilitado");
 			return true;
 		}
 		p.getWorld().setPVP(true);
 		Bukkit.getServer()
-				.broadcastMessage(String.valueOf(Main.prefix) + " §4\u27bc §7O PvP Do Servidor Foi §aHabilitado");
+				.broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7O PvP Do Servidor Foi Â§aHabilitado");
 		return true;
 	}
 }

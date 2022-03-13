@@ -1,14 +1,13 @@
 package Kits;
 
+import Eventos.Habilidade;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
-
-import Eventos.Habilidade;
-import Main.Main;
 
 public class Turtle implements Listener {
 	@EventHandler
@@ -57,7 +56,7 @@ public class Turtle implements Listener {
 		}
 		if (Habilidade.getAbility(p).equalsIgnoreCase("Turtle")) {
 			e.setCancelled(true);
-			p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7N\u00e3o Se Pode Bater No Shift");
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ï¿½4? ï¿½7Nï¿½o Se Pode Bater No Shift");
 		}
 	}
 }

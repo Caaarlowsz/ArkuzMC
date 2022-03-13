@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Effect;
@@ -23,13 +24,11 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
 import Essencial.KitAPI;
-import Main.Main;
 
 public class Sonic implements Listener {
 	public int boost;
 	public static ArrayList<String> Sonic;
 	public static HashMap<String, ItemStack[]> Armadura;
-	public static Main plugin;
 	public static HashMap<String, ItemStack[]> saveinv;
 	public static HashMap<String, ItemStack[]> armadura;
 	public static HashMap<String, ItemStack[]> Armadura2;
@@ -44,7 +43,7 @@ public class Sonic implements Listener {
 		Kits.Sonic.cooldownm = new ArrayList<Player>();
 	}
 
-	public Sonic(final Main main) {
+	public Sonic() {
 		this.boost = 6;
 	}
 
@@ -58,7 +57,7 @@ public class Sonic implements Listener {
 				event.setCancelled(true);
 			}
 			if (Kits.Sonic.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Aguarde o CoolDown Acabar");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Aguarde o CoolDown Acabar");
 				return;
 			}
 			Kits.Sonic.cooldownm.add(p);
@@ -95,19 +94,19 @@ public class Sonic implements Listener {
 			p.getInventory().setLeggings(Calss);
 			p.getInventory().setBoots(Bota);
 			p.updateInventory();
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getInventory().setArmorContents((ItemStack[]) null);
 					p.updateInventory();
 				}
 			}, 50L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Kits.Sonic.cooldownm.remove(p);
 					Kits.Sonic.Sonic.remove(p.getName());
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Seu Cooldown Acabou");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Seu Cooldown Acabou");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 5.0f, 5.0f);
 				}
 			}, 700L);

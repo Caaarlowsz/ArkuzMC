@@ -2,22 +2,18 @@ package Eventos;
 
 import java.util.HashMap;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import Main.Main;
-
 public class AntSpam implements Listener {
 	public static HashMap<Player, Long> chat;
 
 	static {
 		AntSpam.chat = new HashMap<Player, Long>();
-	}
-
-	public AntSpam(final Main main) {
 	}
 
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = false)
@@ -41,7 +37,7 @@ public class AntSpam implements Listener {
 			if (AntSpam.chat.get(p) < System.currentTimeMillis() || p.hasPermission("arkuz.spam")) {
 				return;
 			}
-			p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Pare De Floodar Ou Ser\u00e1 §cPunido");
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7Pare De Floodar Ou SerÃ¡ Â§cPunido");
 			e.setCancelled(true);
 		}
 	}

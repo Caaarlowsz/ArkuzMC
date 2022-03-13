@@ -1,8 +1,8 @@
 package Comandos;
 
-import java.util.ArrayList;
-import java.util.Random;
-
+import Essencial.HorarioAPI;
+import Essencial.Vips;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,9 +12,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import Essencial.HorarioAPI;
-import Essencial.Vips;
-import Main.Main;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class SorteioVip implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
@@ -27,10 +26,10 @@ public class SorteioVip implements CommandExecutor, Listener {
 					Vip.add(s.name().toLowerCase());
 				}
 			}
-			Bukkit.broadcastMessage("               §E\u25cf §6§lSorteio §e\u25cf         ");
+			Bukkit.broadcastMessage("               Â§E\u25cf Â§6Â§lSorteio Â§e\u25cf         ");
 			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("          §6Estamos iniciando um §eSorteio§a!  ");
-			Bukkit.broadcastMessage("   §6Come\u00e7ou \u00e0s: §f" + HorarioAPI.getHorario());
+			Bukkit.broadcastMessage("          Â§6Estamos iniciando um Â§eSorteioÂ§a!  ");
+			Bukkit.broadcastMessage("   Â§6ComeÃ§ou Ã s: Â§f" + HorarioAPI.getHorario());
 			Bukkit.broadcastMessage("");
 			new BukkitRunnable() {
 				public void run() {
@@ -43,18 +42,18 @@ public class SorteioVip implements CommandExecutor, Listener {
 						}
 					}
 					final Player random = Players.get(new Random().nextInt(Players.size()));
-					Bukkit.broadcastMessage("           §E\u25cf §6§lSorteio §e\u25cf ");
+					Bukkit.broadcastMessage("           Â§E\u25cf Â§6Â§lSorteio Â§e\u25cf ");
 					Bukkit.broadcastMessage("");
-					Bukkit.broadcastMessage("   §6O Sorteio Foi Finalizado!");
-					Bukkit.broadcastMessage("     §6O Ganhador Foi: §f" + random.getName());
+					Bukkit.broadcastMessage("   Â§6O Sorteio Foi Finalizado!");
+					Bukkit.broadcastMessage("     Â§6O Ganhador Foi: Â§f" + random.getName());
 					final Random r = new Random();
 					final int x = r.nextInt(Vip.size());
-					Bukkit.broadcastMessage("         §6Ganhou: §f" + Vip.get(x));
+					Bukkit.broadcastMessage("         Â§6Ganhou: Â§f" + Vip.get(x));
 					Bukkit.broadcastMessage("");
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + random.getName() + " group set " + Vip.get(x));
 				}
-			}.runTaskLater((Plugin) Main.instance, 200L);
+			}.runTaskLater((Plugin) ArkuzPvP.getInstance(), 200L);
 		}
 		return false;
 	}

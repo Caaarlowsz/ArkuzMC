@@ -1,8 +1,8 @@
 package Essencial;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
+import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
+import com.sk89q.worldguard.protection.ApplicableRegionSet;
+import com.sk89q.worldguard.protection.flags.DefaultFlag;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -13,11 +13,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.plugin.Plugin;
 
-import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
-import com.sk89q.worldguard.protection.ApplicableRegionSet;
-import com.sk89q.worldguard.protection.flags.DefaultFlag;
-
-import Main.Main;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class KitAPI implements Listener {
 	public static final String Kitado;
@@ -113,9 +110,6 @@ public class KitAPI implements Listener {
 		KitAPI.refillTestTime = new HashMap<String, Integer>();
 	}
 
-	public KitAPI(final Main main) {
-	}
-
 	public static void remove(final Player p) {
 		KitAPI.Kit.remove(p.getName());
 		KitAPI.PvP.remove(p.getName());
@@ -158,7 +152,7 @@ public class KitAPI implements Listener {
 	public static void sopa(final Player p) {
 		final ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 		final ItemMeta ksopa = sopa.getItemMeta();
-		ksopa.setDisplayName("§4\u27bc §cSopa");
+		ksopa.setDisplayName("Â§4âž¼ Â§cSopa");
 		sopa.setItemMeta(ksopa);
 		p.getInventory().addItem(new ItemStack[] { sopa });
 		p.getInventory().addItem(new ItemStack[] { sopa });
@@ -254,7 +248,7 @@ public class KitAPI implements Listener {
 		p.getInventory().setItem(15, cogum);
 		final ItemStack espada1 = new ItemStack(Material.COMPASS);
 		final ItemMeta kespada1 = espada1.getItemMeta();
-		kespada1.setDisplayName("§4\u27bc §cB\u00fassola");
+		kespada1.setDisplayName("Â§4âž¼ Â§cBÃºssola");
 		espada1.setItemMeta(kespada1);
 		p.getInventory().setItem(8, espada1);
 	}
@@ -262,7 +256,7 @@ public class KitAPI implements Listener {
 	public static void sword(final Player p) {
 		final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta kespada = espada.getItemMeta();
-		kespada.setDisplayName("§4\u27bc §cEspada");
+		kespada.setDisplayName("Â§4âž¼ Â§cEspada");
 		espada.setItemMeta(kespada);
 		p.getInventory().setItem(0, espada);
 		p.getInventory().setBoots((ItemStack) null);

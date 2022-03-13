@@ -1,19 +1,18 @@
 package Comandos;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
 
-import Main.Main;
-
 public class Broadcast implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		if (cmd.getName().equalsIgnoreCase("broadcast") || cmd.getName().equalsIgnoreCase("bc")) {
 			if (sender.hasPermission("arkuz.bc")) {
 				if (args.length == 0) {
-					sender.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Use: /aviso {Menssagem}");
+					sender.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Use: /aviso {Menssagem}");
 					return true;
 				}
 				String msg = "";
@@ -22,12 +21,12 @@ public class Broadcast implements CommandExecutor, Listener {
 				}
 				Bukkit.broadcastMessage(" ");
 				Bukkit.broadcastMessage(" ");
-				Bukkit.broadcastMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7" + msg.replace("&", "ง"));
+				Bukkit.broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7" + msg.replace("&", "ยง"));
 				Bukkit.broadcastMessage(" ");
 				Bukkit.broadcastMessage(" ");
 				return true;
 			} else {
-				sender.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Sem Permiss\u00e3o");
+				sender.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Sem Permissรฃo");
 			}
 		}
 		return false;

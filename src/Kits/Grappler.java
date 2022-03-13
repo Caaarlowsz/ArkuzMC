@@ -18,13 +18,12 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
 import Essencial.KitAPI;
-import Main.Main;
 import net.minecraft.server.v1_7_R4.EntityHuman;
 
 public class Grappler implements Listener {
 	Map<Player, Cordinha> hooks;
 
-	public Grappler(final Main main) {
+	public Grappler() {
 		this.hooks = new HashMap<Player, Cordinha>();
 	}
 

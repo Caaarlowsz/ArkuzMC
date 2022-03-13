@@ -1,5 +1,10 @@
 package Eventos;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import net.minecraft.server.v1_7_R4.ChatSerializer;
+import net.minecraft.server.v1_7_R4.IChatBaseComponent;
+import net.minecraft.server.v1_7_R4.Packet;
+import net.minecraft.server.v1_7_R4.PlayerConnection;
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
 import org.bukkit.entity.Player;
@@ -9,12 +14,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 import org.spigotmc.ProtocolInjector;
 
-import Main.Main;
-import net.minecraft.server.v1_7_R4.ChatSerializer;
-import net.minecraft.server.v1_7_R4.IChatBaseComponent;
-import net.minecraft.server.v1_7_R4.Packet;
-import net.minecraft.server.v1_7_R4.PlayerConnection;
-
 public class TabPersonalizado implements Listener {
 	private static int VERSION;
 
@@ -22,23 +21,20 @@ public class TabPersonalizado implements Listener {
 		TabPersonalizado.VERSION = 47;
 	}
 
-	public TabPersonalizado(final Main main) {
-	}
-
 	@EventHandler
 	void TabDoServidor(final PlayerJoinEvent e) {
 		final Player jogador = e.getPlayer();
-		Bukkit.getScheduler().scheduleSyncRepeatingTask((Plugin) Main.getInstance(), (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncRepeatingTask((Plugin) ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				final PlayerConnection connect = ((CraftPlayer) jogador).getHandle().playerConnection;
 				final IChatBaseComponent top = ChatSerializer
-						.a("{'extra': [{text: '', color: 'aqua'}],'color': gold, 'text': '     §4------={" + Main.prefix
-								+ "§c}=------\n       '}");
+						.a("{'extra': [{text: '', color: 'aqua'}],'color': gold, 'text': '     Â§4------={" + ArkuzPvP.prefix
+								+ "Â§c}=------\n       '}");
 				final IChatBaseComponent bottom = ChatSerializer.a(
-						"{'extra': [{'color': 'aqua', 'text': '  \n§4\u27bc  §7Twiter §cEm Breve \n§4\u27bc §7Site §c"
-								+ Main.loja
-								+ "\n§4\u27bc §7TS §cEm Breve', 'underline': 'true'}], 'color': 'gold', 'text': ''}");
+						"{'extra': [{'color': 'aqua', 'text': '  \nÂ§4\u27bc  Â§7Twiter Â§cEm Breve \nÂ§4\u27bc Â§7Site Â§c"
+								+ ArkuzPvP.loja
+								+ "\nÂ§4\u27bc Â§7TS Â§cEm Breve', 'underline': 'true'}], 'color': 'gold', 'text': ''}");
 				if (((CraftPlayer) jogador).getHandle().playerConnection.networkManager
 						.getVersion() < TabPersonalizado.VERSION) {
 					return;

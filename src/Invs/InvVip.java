@@ -24,7 +24,7 @@ public class InvVip implements Listener {
 	}
 
 	public static void inventory(final Player p) {
-		final Inventory menu = Bukkit.createInventory((InventoryHolder) p, 9, "§aMenu de §6§lVIPS");
+		final Inventory menu = Bukkit.createInventory((InventoryHolder) p, 9, "Â§aMenu de Â§6Â§lVIPS");
 		menu.setItem(0, new ItemStack(Material.STAINED_GLASS_PANE));
 		menu.setItem(1, new ItemStack(Material.STAINED_GLASS_PANE));
 		menu.setItem(3, new ItemStack(Material.STAINED_GLASS_PANE));
@@ -32,16 +32,16 @@ public class InvVip implements Listener {
 		menu.setItem(7, new ItemStack(Material.STAINED_GLASS_PANE));
 		menu.setItem(8, new ItemStack(Material.STAINED_GLASS_PANE));
 		menu.setItem(3,
-				criarItemMenu(Material.GOLD_BLOCK, "§aVip",
-						new String[] { " ", "              §b§lVANTAGENS", "§7» §fVaga reservada no servidor.",
-								"§a» §fTag §aVip §fpara ser diferenciado.", "§a» §fAcesso ao §6/FAKE §fe §6/SKIN",
-								"§a» §fMelhor suporte", "§a» §fFalar colorido", "§a» §fAcesso ao §a/FLY",
-								"§a» §aAcesso \u00e0 TODAS classes do servidor.", " " }));
+				criarItemMenu(Material.GOLD_BLOCK, "Â§aVip",
+						new String[] { " ", "              Â§bÂ§lVANTAGENS", "Â§7Â§ Â§fVaga reservada no servidor.",
+								"Â§aÂ§ Â§fTag Â§aVip Â§fpara ser diferenciado.", "Â§aÂ§ Â§fAcesso ao Â§6/FAKE Â§fe Â§6/SKIN",
+								"Â§aÂ§ Â§fMelhor suporte", "Â§aÂ§ Â§fFalar colorido", "Â§aÂ§ Â§fAcesso ao Â§a/FLY",
+								"Â§aÂ§ Â§aAcesso \u00e0 TODAS classes do servidor.", " " }));
 		p.openInventory(menu);
 	}
 
 	public static void inventarioLojas(final Player p) {
-		final Inventory menu = Bukkit.createInventory((InventoryHolder) p, 9, "§aMenu de Lojas");
+		final Inventory menu = Bukkit.createInventory((InventoryHolder) p, 9, "Â§aMenu de Lojas");
 		menu.setItem(0, new ItemStack(Material.STAINED_GLASS_PANE));
 		menu.setItem(1, new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 1));
 		menu.setItem(3, new ItemStack(Material.STAINED_GLASS_PANE));
@@ -49,17 +49,17 @@ public class InvVip implements Listener {
 		menu.setItem(5, new ItemStack(Material.STAINED_GLASS_PANE));
 		menu.setItem(7, new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 1));
 		menu.setItem(8, new ItemStack(Material.STAINED_GLASS_PANE));
-		menu.setItem(2, criarItemMenu(Material.EMERALD_BLOCK, "§fLoja de §6Vips", new String[0]));
+		menu.setItem(2, criarItemMenu(Material.EMERALD_BLOCK, "Â§fLoja de Â§6Vips", new String[0]));
 		p.openInventory(menu);
 	}
 
 	@EventHandler
 	public void clickarloja(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equals("§aMenu de Lojas") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equals("Â§aMenu de Lojas") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0) {
 			e.setCancelled(true);
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§fLoja de §6Vips")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Â§fLoja de Â§6Vips")) {
 				e.setCancelled(true);
 				inventory(p);
 			}
@@ -69,13 +69,13 @@ public class InvVip implements Listener {
 	@EventHandler
 	public void clickarlojavips(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equals("§aMenu de §6§lVIPS") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equals("Â§aMenu de Â§6Â§lVIPS") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0) {
 			e.setCancelled(true);
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aVip")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Â§aVip")) {
 				e.setCancelled(true);
 				p.closeInventory();
-				p.sendMessage("§a§lVIP §e> ");
+				p.sendMessage("Â§aÂ§lVIP Â§e> ");
 			}
 		}
 	}

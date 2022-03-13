@@ -1,7 +1,7 @@
 package Minigames;
 
-import java.util.ArrayList;
-
+import Eventos.TheTitle;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -13,8 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import Eventos.TheTitle;
-import Main.Main;
+import java.util.ArrayList;
 
 public class Clicktest implements CommandExecutor, Listener {
 	public static ArrayList<Player> sela;
@@ -33,17 +32,17 @@ public class Clicktest implements CommandExecutor, Listener {
 		final Player p = e.getPlayer();
 		if (Clicktest.sela.contains(p) && e.getAction() == Action.LEFT_CLICK_AIR) {
 			p.setLevel(p.getLevel() + 1);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					if (Clicktest.sela.contains(p)) {
 						Clicktest.sela.remove(p);
-						p.sendMessage("§c§m-------------------------------------------");
-						p.sendMessage("§c§m----------§7 " + Main.prefix + "§c§m-------------------");
-						p.sendMessage("§cClicks em 10 segundos §b" + p.getLevel() + " §aclicks");
-						p.sendMessage("§cVoce fez a media §b" + p.getLevel() / 10 + " §aclicks por segundo!");
-						p.sendMessage("§cClicks em 60 segundos §b" + p.getLevel() * 6 + " §aclicks");
-						p.sendMessage("§c§m-------------------------------------------");
+						p.sendMessage("ï¿½cï¿½m-------------------------------------------");
+						p.sendMessage("ï¿½cï¿½m----------ï¿½7 " + ArkuzPvP.prefix + "ï¿½cï¿½m-------------------");
+						p.sendMessage("ï¿½cClicks em 10 segundos ï¿½b" + p.getLevel() + " ï¿½aclicks");
+						p.sendMessage("ï¿½cVoce fez a media ï¿½b" + p.getLevel() / 10 + " ï¿½aclicks por segundo!");
+						p.sendMessage("ï¿½cClicks em 60 segundos ï¿½b" + p.getLevel() * 6 + " ï¿½aclicks");
+						p.sendMessage("ï¿½cï¿½m-------------------------------------------");
 						p.teleport(p.getWorld().getSpawnLocation());
 						if (p.getLevel() >= 300) {
 							p.setBanned(true);
@@ -51,7 +50,7 @@ public class Clicktest implements CommandExecutor, Listener {
 					}
 				}
 			}, 200L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.setLevel(0);
@@ -66,38 +65,38 @@ public class Clicktest implements CommandExecutor, Listener {
 			final Player p = (Player) sender;
 			p.setLevel(0);
 			p.setGameMode(GameMode.SURVIVAL);
-			p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Iniciando Treino Em: §c5");
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ï¿½4? ï¿½7Iniciando Treino Em: ï¿½c5");
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Iniciando Treino Em: §c4");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ï¿½4? ï¿½7Iniciando Treino Em: ï¿½c4");
 				}
 			}, 20L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Iniciando Treino Em: §c3");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ï¿½4? ï¿½7Iniciando Treino Em: ï¿½c3");
 				}
 			}, 40L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Iniciando Treino Em: §c2");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ï¿½4? ï¿½7Iniciando Treino Em: ï¿½c2");
 				}
 			}, 60L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Iniciando Treino Em: §c1");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ï¿½4? ï¿½7Iniciando Treino Em: ï¿½c1");
 				}
 			}, 80L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					TheTitle.sendTitle(p, "§4§lTREINO §8§lDE §c§lCLICKS");
-					TheTitle.sendSubTitle(p, "§8§lINICIADO");
-					p.sendMessage(String.valueOf(Main.prefix)
-							+ " §4\u27bc §7O §c§nTreino§7 §c§nDe§7 §c§nClicks§7 Foi Iniciado");
+					TheTitle.sendTitle(p, "ï¿½4ï¿½lTREINO ï¿½8ï¿½lDE ï¿½cï¿½lCLICKS");
+					TheTitle.sendSubTitle(p, "ï¿½8ï¿½lINICIADO");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+							+ " ï¿½4? ï¿½7O ï¿½cï¿½nTreinoï¿½7 ï¿½cï¿½nDeï¿½7 ï¿½cï¿½nClicksï¿½7 Foi Iniciado");
 					Clicktest.sela.add(p);
 				}
 			}, 100L);

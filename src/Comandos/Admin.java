@@ -3,6 +3,7 @@ package Comandos;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -22,7 +23,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import Eventos.TheTitle;
-import Main.Main;
 
 public class Admin implements Listener, CommandExecutor {
 	public static ArrayList<String> admin;
@@ -31,9 +31,6 @@ public class Admin implements Listener, CommandExecutor {
 	static {
 		Admin.admin = new ArrayList<String>();
 		Admin.salvarinv = new HashMap<String, ItemStack[]>();
-	}
-
-	public Admin(final Main main) {
 	}
 
 	@EventHandler
@@ -100,13 +97,13 @@ public class Admin implements Listener, CommandExecutor {
 		if (Admin.admin.contains(p.getName()) && p.getItemInHand().getType() == Material.PAPER) {
 			final Damageable hp;
 			final Player p2 = (Player) (hp = (Damageable) e.getRightClicked());
-			p.sendMessage("§7-=-=-=-=-=-=-=-=-§c{§4+§c}§7-=-=-=-=-=-=-=-=-");
-			p.sendMessage("§4\u27bc §7Nick §c" + p2.getName());
-			p.sendMessage("§4\u27bc §7Life §c" + (int) hp.getHealth());
-			p.sendMessage("§4\u27bc §7Sopas §c" + getAmount(p2, Material.MUSHROOM_SOUP));
-			p.sendMessage("§4\u27bc §7Gm §c" + p2.getGameMode());
-			p.sendMessage("§4\u27bc §7Ip §c" + p2.getAddress().getHostName());
-			p.sendMessage("§7-=-=-=-=-=-=-=-=-§c{§4+§c}§7-=-=-=-=-=-=-=-=-");
+			p.sendMessage("Â§7-=-=-=-=-=-=-=-=-Â§c{Â§4+Â§c}Â§7-=-=-=-=-=-=-=-=-");
+			p.sendMessage("Â§4âž¼ Â§7Nick Â§c" + p2.getName());
+			p.sendMessage("Â§4âž¼ Â§7Life Â§c" + (int) hp.getHealth());
+			p.sendMessage("Â§4âž¼ Â§7Sopas Â§c" + getAmount(p2, Material.MUSHROOM_SOUP));
+			p.sendMessage("Â§4âž¼ Â§7Gm Â§c" + p2.getGameMode());
+			p.sendMessage("Â§4âž¼ Â§7Ip Â§c" + p2.getAddress().getHostName());
+			p.sendMessage("Â§7-=-=-=-=-=-=-=-=-Â§c{Â§4+Â§c}Â§7-=-=-=-=-=-=-=-=-");
 		}
 	}
 
@@ -129,7 +126,7 @@ public class Admin implements Listener, CommandExecutor {
 				&& (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR)
 				&& p.getItemInHand().getType() == Material.FIREBALL) {
 			p.chat("/admin");
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.chat("/admin");
@@ -160,8 +157,8 @@ public class Admin implements Listener, CommandExecutor {
 				p.setGameMode(GameMode.SURVIVAL);
 				for (int i2 = 0; i2 < 10; ++i2) {
 				}
-				TheTitle.sendTitle(p, "§c§lADMIN");
-				TheTitle.sendSubTitle(p, "§4§lOFF");
+				TheTitle.sendTitle(p, "Â§cÂ§lADMIN");
+				TheTitle.sendSubTitle(p, "Â§4Â§lOFF");
 				Admin.admin.remove(p.getName());
 				p.getInventory().setContents((ItemStack[]) Admin.salvarinv.get(p.getName()));
 				p.updateInventory();
@@ -178,18 +175,18 @@ public class Admin implements Listener, CommandExecutor {
 				p.setGameMode(GameMode.CREATIVE);
 				for (int i2 = 0; i2 < 10; ++i2) {
 				}
-				TheTitle.sendTitle(p, "§c§lADMIN");
-				TheTitle.sendSubTitle(p, "§a§lON");
+				TheTitle.sendTitle(p, "Â§cÂ§lADMIN");
+				TheTitle.sendSubTitle(p, "Â§aÂ§lON");
 				Admin.salvarinv.put(p.getName(), p.getInventory().getContents());
 				p.getInventory().clear();
-				this.darItem(p, Material.FIREBALL, " §7{ §cFast Admin §7} ", 1);
-				this.darItem(p, Material.NETHER_STAR, " §7{ §cNo-Fall §7} ", 2);
-				this.darItem(p, Material.MUSHROOM_SOUP, " §7{ §cAuto-Soup §7} ", 4);
-				this.darItem(p, Material.BEDROCK, " §7{ §cCage §7} ", 5);
-				setitem(p, Material.STICK, " §7{ §cKnockBack §7} ", 5, Enchantment.KNOCKBACK, 2, false);
-				setitem(p, Material.DIAMOND_SWORD, " §7{ §cEspada §7} ", 2, Enchantment.FIRE_ASPECT, 1, false);
-				this.darItem(p, Material.PAPER, " §7{ §cInforma\u00e7\u00f5es §7} ", 8);
-				this.darItem(p, Material.ITEM_FRAME, " §7{ §cAbrir-Inventario §7} ", 9);
+				this.darItem(p, Material.FIREBALL, " Â§7{ Â§cFast Admin Â§7} ", 1);
+				this.darItem(p, Material.NETHER_STAR, " Â§7{ Â§cNo-Fall Â§7} ", 2);
+				this.darItem(p, Material.MUSHROOM_SOUP, " Â§7{ Â§cAuto-Soup Â§7} ", 4);
+				this.darItem(p, Material.BEDROCK, " Â§7{ Â§cCage Â§7} ", 5);
+				setitem(p, Material.STICK, " Â§7{ Â§cKnockBack Â§7} ", 5, Enchantment.KNOCKBACK, 2, false);
+				setitem(p, Material.DIAMOND_SWORD, " Â§7{ Â§cEspada Â§7} ", 2, Enchantment.FIRE_ASPECT, 1, false);
+				this.darItem(p, Material.PAPER, " Â§7{ Â§cInforma\u00e7\u00f5es Â§7} ", 8);
+				this.darItem(p, Material.ITEM_FRAME, " Â§7{ Â§cAbrir-Inventario Â§7} ", 9);
 			}
 		}
 		return true;

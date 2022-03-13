@@ -1,5 +1,6 @@
 package Kits;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,11 +9,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
 import Essencial.KitAPI;
-import Main.Main;
 
 public class Stomper implements Listener {
-	public Stomper(final Main main) {
-	}
 
 	@EventHandler(priority = EventPriority.HIGH)
 	public void onPlayerStomp(final EntityDamageEvent e) {
@@ -36,7 +34,7 @@ public class Stomper implements Listener {
 					} else {
 						plr.damage(e.getDamage(), (Entity) p);
 						plr.sendMessage(
-								String.valueOf(Main.prefix) + " �4\u27bc �7Voc\u00ea Foi Stompado Por: " + p.getName());
+								String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Foi Stompado Por: " + p.getName());
 					}
 				}
 			}

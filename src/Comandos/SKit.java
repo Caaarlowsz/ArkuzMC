@@ -1,7 +1,6 @@
 package Comandos;
 
-import java.util.HashMap;
-
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,13 +10,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
-import Main.Main;
+import java.util.HashMap;
 
 public class SKit implements Listener, CommandExecutor {
 	public HashMap<String, ItemStack[]> itens;
 	public HashMap<String, ItemStack[]> armor;
 
-	public SKit(final Main main) {
+	public SKit() {
 		this.itens = new HashMap<String, ItemStack[]>();
 		this.armor = new HashMap<String, ItemStack[]>();
 	}
@@ -35,39 +34,39 @@ public class SKit implements Listener, CommandExecutor {
 		final Player p = (Player) Sender;
 		if (Label.equalsIgnoreCase("skit") && Sender instanceof Player) {
 			if (!p.hasPermission("arkuz.skit")) {
-				p.sendMessage(String.valueOf(Main.prefix) + " ง6ป ง7Sem Permiss\u00e3o");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง6โผ ยง7Sem Permissรฃo");
 				return true;
 			}
 			if (Args.length == 0) {
 				p.sendMessage("       ");
-				p.sendMessage("ง6งm--------------------------------------------");
-				p.sendMessage("                " + Main.prefix);
-				p.sendMessage("      ง4\u27bc ง7Mini Tutorial De Como Usar o /SKit  ");
+				p.sendMessage("ยง6ยงm--------------------------------------------");
+				p.sendMessage("                " + ArkuzPvP.prefix);
+				p.sendMessage("      ยง4โผ ยง7Mini Tutorial De Como Usar o /SKit  ");
 				p.sendMessage("");
-				p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Utilize /SKit Criar [Kit] [Blocos]");
-				p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Utilize /SKit Aplicar [Kit] [Blocos]");
-				p.sendMessage("ง6งm--------------------------------------------");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Utilize /SKit Criar [Kit] [Blocos]");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Utilize /SKit Aplicar [Kit] [Blocos]");
+				p.sendMessage("ยง6ยงm--------------------------------------------");
 				p.sendMessage("       ");
 				return true;
 			}
 			if (Args[0].equalsIgnoreCase("criar")) {
 				if (Args.length == 1) {
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Use: /SKit Para Ver o MiniTutorial");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Use: /SKit Para Ver o MiniTutorial");
 					return true;
 				}
 				final String nome = Args[1];
 				this.itens.put(nome, p.getInventory().getContents());
 				this.armor.put(nome, p.getInventory().getArmorContents());
-				p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7O Kit: งc" + Args[1] + " ง7Foi Criado");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7O Kit: ยงc" + Args[1] + " ยง7Foi Criado");
 				return true;
 			} else if (Args[0].equalsIgnoreCase("aplicar")) {
 				if (Args.length <= 2) {
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Utlize /SKit Para Ver o MiniTutorial");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Utlize /SKit Para Ver o MiniTutorial");
 					return true;
 				}
 				final String nome = Args[1];
 				if (!this.itens.containsKey(nome) && !this.armor.containsKey(nome)) {
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7O Kit งc" + nome + " ง7N\u00e3o Existe");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7O Kit ยงc" + nome + " ยง7Nรฃo Existe");
 					return true;
 				}
 				if (this.isInt(Args[2])) {
@@ -80,11 +79,11 @@ public class SKit implements Listener, CommandExecutor {
 						}
 					}
 					Bukkit.getServer().broadcastMessage("");
-					Bukkit.getServer().broadcastMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7O Kit งc" + nome
-							+ " ง7Foi Aplicado Em Um Raio De งc" + n + " ง7Blocos");
+					Bukkit.getServer().broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7O Kit ยงc" + nome
+							+ " ยง7Foi Aplicado Em Um Raio De ยงc" + n + " ยง7Blocos");
 					Bukkit.getServer().broadcastMessage("");
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Voc\u00ea Aplicou o Kit งc" + nome
-							+ " ง7Em Um Raio De งc" + n + " ง7Blocos");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Voc\u00ea Aplicou o Kit ยงc" + nome
+							+ " ยง7Em Um Raio De ยงc" + n + " ยง7Blocos");
 					return true;
 				}
 			}

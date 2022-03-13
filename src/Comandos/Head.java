@@ -1,5 +1,6 @@
 package Comandos;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -10,17 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
-import Main.Main;
-
 public class Head implements CommandExecutor, Listener {
-	Main main;
-
-	public Head(Main plugin) {
-		plugin = this.main;
-	}
-
-	public Head() {
-	}
 
 	public boolean onCommand(final CommandSender sender, final Command command, final String label,
 			final String[] args) {
@@ -31,7 +22,7 @@ public class Head implements CommandExecutor, Listener {
 		if (sender instanceof Player) {
 			final Player p = (Player) sender;
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Use: /Head {Player}");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Use: /Head {Player}");
 			}
 			if (args.length != 0 && args.length == 1) {
 				if (p.hasPermission("arkuz.head")) {
@@ -41,9 +32,9 @@ public class Head implements CommandExecutor, Listener {
 					skullMeta.setOwner(args[0]);
 					skullItem.setItemMeta((ItemMeta) skullMeta);
 					p.getInventory().addItem(new ItemStack[] { skullItem });
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7A Head Foi Adicionada Ao Seu inventario");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7A Head Foi Adicionada Ao Seu inventario");
 				} else {
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Sem Permiss\u00e3o");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Sem Permissรฃo");
 				}
 			}
 		}

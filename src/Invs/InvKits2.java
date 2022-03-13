@@ -1,8 +1,7 @@
 package Invs;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import Caixas.InvEscolha;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -18,44 +17,42 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Caixas.InvEscolha;
-import Main.Main;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InvKits2 implements Listener, CommandExecutor {
-	public InvKits2(final Main main) {
-	}
 
 	@EventHandler
 	public void warps(final InventoryClickEvent e) {
 		if (e.getCurrentItem() != null && e.getCurrentItem().getItemMeta() != null) {
 			final Inventory inv = e.getInventory();
 			final Player p = (Player) e.getWhoClicked();
-			if (inv.getTitle().equals("§8{ §cKits  [2] §8}")) {
+			if (inv.getTitle().equals("Â§8{ Â§cKits  [2] Â§8}")) {
 				p.playSound(p.getLocation(), Sound.CHEST_OPEN, 5.0f, 5.0f);
 			}
 		}
 	}
 
 	public static void guiKits1(final Player p) {
-		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 54, "§8{ §cKits [2] §8}");
+		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 54, "Â§8{ Â§cKits [2] Â§8}");
 		final ItemStack vidro21 = new ItemStack(Material.EMERALD, 1, (short) 0);
 		final ItemMeta meta21v = vidro21.getItemMeta();
-		meta21v.setDisplayName("§7{ §aLoja De Kits §7}");
+		meta21v.setDisplayName("Â§7{ Â§aLoja De Kits Â§7}");
 		vidro21.setItemMeta(meta21v);
 		inv.setItem(3, vidro21);
 		final ItemStack vidro22 = new ItemStack(Material.DIAMOND, 1, (short) 0);
 		final ItemMeta meta31v = vidro22.getItemMeta();
-		meta31v.setDisplayName("§7{ §aLoja R$ §7}");
+		meta31v.setDisplayName("Â§7{ Â§aLoja R$ Â§7}");
 		vidro22.setItemMeta(meta31v);
 		inv.setItem(5, vidro22);
 		final ItemStack vidro23 = new ItemStack(Material.ENDER_CHEST, 1, (short) 0);
 		final ItemMeta meta41v = vidro23.getItemMeta();
-		meta41v.setDisplayName("§7{ §5Caixas §7}");
+		meta41v.setDisplayName("Â§7{ Â§5Caixas Â§7}");
 		vidro23.setItemMeta(meta41v);
 		inv.setItem(4, vidro23);
 		final ItemStack vidro24 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 0);
 		final ItemMeta meta1v = vidro24.getItemMeta();
-		meta1v.setDisplayName("§7+");
+		meta1v.setDisplayName("Â§7+");
 		vidro24.setItemMeta(meta1v);
 		inv.setItem(0, vidro24);
 		inv.setItem(8, vidro24);
@@ -67,7 +64,7 @@ public class InvKits2 implements Listener, CommandExecutor {
 		inv.setItem(17, vidro24);
 		final ItemStack vidro25 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 		final ItemMeta meta12v = vidro25.getItemMeta();
-		meta12v.setDisplayName("§7=");
+		meta12v.setDisplayName("Â§7=");
 		vidro25.setItemMeta(meta12v);
 		inv.setItem(18, vidro25);
 		inv.setItem(19, vidro25);
@@ -80,7 +77,7 @@ public class InvKits2 implements Listener, CommandExecutor {
 		inv.setItem(26, vidro25);
 		final ItemStack vidro26 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
 		final ItemMeta meta2v = vidro26.getItemMeta();
-		meta2v.setDisplayName("§7-");
+		meta2v.setDisplayName("Â§7-");
 		vidro26.setItemMeta(meta2v);
 		inv.setItem(2, vidro26);
 		inv.setItem(6, vidro26);
@@ -92,7 +89,7 @@ public class InvKits2 implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.grappler")) {
 			final ItemStack pyro = new ItemStack(Material.LEASH);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName("§cGrappler");
+			metapyro.setDisplayName("Â§cGrappler");
 			final ArrayList<String> descpyro1 = new ArrayList<String>();
 			metapyro.setLore((List<String>) descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -101,7 +98,7 @@ public class InvKits2 implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.jellyfish")) {
 			final ItemStack pyro = new ItemStack(Material.CLAY_BALL);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName("§cJellyFish");
+			metapyro.setDisplayName("Â§cJellyFish");
 			final ArrayList<String> descpyro1 = new ArrayList<String>();
 			metapyro.setLore((List<String>) descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -110,7 +107,7 @@ public class InvKits2 implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.quickdropper")) {
 			final ItemStack pyro = new ItemStack(Material.BOWL);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName("§cQuickDropper");
+			metapyro.setDisplayName("Â§cQuickDropper");
 			final ArrayList<String> descpyro1 = new ArrayList<String>();
 			metapyro.setLore((List<String>) descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -119,7 +116,7 @@ public class InvKits2 implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.phantom")) {
 			final ItemStack pyro = new ItemStack(Material.FEATHER);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName("§cPhantom");
+			metapyro.setDisplayName("Â§cPhantom");
 			final ArrayList<String> descpyro1 = new ArrayList<String>();
 			metapyro.setLore((List<String>) descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -128,7 +125,7 @@ public class InvKits2 implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.hulk")) {
 			final ItemStack pyro = new ItemStack(Material.SADDLE);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName("§cHulk");
+			metapyro.setDisplayName("Â§cHulk");
 			final ArrayList<String> descpyro1 = new ArrayList<String>();
 			metapyro.setLore((List<String>) descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -137,7 +134,7 @@ public class InvKits2 implements Listener, CommandExecutor {
 		if (p.hasPermission("kit.anchor")) {
 			final ItemStack pyro = new ItemStack(Material.ANVIL);
 			final ItemMeta metapyro = pyro.getItemMeta();
-			metapyro.setDisplayName("§cAnchor");
+			metapyro.setDisplayName("Â§cAnchor");
 			final ArrayList<String> descpyro1 = new ArrayList<String>();
 			metapyro.setLore((List<String>) descpyro1);
 			pyro.setItemMeta(metapyro);
@@ -158,7 +155,7 @@ public class InvKits2 implements Listener, CommandExecutor {
 	@EventHandler
 	public void onPlayerCLickInventry(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equalsIgnoreCase("§8{ §cKits [2] §8}") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equalsIgnoreCase("Â§8{ Â§cKits [2] Â§8}") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0) {
 			e.setCancelled(true);
 			if (e.getCurrentItem().getType() == Material.BOWL) {
@@ -379,10 +376,10 @@ public class InvKits2 implements Listener, CommandExecutor {
 			if (e.getCurrentItem().getType() == Material.DIAMOND) {
 				e.setCancelled(true);
 				p.closeInventory();
-				p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Entrem Em Nossa Loja: §c" + Main.loja);
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7Entrem Em Nossa Loja: Â§c" + ArkuzPvP.loja);
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§7{ §cAnterior §7}")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("Â§7{ Â§cAnterior Â§7}")) {
 				e.setCancelled(true);
 				p.closeInventory();
 				InvKits.guiKits1(p);

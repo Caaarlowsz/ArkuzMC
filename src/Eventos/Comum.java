@@ -1,11 +1,10 @@
 package Eventos;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Effect;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Sound;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import net.minecraft.server.v1_7_R4.EntityPlayer;
+import net.minecraft.server.v1_7_R4.EnumClientCommand;
+import net.minecraft.server.v1_7_R4.PacketPlayInClientCommand;
+import org.bukkit.*;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
 import org.bukkit.entity.Damageable;
@@ -14,28 +13,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.EntityExplodeEvent;
-import org.bukkit.event.entity.FoodLevelChangeEvent;
-import org.bukkit.event.entity.ItemSpawnEvent;
-import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import org.bukkit.event.player.PlayerDropItemEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
-import org.bukkit.event.player.PlayerPickupItemEvent;
+import org.bukkit.event.entity.*;
+import org.bukkit.event.player.*;
 import org.bukkit.event.server.ServerListPingEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.help.HelpTopic;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
-
-import Main.Main;
-import net.minecraft.server.v1_7_R4.EntityPlayer;
-import net.minecraft.server.v1_7_R4.EnumClientCommand;
-import net.minecraft.server.v1_7_R4.PacketPlayInClientCommand;
 
 public class Comum implements Listener {
 	@EventHandler
@@ -73,7 +58,7 @@ public class Comum implements Listener {
 		final HelpTopic topic = Bukkit.getServer().getHelpMap().getHelpTopic(msg);
 		if (topic == null) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Comando Inexistente");
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Comando Inexistente");
 		}
 	}
 
@@ -81,7 +66,7 @@ public class Comum implements Listener {
 	public void onSopa(final PlayerInteractEvent e) {
 		final ItemStack pote = new ItemStack(Material.BOWL, 1);
 		final ItemMeta kpote = pote.getItemMeta();
-		kpote.setDisplayName("ง7Pote");
+		kpote.setDisplayName("ยง7Pote");
 		pote.setItemMeta(kpote);
 		final Damageable hp;
 		final Player p = (Player) (hp = (Damageable) e.getPlayer());
@@ -151,7 +136,7 @@ public class Comum implements Listener {
 
 	@EventHandler
 	public void aoPing(final ServerListPingEvent e) {
-		e.setMotd(Main.motd);
+		e.setMotd(ArkuzPvP.motd);
 	}
 
 	@EventHandler
@@ -162,15 +147,15 @@ public class Comum implements Listener {
 			final Player k = p.getKiller();
 			final Location l = k.getLocation();
 			final Location lp = p.getLocation();
-			p.sendMessage(String.valueOf(Main.prefix) + " ง6\u27bc ง7Voc\u00ea Morreu Para " + ChatColor.DARK_RED
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง6โผ ยง7Vocรช Morreu Para " + ChatColor.DARK_RED
 					+ k.getName());
-			k.sendMessage(String.valueOf(Main.prefix) + " ง6\u27bc ง7Voc\u00ea Ganhou งc50ง7 XP");
-			p.sendMessage(String.valueOf(Main.prefix) + " ง6\u27bc ง7Voc\u00ea Perdeu งc25ง7 XP");
-			k.sendMessage(String.valueOf(Main.prefix) + " ง6\u27bc ง7Voc\u00ea Matou " + ChatColor.RED + p.getName());
+			k.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง6โผ ยง7Vocรช Ganhou ยงc50ยง7 XP");
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง6โผ ยง7Vocรช Perdeu ยงc25ยง7 XP");
+			k.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง6โผ ยง7Vocรช Matou " + ChatColor.RED + p.getName());
 			k.playSound(l, Sound.ARROW_HIT, 10.0f, 1.0f);
 			p.playSound(lp, Sound.ANVIL_USE, 10.0f, 1.0f);
 		}
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				e.getEntity().setFlying(false);
@@ -185,7 +170,7 @@ public class Comum implements Listener {
 
 	@EventHandler
 	public void onItemDrop(final ItemSpawnEvent e) {
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(),
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
 				(Runnable) new Runnable() {
 					@Override
 					public void run() {
@@ -205,7 +190,7 @@ public class Comum implements Listener {
 		final Player p = event.getPlayer();
 		if (event.getMessage().toLowerCase().startsWith("/me")) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Comando Inexistente");
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Comando Inexistente");
 		}
 	}
 
@@ -246,7 +231,7 @@ public class Comum implements Listener {
 		final Player p = event.getPlayer();
 		if (event.getMessage().toLowerCase().startsWith("/kill")) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Use: /Suicide");
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Use: /Suicide");
 		}
 	}
 
@@ -258,7 +243,7 @@ public class Comum implements Listener {
 				&& p.hasPermission("arkuz.reload")) {
 			event.setCancelled(true);
 			Bukkit.reload();
-			Bukkit.broadcastMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7O Servidor Foi Reiniciado");
+			Bukkit.broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7O Servidor Foi Reiniciado");
 		}
 	}
 }

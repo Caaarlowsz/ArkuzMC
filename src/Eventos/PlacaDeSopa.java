@@ -1,5 +1,6 @@
 package Eventos;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Sign;
@@ -13,12 +14,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
-import Main.Main;
-
 public class PlacaDeSopa implements Listener {
-
-	public PlacaDeSopa(final Main main) {
-	}
 
 	public PlacaDeSopa() {
 	}
@@ -27,8 +23,8 @@ public class PlacaDeSopa implements Listener {
 	public void onSignChange(final SignChangeEvent e) {
 		if (e.getLine(0).equalsIgnoreCase("sopa")) {
 			e.setLine(0, "--={+}=--");
-			e.setLine(1, Main.prefix);
-			e.setLine(2, "§f Sopas");
+			e.setLine(1, ArkuzPvP.prefix);
+			e.setLine(2, "Â§f Sopas");
 			e.setLine(3, "--={+}=--");
 		}
 	}
@@ -37,7 +33,7 @@ public class PlacaDeSopa implements Listener {
 	public void inv(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
 		final ItemStack sopas = new ItemStack(Material.MUSHROOM_SOUP);
-		final Inventory inve = Bukkit.getServer().createInventory((InventoryHolder) p, 36, "§8{ §cSopas §8}");
+		final Inventory inve = Bukkit.getServer().createInventory((InventoryHolder) p, 36, "Â§8{ Â§cSopas Â§8}");
 		inve.setItem(0, sopas);
 		inve.setItem(1, sopas);
 		inve.setItem(2, sopas);
@@ -79,8 +75,8 @@ public class PlacaDeSopa implements Listener {
 						|| e.getClickedBlock().getType() == Material.SIGN_POST)) {
 			final Sign s = (Sign) e.getClickedBlock().getState();
 			final String[] lines = s.getLines();
-			if (lines.length > 0 && lines[0].equals("--={+}=--") && lines.length > 1 && lines[1].equals(Main.prefix)
-					&& lines.length > 2 && lines[2].equals("§f Sopas") && lines.length > 3
+			if (lines.length > 0 && lines[0].equals("--={+}=--") && lines.length > 1 && lines[1].equals(ArkuzPvP.prefix)
+					&& lines.length > 2 && lines[2].equals("Â§f Sopas") && lines.length > 3
 					&& lines[3].equals("--={+}=--")) {
 				p.openInventory(inve);
 			}

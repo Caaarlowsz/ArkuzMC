@@ -16,11 +16,11 @@ public class Limpar implements CommandExecutor, Listener {
 		final Player p = (Player) Sender;
 		if (Cmd.getName().equalsIgnoreCase("limpar")) {
 			if (!p.hasPermission("arkuz.limpar")) {
-				p.sendMessage("§c§lSem permiss\u00e3o");
+				p.sendMessage("Â§cÂ§lSem permissÃ£o");
 				return true;
 			}
 			Bukkit.broadcastMessage(
-					"§cExecutando limpeza do servidor, isto pode causar LAG, mas ser\u00e1 temporario!");
+					"Â§cExecutando limpeza do servidor, isto pode causar LAG, mas serÃ¡ temporario!");
 			final Runtime r2 = Runtime.getRuntime();
 			final long Lused2 = (r2.totalMemory() - r2.freeMemory()) / 1024L / 1024L;
 			System.gc();
@@ -30,11 +30,11 @@ public class Limpar implements CommandExecutor, Listener {
 				final Player s = onlinePlayers[i];
 				if (s.hasPermission("arkuz.limpar")) {
 					s.sendMessage(
-							"§a§l!§7 Foram removidos §6" + Long.toString(Lused2 - Lused3) + "M §7RAM do Servidor");
+							"Â§aÂ§l!Â§7 Foram removidos Â§6" + Long.toString(Lused2 - Lused3) + "M Â§7RAM do Servidor");
 				}
 			}
 		}
-		Bukkit.broadcastMessage("§4§lINFO: §7Limpeza conclu\u00edda!");
+		Bukkit.broadcastMessage("Â§4Â§lINFO: Â§7Limpeza concluÃ­da!");
 		return false;
 	}
 }

@@ -1,11 +1,10 @@
 package Eventos;
 
-import java.util.Random;
-
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import java.util.Random;
 
 public class Mensagens implements Listener {
 	public Mensagens() {
@@ -14,36 +13,36 @@ public class Mensagens implements Listener {
 		case 1: {
 			Bukkit.broadcastMessage(" ");
 			Bukkit.broadcastMessage(
-					String.valueOf(Main.prefix) + "\n§fCompre §aVIP§f e ajude o servidor a crescer! " + Main.loja);
+					String.valueOf(ArkuzPvP.prefix) + "\nÂ§fCompre Â§aVIPÂ§f e ajude o servidor a crescer! " + ArkuzPvP.loja);
 			break;
 		}
 		case 2: {
 			Bukkit.broadcastMessage(" ");
-			Bukkit.broadcastMessage(String.valueOf(Main.prefix) + "\n§fVeja os comandos usando §b/ajuda");
+			Bukkit.broadcastMessage(String.valueOf(ArkuzPvP.prefix) + "\nÂ§fVeja os comandos usando Â§b/ajuda");
 			break;
 		}
 		case 4: {
 			Bukkit.broadcastMessage(" ");
 			Bukkit.broadcastMessage(
-					String.valueOf(Main.prefix) + "\n§fCaso queira se aplicar para a §2equipe§f digite §e/aplicar");
+					String.valueOf(ArkuzPvP.prefix) + "\nÂ§fCaso queira se aplicar para a Â§2equipeÂ§f digite Â§e/aplicar");
 			break;
 		}
 		case 5: {
 			Bukkit.broadcastMessage(" ");
 			Bukkit.broadcastMessage(
-					String.valueOf(Main.prefix) + "\n§fCaso ache hacks, Use o comando §2/report §b<nick> <motivo>");
+					String.valueOf(ArkuzPvP.prefix) + "\nÂ§fCaso ache hacks, Use o comando Â§2/report Â§b<nick> <motivo>");
 			break;
 		}
 		case 6: {
 			Bukkit.broadcastMessage(" ");
 			Bukkit.broadcastMessage(
-					String.valueOf(Main.prefix) + "\n§fCaso ache hacks, Use o comando §2/report §b<nick> <motivo>");
+					String.valueOf(ArkuzPvP.prefix) + "\nÂ§fCaso ache hacks, Use o comando Â§2/report Â§b<nick> <motivo>");
 			break;
 		}
 		default: {
 			Bukkit.broadcastMessage(" ");
 			Bukkit.broadcastMessage(
-					String.valueOf(Main.prefix) + "\n§fCaso ache hacks, Use o comando §2/report §b<nick> <motivo>");
+					String.valueOf(ArkuzPvP.prefix) + "\nÂ§fCaso ache hacks, Use o comando Â§2/report Â§b<nick> <motivo>");
 			break;
 		}
 		}

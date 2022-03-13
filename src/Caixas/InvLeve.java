@@ -16,10 +16,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class InvLeve implements Listener, CommandExecutor {
 	public static void guiKits(final Player p) {
-		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 54, "§8{ §cKits (Leve) §8}");
+		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 54, "Â§8{ Â§cKits (Leve) Â§8}");
 		final ItemStack event4 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 		final ItemMeta event4v = event4.getItemMeta();
-		event4v.setDisplayName("§7-");
+		event4v.setDisplayName("Â§7-");
 		event4.setItemMeta(event4v);
 		inv.setItem(2, event4);
 		inv.setItem(3, event4);
@@ -38,7 +38,7 @@ public class InvLeve implements Listener, CommandExecutor {
 		inv.setItem(24, event4);
 		final ItemStack loja23 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 0);
 		final ItemMeta loja23v = loja23.getItemMeta();
-		loja23v.setDisplayName("§7=");
+		loja23v.setDisplayName("Â§7=");
 		loja23.setItemMeta(loja23v);
 		inv.setItem(0, loja23);
 		inv.setItem(1, loja23);
@@ -54,67 +54,67 @@ public class InvLeve implements Listener, CommandExecutor {
 		inv.setItem(53, loja23);
 		final ItemStack event5 = new ItemStack(Material.FIREBALL, 1, (short) 0);
 		final ItemMeta event451v = event5.getItemMeta();
-		event451v.setDisplayName("§7{ §cKit Magma §7}");
+		event451v.setDisplayName("Â§7{ Â§cKit Magma Â§7}");
 		event5.setItemMeta(event451v);
 		inv.setItem(12, event5);
 		final ItemStack event6 = new ItemStack(Material.LAPIS_BLOCK, 1, (short) 10);
 		final ItemMeta event456v = event6.getItemMeta();
-		event456v.setDisplayName("§7{ §cKit Sonic §7}");
+		event456v.setDisplayName("Â§7{ Â§cKit Sonic Â§7}");
 		event6.setItemMeta(event456v);
 		inv.setItem(13, event6);
 		final ItemStack event7 = new ItemStack(Material.MUSHROOM_SOUP);
 		final ItemMeta eventv = event7.getItemMeta();
-		eventv.setDisplayName("§7{ §cKit Resouper §7}");
+		eventv.setDisplayName("Â§7{ Â§cKit Resouper Â§7}");
 		event7.setItemMeta(eventv);
 		inv.setItem(14, event7);
 		final ItemStack event8 = new ItemStack(Material.GOLD_INGOT);
 		final ItemMeta eventv2 = event8.getItemMeta();
-		eventv2.setDisplayName("§7{ §cKit Armor §7}");
+		eventv2.setDisplayName("Â§7{ Â§cKit Armor Â§7}");
 		event8.setItemMeta(eventv2);
 		inv.setItem(20, event8);
 		final ItemStack event9 = new ItemStack(Material.SNOW_BALL);
 		final ItemMeta eventv3 = event9.getItemMeta();
-		eventv3.setDisplayName("§7{ §cKit Switcher §7}");
+		eventv3.setDisplayName("Â§7{ Â§cKit Switcher Â§7}");
 		event9.setItemMeta(eventv3);
 		inv.setItem(21, event9);
 		final ItemStack event10 = new ItemStack(Material.LEVER);
 		final ItemMeta eventv4 = event10.getItemMeta();
-		eventv4.setDisplayName("§7{ §cKit Thresh §7}");
+		eventv4.setDisplayName("Â§7{ Â§cKit Thresh Â§7}");
 		event10.setItemMeta(eventv4);
 		inv.setItem(22, event10);
 		final ItemStack event11 = new ItemStack(Material.BLAZE_ROD);
 		final ItemMeta eventv5 = event11.getItemMeta();
-		eventv5.setDisplayName("§7{ §cKit Monk §7}");
+		eventv5.setDisplayName("Â§7{ Â§cKit Monk Â§7}");
 		event11.setItemMeta(eventv5);
 		inv.setItem(23, event11);
 		final ItemStack event12 = new ItemStack(Material.NETHER_STAR);
 		final ItemMeta eventv6 = event12.getItemMeta();
-		eventv6.setDisplayName("§7{ §cKit Ajnin §7}");
+		eventv6.setDisplayName("Â§7{ Â§cKit Ajnin Â§7}");
 		event12.setItemMeta(eventv6);
 		inv.setItem(24, event12);
 		final ItemStack event13 = new ItemStack(Material.DIAMOND_CHESTPLATE);
 		final ItemMeta eventv7 = event13.getItemMeta();
-		eventv7.setDisplayName("§7{ §cKit Turtle §7}");
+		eventv7.setDisplayName("Â§7{ Â§cKit Turtle Â§7}");
 		event13.setItemMeta(eventv7);
 		inv.setItem(29, event13);
 		final ItemStack event14 = new ItemStack(Material.BOW);
 		final ItemMeta eventv8 = event14.getItemMeta();
-		eventv8.setDisplayName("§7{ §cKit Archer §7}");
+		eventv8.setDisplayName("Â§7{ Â§cKit Archer Â§7}");
 		event14.setItemMeta(eventv8);
 		inv.setItem(30, event14);
 		final ItemStack event15 = new ItemStack(Material.GOLD_AXE);
 		final ItemMeta eventv9 = event15.getItemMeta();
-		eventv9.setDisplayName("§7{ §cKit Thor §7}");
+		eventv9.setDisplayName("Â§7{ Â§cKit Thor Â§7}");
 		event15.setItemMeta(eventv9);
 		inv.setItem(31, event15);
 		final ItemStack event16 = new ItemStack(Material.COMPASS);
 		final ItemMeta eventv10 = event16.getItemMeta();
-		eventv10.setDisplayName("§7{ §cKit Ninja §7}");
+		eventv10.setDisplayName("Â§7{ Â§cKit Ninja Â§7}");
 		event16.setItemMeta(eventv10);
 		inv.setItem(32, event16);
 		final ItemStack event17 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
 		final ItemMeta event41v = event17.getItemMeta();
-		event41v.setDisplayName("§7{ §cNada §7}");
+		event41v.setDisplayName("Â§7{ Â§cNada Â§7}");
 		event17.setItemMeta(event41v);
 		inv.setItem(33, event17);
 		inv.setItem(39, event17);
@@ -142,7 +142,7 @@ public class InvLeve implements Listener, CommandExecutor {
 
 	@EventHandler
 	public void onPlayerCLickInventry(final InventoryClickEvent e) {
-		if (e.getInventory().getTitle().equalsIgnoreCase("§8{ §cKits (Leve) §8}") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equalsIgnoreCase("Â§8{ Â§cKits (Leve) Â§8}") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0) {
 			e.setCancelled(true);
 			if (e.getSlot() == 12) {

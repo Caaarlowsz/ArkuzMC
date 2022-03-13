@@ -1,5 +1,6 @@
 package Comandos;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -7,11 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
-
 public class ClearChat implements CommandExecutor, Listener {
-	public ClearChat(final Main main) {
-	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String commandLabel,
 			final String[] args) {
@@ -140,7 +137,7 @@ public class ClearChat implements CommandExecutor, Listener {
 				Bukkit.getServer().broadcastMessage("");
 				Bukkit.getServer().broadcastMessage("");
 				Bukkit.getServer().broadcastMessage("");
-				Bukkit.getServer().broadcastMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Chat Limpo");
+				Bukkit.getServer().broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Chat Limpo");
 			}
 			return false;
 		}

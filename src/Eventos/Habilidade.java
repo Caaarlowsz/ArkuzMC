@@ -1,8 +1,5 @@
 package Eventos;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -10,16 +7,14 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Habilidade implements Listener {
 	public static Map<String, String> powerMap;
 
 	static {
 		Habilidade.powerMap = new HashMap<String, String>();
-	}
-
-	public Habilidade(final Main main) {
 	}
 
 	public static String NomeDoKit(final String original) {

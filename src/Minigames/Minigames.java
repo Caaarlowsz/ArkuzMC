@@ -1,16 +1,12 @@
 package Minigames;
 
+import Essencial.KitAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import Essencial.KitAPI;
-import Main.Main;
-
 public class Minigames implements Listener {
-	public Minigames(final Main main) {
-	}
 
 	public static void joinMinigame(final Player p, final ListGames minigame) {
 		if (minigame == ListGames.refillTest) {

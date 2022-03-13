@@ -3,6 +3,7 @@ package Kits;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
@@ -15,16 +16,12 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import Essencial.KitAPI;
-import Main.Main;
 
 public class Phantom implements Listener {
 	public static HashMap<String, Long> cooldown;
 
 	static {
 		Phantom.cooldown = new HashMap<String, Long>();
-	}
-
-	public Phantom(final Main main) {
 	}
 
 	@EventHandler
@@ -39,18 +36,18 @@ public class Phantom implements Listener {
 					p.setAllowFlight(true);
 					p.setFlying(true);
 					p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 100, 1));
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7 Voc\u00ea Pode Voar");
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7 Vocรช Pode Voar");
+					Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
 							p.setFlying(false);
 							p.setAllowFlight(false);
-							p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Seu Tempo Acabou");
+							p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Seu Tempo Acabou");
 						}
 					}, 150L);
 					Phantom.cooldown.put(p.getName(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(60L));
 				} else {
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Aguarde o Cooldown Terminar");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Aguarde o Cooldown Terminar");
 				}
 			}
 		}

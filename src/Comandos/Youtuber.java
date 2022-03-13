@@ -11,24 +11,24 @@ public class Youtuber implements CommandExecutor, Listener {
 		final Player p = (Player) Sender;
 		if (cmd.getName().equalsIgnoreCase("youtuber")) {
 			p.sendMessage("  ");
-			p.sendMessage("        §3§lYouTuber+        ");
+			p.sendMessage("        Â§3Â§lYouTuber+        ");
 			p.sendMessage("  ");
-			p.sendMessage("§b» V\u00eddeo No Servidor");
-			p.sendMessage("§b» 1000 Inscritos");
-			p.sendMessage("§b» 500 visualiza\u00e7\u00f5es");
+			p.sendMessage("Â§bÂ§ VÃ­deo No Servidor");
+			p.sendMessage("Â§bÂ§ 1000 Inscritos");
+			p.sendMessage("Â§bÂ§ 500 visualizaÃ§Ãµes");
 			p.sendMessage("  ");
-			p.sendMessage("        §b§lYou§f§lTuber        ");
+			p.sendMessage("        Â§bÂ§lYouÂ§fÂ§lTuber        ");
 			p.sendMessage("  ");
-			p.sendMessage("§b» V\u00eddeo No Servidor");
-			p.sendMessage("§b» 300 Inscritos");
-			p.sendMessage("§b» 150 visualiza\u00e7\u00f5es");
+			p.sendMessage("Â§bÂ§ VÃ­deo No Servidor");
+			p.sendMessage("Â§bÂ§ 300 Inscritos");
+			p.sendMessage("Â§bÂ§ 150 visualizaÃ§Ãµes");
 			p.sendMessage("  ");
 			p.sendMessage("  ");
-			p.sendMessage("          §6§lPro                   ");
+			p.sendMessage("          Â§6Â§lPro                   ");
 			p.sendMessage("  ");
-			p.sendMessage("§f» Video no servidor   ");
-			p.sendMessage("§6» 50 Inscritos");
-			p.sendMessage("§f» 100 visualiza\u00e7\u00f5es");
+			p.sendMessage("Â§fÂ§ Video no servidor   ");
+			p.sendMessage("Â§6Â§ 50 Inscritos");
+			p.sendMessage("Â§fÂ§ 100 visualizaÃ§Ãµes");
 		}
 		return false;
 	}

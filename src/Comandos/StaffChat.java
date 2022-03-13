@@ -1,7 +1,6 @@
 package Comandos;
 
-import java.util.ArrayList;
-
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,13 +10,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import Main.Main;
+import java.util.ArrayList;
 
 public class StaffChat implements Listener, CommandExecutor {
 	ArrayList<String> staff;
 
 	public StaffChat() {
-		this.staff = Main.staff;
+		this.staff = ArkuzPvP.staff;
 	}
 
 	@EventHandler
@@ -29,7 +28,7 @@ public class StaffChat implements Listener, CommandExecutor {
 			if (this.isStaffChatting(p)) {
 				e.setCancelled(true);
 				if (online.hasPermission("arkuz.sc") || this.isStaffChatting(online)) {
-					online.sendMessage("§7{ §cSC §7} §7" + p.getName() + " §4\u27bc " + "§7" + e.getMessage());
+					online.sendMessage("Â§7{ Â§cSC Â§7} Â§7" + p.getName() + " Â§4âž¼ " + "Â§7" + e.getMessage());
 				}
 			}
 		}
@@ -44,10 +43,10 @@ public class StaffChat implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("sc") && p.hasPermission("arkuz.sc")) {
 			if (this.isStaffChatting(p)) {
 				this.staff.remove(p.getName());
-				p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Voc\u00ea Saiu Do Chat Da Staff");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7VocÃª Saiu Do Chat Da Staff");
 			} else {
 				this.staff.add(p.getName());
-				p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Voc\u00ea Est\u00e1 No Chat Da Staff");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7VocÃª EstÃ¡ No Chat Da Staff");
 			}
 		}
 		return false;

@@ -1,9 +1,8 @@
 package Coins;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-
-import Main.Main;
 
 public class XpM implements Listener {
 	public static MyConfig PlayerMoney;
@@ -14,7 +13,7 @@ public class XpM implements Listener {
 	}
 
 	public static void loadMoneyManager() {
-		XpM.PlayerMoney = Main.manager.getNewConfig("XP.yml");
+		XpM.PlayerMoney = ArkuzPvP.manager.getNewConfig("XP.yml");
 	}
 
 	public static int getPlayerMoney(final Player p) {

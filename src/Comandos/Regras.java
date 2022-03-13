@@ -10,17 +10,17 @@ public class Regras implements Listener, CommandExecutor {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		final Player p = (Player) sender;
 		cmd.getName().equalsIgnoreCase("regras");
-		p.sendMessage("§c----------------------------------------------");
-		p.sendMessage("    §4§lREGRAS:    ");
-		p.sendMessage("§c\u279c Nao usar hack, macro, ou autoclick!");
-		p.sendMessage("§c\u279c Nao abusar de bugs");
-		p.sendMessage("§c\u279c Nao testar staff!");
-		p.sendMessage("§c\u279c Nao ofender staff");
-		p.sendMessage("§c\u279c Nao ofender jogadores");
-		p.sendMessage("§c\u279c Nao ofender o servidor");
-		p.sendMessage("§c\u279c Nao dilvugar outro servidor");
-		p.sendMessage("§c\u279c Nao abuse do report!");
-		p.sendMessage("§c----------------------------------------------");
+		p.sendMessage("Â§c----------------------------------------------");
+		p.sendMessage("    Â§4Â§lREGRAS:    ");
+		p.sendMessage("Â§câž¼ Nao usar hack, macro, ou autoclick!");
+		p.sendMessage("Â§câž¼ Nao abusar de bugs");
+		p.sendMessage("Â§câž¼ Nao testar staff!");
+		p.sendMessage("Â§câž¼ Nao ofender staff");
+		p.sendMessage("Â§câž¼ Nao ofender jogadores");
+		p.sendMessage("Â§câž¼ Nao ofender o servidor");
+		p.sendMessage("Â§câž¼ Nao dilvugar outro servidor");
+		p.sendMessage("Â§câž¼ Nao abuse do report!");
+		p.sendMessage("Â§c----------------------------------------------");
 		return false;
 	}
 }

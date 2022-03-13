@@ -1,5 +1,7 @@
 package Kits;
 
+import Essencial.KitAPI;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -7,12 +9,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Essencial.KitAPI;
-import Main.Main;
-
 public class Viper implements Listener {
-	public Viper(final Main main) {
-	}
 
 	@EventHandler
 	public void onSnail(final EntityDamageByEntityEvent e) {
@@ -29,7 +26,7 @@ public class Viper implements Listener {
 		}
 		if (Math.random() > 0.4 && Math.random() > 0.1) {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 80, 0));
-			d.sendMessage(String.valueOf(Main.prefix) + " §6» §7Voc\u00ea Infectou o Player §e " + p.getDisplayName());
+			d.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§6âž¼ Â§7VocÃª Infectou o Player Â§e " + p.getDisplayName());
 		}
 	}
 }

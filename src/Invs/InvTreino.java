@@ -17,10 +17,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class InvTreino implements Listener, CommandExecutor {
 	public static void guiKits(final Player p) {
-		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 27, "§8{ §cTreinos §8}");
+		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 27, "Â§8{ Â§cTreinos Â§8}");
 		final ItemStack event4 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 		final ItemMeta event4v = event4.getItemMeta();
-		event4v.setDisplayName("§7-");
+		event4v.setDisplayName("Â§7-");
 		event4.setItemMeta(event4v);
 		inv.setItem(2, event4);
 		inv.setItem(3, event4);
@@ -39,19 +39,19 @@ public class InvTreino implements Listener, CommandExecutor {
 		inv.setItem(24, event4);
 		final ItemStack event5 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
 		final ItemMeta event45v = event5.getItemMeta();
-		event45v.setDisplayName("§7+");
+		event45v.setDisplayName("Â§7+");
 		event5.setItemMeta(event4v);
 		inv.setItem(26, event5);
 		inv.setItem(18, event5);
 		inv.setItem(0, event5);
 		final ItemStack event6 = new ItemStack(Material.INK_SACK, 1, (short) 10);
 		final ItemMeta event456v = event6.getItemMeta();
-		event456v.setDisplayName("§7{ §aProximo §7}");
+		event456v.setDisplayName("Â§7{ Â§aProximo Â§7}");
 		event6.setItemMeta(event456v);
 		inv.setItem(8, event6);
 		final ItemStack loja23 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 0);
 		final ItemMeta loja23v = loja23.getItemMeta();
-		loja23v.setDisplayName("§7=");
+		loja23v.setDisplayName("Â§7=");
 		loja23.setItemMeta(loja23v);
 		inv.setItem(1, loja23);
 		inv.setItem(7, loja23);
@@ -61,12 +61,12 @@ public class InvTreino implements Listener, CommandExecutor {
 		inv.setItem(25, loja23);
 		final ItemStack event7 = new ItemStack(Material.IRON_SWORD);
 		final ItemMeta eventv12 = event7.getItemMeta();
-		eventv12.setDisplayName("§cTreino De Clicks");
+		eventv12.setDisplayName("Â§cTreino De Clicks");
 		event7.setItemMeta(eventv12);
 		inv.setItem(12, event7);
 		final ItemStack event8 = new ItemStack(Material.STAINED_GLASS_PANE);
 		final ItemMeta eventv13 = event8.getItemMeta();
-		eventv13.setDisplayName("§cEm Breve");
+		eventv13.setDisplayName("Â§cEm Breve");
 		event8.setItemMeta(eventv13);
 		inv.setItem(14, event8);
 		ItemStack[] arrayOfItemStack;
@@ -92,7 +92,7 @@ public class InvTreino implements Listener, CommandExecutor {
 	@EventHandler
 	public void onPlayerCLickInventry(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equalsIgnoreCase("§8{ §cTreinos §8}") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equalsIgnoreCase("Â§8{ Â§cTreinos Â§8}") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0) {
 			if (e.getSlot() == 12) {
 				e.setCancelled(true);

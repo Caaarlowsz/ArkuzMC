@@ -1,5 +1,9 @@
 package Kits;
 
+import Essencial.Cooldown;
+import Essencial.KitUtil;
+import Eventos.Habilidade;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Material;
@@ -12,11 +16,6 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.Plugin;
-
-import Essencial.Cooldown;
-import Essencial.KitUtil;
-import Eventos.Habilidade;
-import Main.Main;
 
 public class Terrorista implements Listener {
 	@EventHandler
@@ -33,10 +32,10 @@ public class Terrorista implements Listener {
 			p.getWorld().playEffect(p.getLocation(), Effect.MOBSPAWNER_FLAMES, 15);
 			p.getWorld().playSound(p.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.0f);
 			Cooldown.add(p, 25);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Seu CoolDown Acabou");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Seu CoolDown Acabou");
 				}
 			}, 500L);
 		}

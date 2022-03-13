@@ -12,8 +12,8 @@ public class Leave implements Listener {
 	@EventHandler
 	public void Sair(final PlayerQuitEvent e) {
 		final Player p = e.getPlayer();
-		e.setQuitMessage("งc- ง7" + p.getDisplayName());
+		e.setQuitMessage("ยงc- ยง7" + p.getDisplayName());
 		KitAPI.remove(p);
-		Bukkit.broadcastMessage("งc- ง7" + p.getName());
+		Bukkit.broadcastMessage("ยงc- ยง7" + p.getName());
 	}
 }

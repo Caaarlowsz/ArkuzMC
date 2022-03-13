@@ -1,5 +1,6 @@
 package Essencial;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -11,12 +12,10 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Main.Main;
-
 public class KitUtil implements Listener {
 	public static void MensagemCooldown(final Player p) {
-		p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Aguarde §c" + Cooldown.CoolDown(p)
-				+ " §7Segundos De Cooldown");
+		p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7Aguarde Â§c" + Cooldown.CoolDown(p)
+				+ " Â§7Segundos De Cooldown");
 	}
 
 	public static ItemStack darArmadura(final Material material, final Color cor) {
@@ -54,17 +53,17 @@ public class KitUtil implements Listener {
 	}
 
 	public static void ItemServer(final Player p) {
-		setitem(p, Material.PAPER, "§4\u27bc §cWarps", 1, Enchantment.DAMAGE_ALL, 0, false);
-		setitem(p, Material.BOOK, "§4\u27bc §cLoja", 2, Enchantment.DAMAGE_ALL, 0, false);
-		setitem(p, Material.PISTON_STICKY_BASE, "§4\u27bc §cKits", 4, Enchantment.DAMAGE_ALL, 0, false);
-		setitem(p, Material.CHEST, "§4\u27bc §cCaixas", 6, Enchantment.DAMAGE_ALL, 0, false);
-		setitem(p, Material.REDSTONE, "§4\u27bc §cOutros", 7, Enchantment.DAMAGE_ALL, 0, false);
+		setitem(p, Material.PAPER, "Â§4âž¼ Â§cWarps", 1, Enchantment.DAMAGE_ALL, 0, false);
+		setitem(p, Material.BOOK, "Â§4âž¼ Â§cLoja", 2, Enchantment.DAMAGE_ALL, 0, false);
+		setitem(p, Material.PISTON_STICKY_BASE, "Â§4âž¼ Â§cKits", 4, Enchantment.DAMAGE_ALL, 0, false);
+		setitem(p, Material.CHEST, "Â§4âž¼ Â§cCaixas", 6, Enchantment.DAMAGE_ALL, 0, false);
+		setitem(p, Material.REDSTONE, "Â§4âž¼ Â§cOutros", 7, Enchantment.DAMAGE_ALL, 0, false);
 	}
 
 	public static void darSopa(final Player p, final int quantas) {
 		final ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 		final ItemMeta msopa = sopa.getItemMeta();
-		msopa.setDisplayName("§4\u27bc §cSopa");
+		msopa.setDisplayName("Â§4âž¼ Â§cSopa");
 		sopa.setItemMeta(msopa);
 		for (int i = 0; i < quantas; ++i) {
 			p.getInventory().setItem(p.getInventory().firstEmpty(), new ItemStack(sopa));

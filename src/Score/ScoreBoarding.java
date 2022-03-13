@@ -1,7 +1,9 @@
 package Score;
 
-import java.util.Random;
-
+import Coins.XpM;
+import Eventos.Habilidade;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -9,311 +11,308 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 
-import Coins.XpM;
-import Eventos.Habilidade;
-import Main.Main;
-import net.md_5.bungee.api.ChatColor;
+import java.util.Random;
 
 public class ScoreBoarding implements Listener {
-	public static Main plugin;
+	public static ArkuzPvP plugin;
 
 	public static String Rank(final Player p) {
 		final double a = Status.getKills(p);
 		if (a <= 100.0) {
-			return "§f\u268a";
+			return "Â§fâœ–";
 		}
 		if (a <= 200.0) {
-			return ChatColor.GREEN + "\u268c";
+			return "Â§aâœ¾";
 		}
 		if (a <= 300.0) {
-			return ChatColor.YELLOW + "\u2630";
+			return "Â§eâœ¿";
 		}
 		if (a <= 400.0) {
-			return "§1\u2725";
+			return "Â§1âœ¥";
 		}
 		if (a <= 500.0) {
-			return "§7\u272f";
+			return "Â§7âœ¯";
 		}
 		if (a <= 600.0) {
-			return "§6\u272a";
+			return "Â§6âœª";
 		}
 		if (a <= 700.0) {
-			return ChatColor.AQUA + "§b\u2748";
+			return "Â§bâˆ";
 		}
 		if (a <= 800.0) {
-			return "§2\u2738";
+			return "Â§2âœ¸";
 		}
 		if (a <= 900.0) {
-			return ChatColor.RED + "\u2739";
+			return "Â§câœ¦";
 		}
 		if (a <= 1000.0) {
-			return "§3\u2737";
+			return "Â§3âœ·";
 		}
 		if (a <= 1500.0) {
-			return "§4\u2742";
+			return "Â§4â‚";
 		}
-		return "§4\u2742";
+		return "Â§4â‚";
 	}
 
 	public static String getRankConfig(final Player p) {
 		final double a = Status.getKills(p);
 		if (a <= 100.0) {
-			return "§fUNRANKED";
+			return "Â§fUNRANKED";
 		}
 		if (a <= 200.0) {
-			return "§aINICIANTE";
+			return "Â§aINICIANTE";
 		}
 		if (a <= 300.0) {
-			return "§eAPRENDIZ";
+			return "Â§eAPRENDIZ";
 		}
 		if (a <= 400.0) {
-			return "§1EXPERT";
+			return "Â§1EXPERT";
 		}
 		if (a <= 500.0) {
-			return "§7SILVER";
+			return "Â§7SILVER";
 		}
 		if (a <= 600.0) {
-			return "§6GOLD";
+			return "Â§6GOLD";
 		}
 		if (a <= 700.0) {
-			return "§bDIAMOND";
+			return "Â§bDIAMOND";
 		}
 		if (a <= 800.0) {
-			return "§2EMERALD";
+			return "Â§2EMERALD";
 		}
 		if (a <= 900.0) {
-			return "§cRUBY";
+			return "Â§cRUBY";
 		}
 		if (a <= 1000.0) {
-			return "§3SAFIRA";
+			return "Â§3SAFIRA";
 		}
 		if (a <= 1500.0) {
-			return "§4LENDARIO";
+			return "Â§4LENDARIO";
 		}
-		return "§4LENDARIO";
+		return "Â§4LENDARIO";
 	}
 
 	public static String getNomeRank(final Player p) {
 		final double a = Status.getKills(p);
 		if (a <= 100.0) {
-			return "§fUNRANKED";
+			return "Â§fUNRANKED";
 		}
 		if (a <= 200.0) {
-			return "§aINICIANTE";
+			return "Â§aINICIANTE";
 		}
 		if (a <= 300.0) {
-			return "§eAPRENDIZ";
+			return "Â§eAPRENDIZ";
 		}
 		if (a <= 400.0) {
-			return "§1EXPERT";
+			return "Â§1EXPERT";
 		}
 		if (a <= 500.0) {
-			return "§7SILVER";
+			return "Â§7SILVER";
 		}
 		if (a <= 600.0) {
-			return "§6GOLD";
+			return "Â§6GOLD";
 		}
 		if (a <= 700.0) {
-			return "§bDIAMOND";
+			return "Â§bDIAMOND";
 		}
 		if (a <= 800.0) {
-			return "§2EMERALD";
+			return "Â§2EMERALD";
 		}
 		if (a <= 900.0) {
-			return "§CRUBY";
+			return "Â§CRUBY";
 		}
 		if (a <= 1000.0) {
-			return "§3SAFIRA";
+			return "Â§3SAFIRA";
 		}
 		if (a <= 1500.0) {
-			return "§4LENDARIO";
+			return "Â§4LENDARIO";
 		}
-		return "§4LENDARIO";
+		return "Â§4LENDARIO";
 	}
 
 	public static String Liga(final Player p) {
 		final double a = Status.getKills(p);
 		if (a <= 100.0) {
-			return "§fUNRANKED";
+			return "Â§fUNRANKED";
 		}
 		if (a <= 200.0) {
-			return "§aINICIANTE";
+			return "Â§aINICIANTE";
 		}
 		if (a <= 300.0) {
-			return "§eAPRENDIZ";
+			return "Â§eAPRENDIZ";
 		}
 		if (a <= 400.0) {
-			return "§1EXPERT";
+			return "Â§1EXPERT";
 		}
 		if (a <= 500.0) {
-			return "§7SILVER";
+			return "Â§7SILVER";
 		}
 		if (a <= 600.0) {
-			return "§6GOLD";
+			return "Â§6GOLD";
 		}
 		if (a <= 700.0) {
-			return "§bDIAMOND";
+			return "Â§bDIAMOND";
 		}
 		if (a <= 800.0) {
-			return "§2EMERALD";
+			return "Â§2EMERALD";
 		}
 		if (a <= 900.0) {
-			return "§cRUBY";
+			return "Â§cRUBY";
 		}
 		if (a <= 1000.0) {
-			return "§3SAFIRA";
+			return "Â§3SAFIRA";
 		}
 		if (a <= 1500.0) {
-			return "§4LENDARIO";
+			return "Â§4LENDARIO";
 		}
-		return "§4LENDARIO";
+		return "Â§4LENDARIO";
 	}
 
 	public static void setScoreBoard(final Player p) {
 		final String jogadoronline = String.valueOf(String.valueOf(Bukkit.getServer().getOnlinePlayers().length))
-				+ "§7/§f" + Bukkit.getServer().getMaxPlayers();
+				+ "Â§7/Â§f" + Bukkit.getServer().getMaxPlayers();
 		final Random r = new Random();
 		final int animar = r.nextInt(12);
 		if (animar == 1) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-			scoreboard.add("   " + Main.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
+			scoreboard.add("   " + ArkuzPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"Â§fKills: Â§7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"Â§fDeaths: Â§e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
-			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-			scoreboard.add("§fJogadores: §7" + jogadoronline);
-			scoreboard.add("§fRank: " + Rank(p));
-			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.add("Â§fMoedas: Â§e" + XpM.getPlayerMoney(p));
+			scoreboard.add("Â§fKit: Â§7" + Habilidade.getAbility(p));
+			scoreboard.add("Â§fJogadores: Â§7" + jogadoronline);
+			scoreboard.add("Â§fRank: " + Rank(p));
+			scoreboard.add("Â§fLiga: " + Liga(p));
 			scoreboard.blankLine();
 			scoreboard.build();
 			scoreboard.send(p);
 		}
 		if (animar == 2) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-			scoreboard.add("   " + Main.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
+			scoreboard.add("   " + ArkuzPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"Â§fKills: Â§7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"Â§fDeaths: Â§e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
-			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-			scoreboard.add("§fJogadores: §7" + jogadoronline);
-			scoreboard.add("§fRank: " + Rank(p));
-			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.add("Â§fMoedas: Â§e" + XpM.getPlayerMoney(p));
+			scoreboard.add("Â§fKit: Â§7" + Habilidade.getAbility(p));
+			scoreboard.add("Â§fJogadores: Â§7" + jogadoronline);
+			scoreboard.add("Â§fRank: " + Rank(p));
+			scoreboard.add("Â§fLiga: " + Liga(p));
 			scoreboard.blankLine();
 			scoreboard.build();
 			scoreboard.send(p);
 		}
 		if (animar == 3) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-			scoreboard.add("   " + Main.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
+			scoreboard.add("   " + ArkuzPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"Â§fKills: Â§7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"Â§fDeaths: Â§e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
-			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-			scoreboard.add("§fJogadores: §7" + jogadoronline);
-			scoreboard.add("§fRank: " + Rank(p));
-			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.add("Â§fMoedas: Â§e" + XpM.getPlayerMoney(p));
+			scoreboard.add("Â§fKit: Â§7" + Habilidade.getAbility(p));
+			scoreboard.add("Â§fJogadores: Â§7" + jogadoronline);
+			scoreboard.add("Â§fRank: " + Rank(p));
+			scoreboard.add("Â§fLiga: " + Liga(p));
 			scoreboard.blankLine();
 			scoreboard.build();
 			scoreboard.send(p);
 		}
 		if (animar == 4) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-			scoreboard.add("   " + Main.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
+			scoreboard.add("   " + ArkuzPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"Â§fKills: Â§7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"Â§fDeaths: Â§e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
-			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-			scoreboard.add("§fJogadores: §7" + jogadoronline);
-			scoreboard.add("§fRank: " + Rank(p));
-			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.add("Â§fMoedas: Â§e" + XpM.getPlayerMoney(p));
+			scoreboard.add("Â§fKit: Â§7" + Habilidade.getAbility(p));
+			scoreboard.add("Â§fJogadores: Â§7" + jogadoronline);
+			scoreboard.add("Â§fRank: " + Rank(p));
+			scoreboard.add("Â§fLiga: " + Liga(p));
 			scoreboard.blankLine();
 			scoreboard.build();
 			scoreboard.send(p);
 		}
 		if (animar == 5) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-			scoreboard.add("   " + Main.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
+			scoreboard.add("   " + ArkuzPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"Â§fKills: Â§7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"Â§fDeaths: Â§e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
-			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-			scoreboard.add("§fJogadores: §7" + jogadoronline);
-			scoreboard.add("§fRank: " + Rank(p));
-			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.add("Â§fMoedas: Â§e" + XpM.getPlayerMoney(p));
+			scoreboard.add("Â§fKit: Â§7" + Habilidade.getAbility(p));
+			scoreboard.add("Â§fJogadores: Â§7" + jogadoronline);
+			scoreboard.add("Â§fRank: " + Rank(p));
+			scoreboard.add("Â§fLiga: " + Liga(p));
 			scoreboard.blankLine();
 			scoreboard.build();
 			scoreboard.send(p);
 		}
 		if (animar == 6) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-			scoreboard.add("   " + Main.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
+			scoreboard.add("   " + ArkuzPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"Â§fKills: Â§7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"Â§fDeaths: Â§e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
-			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-			scoreboard.add("§fJogadores: §7" + jogadoronline);
-			scoreboard.add("§fRank: " + Rank(p));
-			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.add("Â§fMoedas: Â§e" + XpM.getPlayerMoney(p));
+			scoreboard.add("Â§fKit: Â§7" + Habilidade.getAbility(p));
+			scoreboard.add("Â§fJogadores: Â§7" + jogadoronline);
+			scoreboard.add("Â§fRank: " + Rank(p));
+			scoreboard.add("Â§fLiga: " + Liga(p));
 			scoreboard.blankLine();
 			scoreboard.build();
 			scoreboard.send(p);
 		}
 		if (animar == 7) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-			scoreboard.add("   " + Main.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
+			scoreboard.add("   " + ArkuzPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"Â§fKills: Â§7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"Â§fDeaths: Â§e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
-			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-			scoreboard.add("§fJogadores: §7" + jogadoronline);
-			scoreboard.add("§fRank: " + Rank(p));
-			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.add("Â§fMoedas: Â§e" + XpM.getPlayerMoney(p));
+			scoreboard.add("Â§fKit: Â§7" + Habilidade.getAbility(p));
+			scoreboard.add("Â§fJogadores: Â§7" + jogadoronline);
+			scoreboard.add("Â§fRank: " + Rank(p));
+			scoreboard.add("Â§fLiga: " + Liga(p));
 			scoreboard.blankLine();
 			scoreboard.build();
 			scoreboard.send(p);
 		}
 		if (animar == 8) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(Main.prefix);
-			scoreboard.add("   " + Main.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
+			scoreboard.add("   " + ArkuzPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"Â§fKills: Â§7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"Â§fDeaths: Â§e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
-			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
-			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
-			scoreboard.add("§fJogadores: §7" + jogadoronline);
-			scoreboard.add("§fRank: " + Rank(p));
-			scoreboard.add("§fLiga: " + Liga(p));
+			scoreboard.add("Â§fMoedas: Â§e" + XpM.getPlayerMoney(p));
+			scoreboard.add("Â§fKit: Â§7" + Habilidade.getAbility(p));
+			scoreboard.add("Â§fJogadores: Â§7" + jogadoronline);
+			scoreboard.add("Â§fRank: " + Rank(p));
+			scoreboard.add("Â§fLiga: " + Liga(p));
 			scoreboard.blankLine();
 			scoreboard.build();
 			scoreboard.send(p);

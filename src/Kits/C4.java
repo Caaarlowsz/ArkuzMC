@@ -2,6 +2,7 @@ package Kits;
 
 import java.util.HashMap;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Location;
@@ -21,7 +22,6 @@ import org.bukkit.util.Vector;
 import Essencial.Cooldown;
 import Essencial.KitUtil;
 import Eventos.Habilidade;
-import Main.Main;
 
 public class C4 implements Listener {
 	public static HashMap<String, Item> bomba;
@@ -48,15 +48,15 @@ public class C4 implements Listener {
 					C4.bomba.put(p.getName(), item);
 					final ItemStack itemb = new ItemStack(Material.STONE_BUTTON);
 					final ItemMeta itembm = itemb.getItemMeta();
-					itembm.setDisplayName(String.valueOf(Main.prefix) + " ง4\u27bc ง7Kit งcC4");
+					itembm.setDisplayName(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Kit ยงcC4");
 					itemb.setItemMeta(itembm);
 					p.getInventory().setItemInHand(itemb);
 					p.updateInventory();
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Bomba Implantada");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Bomba Implantada");
 				} else if (p.getItemInHand().getType() == Material.STONE_BUTTON) {
 					final ItemStack itemb2 = new ItemStack(Material.SLIME_BALL);
 					final ItemMeta itembm2 = itemb2.getItemMeta();
-					itembm2.setDisplayName("ง7Kit งcC4");
+					itembm2.setDisplayName("ยง7Kit ยงcC4");
 					itemb2.setItemMeta(itembm2);
 					p.getInventory().setItemInHand(itemb2);
 					final Item item2 = C4.bomba.get(p.getName());
@@ -65,13 +65,13 @@ public class C4 implements Listener {
 					C4.bomba.remove(p.getName());
 					item2.remove();
 					p.updateInventory();
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Bomba Explodida");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Bomba Explodida");
 					Cooldown.add(p, 20);
-					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(),
+					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
-									p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Seu CoolDown Acabou");
+									p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Seu CoolDown Acabou");
 								}
 							}, 400L);
 				}
@@ -83,14 +83,14 @@ public class C4 implements Listener {
 				}
 				final ItemStack itemb2 = new ItemStack(Material.SLIME_BALL);
 				final ItemMeta itembm2 = itemb2.getItemMeta();
-				itembm2.setDisplayName(String.valueOf(Main.prefix) + " ง4\u27bc ง7Kit งcC4");
+				itembm2.setDisplayName(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Kit ยงcC4");
 				itemb2.setItemMeta(itembm2);
 				p.getInventory().setItemInHand(itemb2);
 				final Item item2 = C4.bomba.get(p.getName());
 				C4.bomba.remove(p.getName());
 				item2.remove();
 				p.updateInventory();
-				p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Bomba Desarmada");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Bomba Desarmada");
 			}
 		}
 	}

@@ -28,16 +28,16 @@ public class TheTitle implements Listener {
 	@EventHandler
 	public void onPlayerColor(final SignChangeEvent e) {
 		if (e.getLine(0).contains("&")) {
-			e.setLine(0, e.getLine(0).replace("&", "ง"));
+			e.setLine(0, e.getLine(0).replace("&", "ยง"));
 		}
 		if (e.getLine(1).contains("&")) {
-			e.setLine(1, e.getLine(1).replace("&", "ง"));
+			e.setLine(1, e.getLine(1).replace("&", "ยง"));
 		}
 		if (e.getLine(2).contains("&")) {
-			e.setLine(2, e.getLine(2).replace("&", "ง"));
+			e.setLine(2, e.getLine(2).replace("&", "ยง"));
 		}
 		if (e.getLine(3).contains("&")) {
-			e.setLine(3, e.getLine(3).replace("&", "ง"));
+			e.setLine(3, e.getLine(3).replace("&", "ยง"));
 		}
 	}
 

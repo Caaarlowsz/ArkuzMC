@@ -1,12 +1,11 @@
 package Comandos;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-
-import Main.Main;
 
 public class Score implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
@@ -15,12 +14,12 @@ public class Score implements CommandExecutor, Listener {
 			return true;
 		}
 		final Player p = (Player) sender;
-		if (Main.score.contains(p.getName())) {
-			Main.score.remove(p.getName());
-			p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7ScoreBoard Ativada");
+		if (ArkuzPvP.score.contains(p.getName())) {
+			ArkuzPvP.score.remove(p.getName());
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7ScoreBoard Ativada");
 		} else {
-			Main.score.add(p.getName());
-			p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7ScoreBoard Desativada");
+			ArkuzPvP.score.add(p.getName());
+			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7ScoreBoard Desativada");
 		}
 		return false;
 	}

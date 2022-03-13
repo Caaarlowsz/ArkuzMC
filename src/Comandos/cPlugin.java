@@ -1,13 +1,12 @@
 package Comandos;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
-import Main.Main;
+import java.util.ArrayList;
+import java.util.List;
 
 public class cPlugin implements Listener {
 	@EventHandler
@@ -35,13 +34,13 @@ public class cPlugin implements Listener {
 		plugins.add("minecraft:me");
 		for (final String Loop : plugins) {
 			if (msg[0].equalsIgnoreCase("/" + Loop)) {
-				e.getPlayer().sendMessage("§7 ");
-				e.getPlayer().sendMessage("§7                §6§lPLUGIN§7                ");
-				e.getPlayer().sendMessage(String.valueOf(Main.prefix) + " §f\u27bc §7Plugin Criado Por §cFleaShot ");
+				e.getPlayer().sendMessage("Â§7 ");
+				e.getPlayer().sendMessage("Â§7                Â§6Â§lPLUGINÂ§7                ");
+				e.getPlayer().sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§fâž¼ Â§7Plugin Criado Por Â§cFleaShot ");
 				e.getPlayer().sendMessage(
-						String.valueOf(Main.prefix) + " §f\u27bc §7 Servidor ultilizando o plugin: §a§l" + Main.prefix);
-				e.getPlayer().sendMessage("§7                §6§lPLUGIN§7                ");
-				e.getPlayer().sendMessage("§7   ");
+						String.valueOf(ArkuzPvP.prefix) + " Â§fâž¼ Â§7 Servidor utilizando o plugin: Â§aÂ§l" + ArkuzPvP.prefix);
+				e.getPlayer().sendMessage("Â§7                Â§6Â§lPLUGINÂ§7                ");
+				e.getPlayer().sendMessage("Â§7   ");
 				e.setCancelled(true);
 			}
 		}

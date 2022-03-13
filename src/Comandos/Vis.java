@@ -1,7 +1,6 @@
 package Comandos;
 
-import java.util.ArrayList;
-
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -10,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import Main.Main;
+import java.util.ArrayList;
 
 public class Vis implements CommandExecutor, Listener {
 	public static ArrayList<Player> emVis;
@@ -40,7 +39,7 @@ public class Vis implements CommandExecutor, Listener {
 			if (p.hasPermission("arkuz.vis")) {
 				if (!emInvisivel(p)) {
 					addInvisivel(p);
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Modo Invisivel Ativado");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Modo Invisivel Ativado");
 					p.setGameMode(GameMode.CREATIVE);
 					Player[] onlinePlayers;
 					for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
@@ -55,10 +54,10 @@ public class Vis implements CommandExecutor, Listener {
 						todos.showPlayer(p);
 					}
 					p.setGameMode(GameMode.SURVIVAL);
-					p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Modo Invisivel Desativado");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Modo Invisivel Desativado");
 				}
 			} else {
-				p.sendMessage(String.valueOf(Main.prefix) + " ง4\u27bc ง7Sem Permissao");
+				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " ยง4โผ ยง7Sem Permissao");
 			}
 		}
 		return false;

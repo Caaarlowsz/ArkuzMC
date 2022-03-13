@@ -17,10 +17,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class InvCosmeticos implements Listener, CommandExecutor {
 	public static void guiKits(final Player p) {
-		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 27, "§8{ §cCosm\u00e9ticos §8}");
+		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 27, "Â§8{ Â§cCosmÃ©ticos Â§8}");
 		final ItemStack event4 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 		final ItemMeta event4v = event4.getItemMeta();
-		event4v.setDisplayName("§7-");
+		event4v.setDisplayName("Â§7-");
 		event4.setItemMeta(event4v);
 		inv.setItem(2, event4);
 		inv.setItem(3, event4);
@@ -38,7 +38,7 @@ public class InvCosmeticos implements Listener, CommandExecutor {
 		inv.setItem(24, event4);
 		final ItemStack event5 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
 		final ItemMeta event45v = event5.getItemMeta();
-		event45v.setDisplayName("§7+");
+		event45v.setDisplayName("Â§7+");
 		event5.setItemMeta(event4v);
 		inv.setItem(26, event5);
 		inv.setItem(18, event5);
@@ -46,7 +46,7 @@ public class InvCosmeticos implements Listener, CommandExecutor {
 		inv.setItem(8, event5);
 		final ItemStack loja23 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 0);
 		final ItemMeta loja23v = loja23.getItemMeta();
-		loja23v.setDisplayName("§7=");
+		loja23v.setDisplayName("Â§7=");
 		loja23.setItemMeta(loja23v);
 		inv.setItem(1, loja23);
 		inv.setItem(7, loja23);
@@ -56,7 +56,7 @@ public class InvCosmeticos implements Listener, CommandExecutor {
 		inv.setItem(25, loja23);
 		final ItemStack event6 = new ItemStack(Material.SKULL_ITEM);
 		final ItemMeta eventv1 = event6.getItemMeta();
-		eventv1.setDisplayName("§cSkulls");
+		eventv1.setDisplayName("Â§cSkulls");
 		event6.setItemMeta(eventv1);
 		inv.setItem(13, event6);
 		ItemStack[] arrayOfItemStack;
@@ -82,7 +82,7 @@ public class InvCosmeticos implements Listener, CommandExecutor {
 	@EventHandler
 	public void onPlayerCLickInventry(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equalsIgnoreCase("§8{ §cCosm\u00e9ticos §8}") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equalsIgnoreCase("Â§8{ Â§cCosmÃ©ticos Â§8}") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0 && e.getSlot() == 13) {
 			e.setCancelled(true);
 			p.closeInventory();

@@ -1,5 +1,6 @@
 package Kits;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -10,7 +11,6 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import Essencial.Cooldown;
 import Essencial.KitUtil;
 import Eventos.Habilidade;
-import Main.Main;
 
 public class Hulk implements Listener {
 	@EventHandler
@@ -30,8 +30,8 @@ public class Hulk implements Listener {
 					return;
 				}
 				if (p.getPassenger() != null) {
-					p.sendMessage(String.valueOf(Main.prefix)
-							+ " �4\u27bc �7Aguarde o Player Sair Da Cabe\u00e7a Do Adversario");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+							+ " §4➼ §7Aguarde o Player Sair Da Cabeça Do Adversario");
 					return;
 				}
 				if (r.getPassenger() != null) {
@@ -39,8 +39,8 @@ public class Hulk implements Listener {
 				}
 				Cooldown.add(p, 6);
 				p.setPassenger((Entity) r);
-				r.sendMessage(String.valueOf(Main.prefix)
-						+ " �4\u27bc �7Um Hulk Prendeu Voc\u00ea Aperde SHIFT Para Se Desprender");
+				r.sendMessage(String.valueOf(ArkuzPvP.prefix)
+						+ " §4➼ §7Um Hulk Prendeu Você Aperde SHIFT Para Se Desprender");
 			}
 		}
 	}

@@ -1,5 +1,6 @@
 package Comandos;
 
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,7 +9,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
 import Eventos.TheTitle;
-import Main.Main;
 
 public class Fly implements CommandExecutor, Listener {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
@@ -21,42 +21,42 @@ public class Fly implements CommandExecutor, Listener {
 			if (args.length == 0) {
 				if (p.hasPermission("arkuz.fly")) {
 					if (!p.getAllowFlight()) {
-						p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Voc\u00ea Habilitou o Modo Fly");
-						TheTitle.sendTitle(p, "§a§lFLY");
-						TheTitle.sendSubTitle(p, "§a§lATIVADO");
+						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7VocÃª Habilitou o Modo Fly");
+						TheTitle.sendTitle(p, "Â§aÂ§lFLY");
+						TheTitle.sendSubTitle(p, "Â§aÂ§lATIVADO");
 						p.setAllowFlight(true);
 					} else {
-						p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Voc\u00ea Desabilitou o Modo Fly");
-						TheTitle.sendTitle(p, "§c§lFLY");
-						TheTitle.sendSubTitle(p, "§C§lDESATIVADO");
+						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7VocÃª Desabilitou o Modo Fly");
+						TheTitle.sendTitle(p, "Â§cÂ§lFLY");
+						TheTitle.sendSubTitle(p, "Â§CÂ§lDESATIVADO");
 						p.setAllowFlight(false);
 					}
 				} else {
-					p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Sem Permiss\u00e3o");
+					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7Sem PermissÃ£o");
 				}
 				if (args.length == 1) {
 					if (sender.hasPermission("sword.fly")) {
 						final Player k = Bukkit.getPlayer(args[0]);
 						if (k == null) {
-							sender.sendMessage(String.valueOf(Main.prefix)
-									+ " §4\u27bc §7Este Player N\u00e3o Est\u00e1 Conectado No Servidor");
+							sender.sendMessage(String.valueOf(ArkuzPvP.prefix)
+									+ " Â§4âž¼ Â§7Este Player NÃ£o EstÃ¡ Conectado No Servidor");
 							return true;
 						}
 						if (!p.getAllowFlight()) {
-							p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Voc\u00ea Habilitou o Fly Para §c"
+							p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7VocÃª Habilitou o Fly Para Â§c"
 									+ k.getName());
 							k.setAllowFlight(true);
-							k.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Seu Fly Foi Habilitado Por §c"
+							k.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7Seu Fly Foi Habilitado Por Â§c"
 									+ p.getName());
 						} else {
-							p.sendMessage(String.valueOf(Main.prefix)
-									+ " §4\u27bc §7Voc\u00ea Desabilitou o Fly Para §c" + k.getName());
+							p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+									+ " Â§4âž¼ Â§7VocÃª Desabilitou o Fly Para Â§c" + k.getName());
 							k.setAllowFlight(false);
-							k.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Seu Fly Foi Desabilitado Por §c"
+							k.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7Seu Fly Foi Desabilitado Por Â§c"
 									+ p.getName());
 						}
 					} else {
-						p.sendMessage(String.valueOf(Main.prefix) + " §4\u27bc §7Sem Permissa\u00e3o");
+						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " Â§4âž¼ Â§7Sem PermissaÃ£o");
 					}
 				}
 			}

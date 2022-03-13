@@ -16,10 +16,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class InvCoins implements Listener, CommandExecutor {
 	public static void guiKits(final Player p) {
-		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 54, "ง8{ งcCoins ง8}");
+		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 54, "ยง8{ ยงcCoins ยง8}");
 		final ItemStack event4 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 		final ItemMeta event4v = event4.getItemMeta();
-		event4v.setDisplayName("ง7-");
+		event4v.setDisplayName("ยง7-");
 		event4.setItemMeta(event4v);
 		inv.setItem(2, event4);
 		inv.setItem(3, event4);
@@ -38,7 +38,7 @@ public class InvCoins implements Listener, CommandExecutor {
 		inv.setItem(24, event4);
 		final ItemStack loja23 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 0);
 		final ItemMeta loja23v = loja23.getItemMeta();
-		loja23v.setDisplayName("ง7=");
+		loja23v.setDisplayName("ยง7=");
 		loja23.setItemMeta(loja23v);
 		inv.setItem(0, loja23);
 		inv.setItem(1, loja23);
@@ -54,82 +54,82 @@ public class InvCoins implements Listener, CommandExecutor {
 		inv.setItem(53, loja23);
 		final ItemStack event5 = new ItemStack(Material.EXP_BOTTLE, 1, (short) 0);
 		final ItemMeta event451v = event5.getItemMeta();
-		event451v.setDisplayName("ง7{ งc500 Coins ง7}");
+		event451v.setDisplayName("ยง7{ ยงc500 Coins ยง7}");
 		event5.setItemMeta(event451v);
 		inv.setItem(12, event5);
 		final ItemStack event6 = new ItemStack(Material.EXP_BOTTLE, 1, (short) 0);
 		final ItemMeta event456v = event6.getItemMeta();
-		event456v.setDisplayName("ง7{ งc1000 Coins ง7}");
+		event456v.setDisplayName("ยง7{ ยงc1000 Coins ยง7}");
 		event6.setItemMeta(event456v);
 		inv.setItem(13, event6);
 		final ItemStack event7 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv = event7.getItemMeta();
-		eventv.setDisplayName("ง7{ งc1500 Coins ง7}");
+		eventv.setDisplayName("ยง7{ ยงc1500 Coins ยง7}");
 		event7.setItemMeta(eventv);
 		inv.setItem(14, event7);
 		final ItemStack event8 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv2 = event8.getItemMeta();
-		eventv2.setDisplayName("ง7{ งc800 Coins ง7}");
+		eventv2.setDisplayName("ยง7{ ยงc800 Coins ยง7}");
 		event8.setItemMeta(eventv2);
 		inv.setItem(20, event8);
 		final ItemStack event9 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv3 = event9.getItemMeta();
-		eventv3.setDisplayName("ง7{ งc400 Coins ง7}");
+		eventv3.setDisplayName("ยง7{ ยงc400 Coins ยง7}");
 		event9.setItemMeta(eventv3);
 		inv.setItem(21, event9);
 		final ItemStack event10 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv4 = event10.getItemMeta();
-		eventv4.setDisplayName("ง7{ งc300 Coins ง7}");
+		eventv4.setDisplayName("ยง7{ ยงc300 Coins ยง7}");
 		event10.setItemMeta(eventv4);
 		inv.setItem(22, event10);
 		final ItemStack event11 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv5 = event11.getItemMeta();
-		eventv5.setDisplayName("ง7{ งc200 Coins ง7}");
+		eventv5.setDisplayName("ยง7{ ยงc200 Coins ยง7}");
 		event11.setItemMeta(eventv5);
 		inv.setItem(23, event11);
 		final ItemStack event12 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv6 = event12.getItemMeta();
-		eventv6.setDisplayName("ง7{ งc100 Coins ง7}");
+		eventv6.setDisplayName("ยง7{ ยงc100 Coins ยง7}");
 		event12.setItemMeta(eventv6);
 		inv.setItem(24, event12);
 		final ItemStack event13 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv7 = event13.getItemMeta();
-		eventv7.setDisplayName("ง7{ งc1100 Coins ง7}");
+		eventv7.setDisplayName("ยง7{ ยงc1100 Coins ยง7}");
 		event13.setItemMeta(eventv7);
 		inv.setItem(29, event13);
 		final ItemStack event14 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv8 = event14.getItemMeta();
-		eventv8.setDisplayName("ง7{ งc1200 Coins ง7}");
+		eventv8.setDisplayName("ยง7{ ยงc1200 Coins ยง7}");
 		event14.setItemMeta(eventv8);
 		inv.setItem(30, event14);
 		final ItemStack event15 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv9 = event15.getItemMeta();
-		eventv9.setDisplayName("ง7{ งc1300 Coins ง7}");
+		eventv9.setDisplayName("ยง7{ ยงc1300 Coins ยง7}");
 		event15.setItemMeta(eventv9);
 		inv.setItem(31, event15);
 		final ItemStack event16 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv10 = event16.getItemMeta();
-		eventv10.setDisplayName("ง7{ งc1400 Coins ง7}");
+		eventv10.setDisplayName("ยง7{ ยงc1400 Coins ยง7}");
 		event16.setItemMeta(eventv10);
 		inv.setItem(32, event16);
 		final ItemStack event17 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv11 = event17.getItemMeta();
-		eventv11.setDisplayName("ง7{ งc1500 Coins ง7}");
+		eventv11.setDisplayName("ยง7{ ยงc1500 Coins ยง7}");
 		event17.setItemMeta(eventv11);
 		inv.setItem(33, event17);
 		final ItemStack event18 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv12 = event18.getItemMeta();
-		eventv12.setDisplayName("ง7{ งc2000 Coins ง7}");
+		eventv12.setDisplayName("ยง7{ ยงc2000 Coins ยง7}");
 		event18.setItemMeta(eventv12);
 		inv.setItem(39, event18);
 		final ItemStack event19 = new ItemStack(Material.EXP_BOTTLE);
 		final ItemMeta eventv13 = event19.getItemMeta();
-		eventv13.setDisplayName("ง7{ งc4000 Coins ง7}");
+		eventv13.setDisplayName("ยง7{ ยงc4000 Coins ยง7}");
 		event19.setItemMeta(eventv13);
 		inv.setItem(40, event19);
 		final ItemStack event20 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
 		final ItemMeta event41v = event20.getItemMeta();
-		event41v.setDisplayName("ง7{ งcNada ง7}");
+		event41v.setDisplayName("ยง7{ ยงcNada ยง7}");
 		event20.setItemMeta(event41v);
 		inv.setItem(41, event20);
 		ItemStack[] arrayOfItemStack;
@@ -154,7 +154,7 @@ public class InvCoins implements Listener, CommandExecutor {
 
 	@EventHandler
 	public void onPlayerCLickInventry(final InventoryClickEvent e) {
-		if (e.getInventory().getTitle().equalsIgnoreCase("ง8{ งcCoins ง8}") && e.getCurrentItem() != null
+		if (e.getInventory().getTitle().equalsIgnoreCase("ยง8{ ยงcCoins ยง8}") && e.getCurrentItem() != null
 				&& e.getCurrentItem().getTypeId() != 0) {
 			e.setCancelled(true);
 			if (e.getSlot() == 12) {
