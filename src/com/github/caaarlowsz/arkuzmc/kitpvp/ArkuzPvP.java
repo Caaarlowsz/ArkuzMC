@@ -53,6 +53,7 @@ public class ArkuzPvP extends JavaPlugin implements KitPvP {
     @Override
     public void onDisable() {
         super.onDisable();
+        KitPvPAPI.setInstance(null);
         instance = null;
 
         //TODO: Remover quando melhorar a classe principal
