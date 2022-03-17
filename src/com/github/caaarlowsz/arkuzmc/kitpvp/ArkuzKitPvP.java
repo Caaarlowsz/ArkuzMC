@@ -76,10 +76,9 @@ public final class ArkuzKitPvP extends JavaPlugin implements KitPvP {
         KitPvPAPI.setInstance(this);
 
         this.addKit(new ArkuzPvPKit());
+        this.addKit(new ArkuzAjninKit());
 
         final PluginManager Eventos = Bukkit.getPluginManager();
-        Eventos.registerEvents(new ArkuzAjninKit(), this);
-        this.addKit(new ArkuzKit("Ajnin"));
         this.addKit(new ArkuzKit("Archer"));
         Eventos.registerEvents(new Armor(), this);
         this.addKit(new ArkuzKit("Armor"));
