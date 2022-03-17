@@ -4,7 +4,7 @@ import Essencial.KitAPI;
 import Essencial.KitUtil;
 import Eventos.Habilidade;
 import Eventos.TheTitle;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,11 +19,11 @@ public class Kit implements CommandExecutor, Listener {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("kit")) {
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Use: /Kit {Kit}");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Use: /Kit {Kit}");
 				return true;
 			}
 			if (KitAPI.Kit.contains(p.getName())) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Para Usar Outro Kit Digite: /Spawn");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Para Usar Outro Kit Digite: /Spawn");
 				return true;
 			}
 		}
@@ -35,12 +35,12 @@ public class Kit implements CommandExecutor, Listener {
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "PvP");
 				KitAPI.Kit.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cPvP");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cPvP");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lPVP");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -53,12 +53,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Ajnin");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Ajnin.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cAjnin");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cAjnin");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lAJNIN");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ "§4➼§7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -71,12 +71,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Anchor");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Anchor.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cAnchor");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cAnchor");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lANCHOR");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -89,13 +89,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Armor");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Armor.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cArmor");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cArmor");
 				KitAPI.setitem(p, Material.GOLD_INGOT, "§7Kit §cArmor", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lARMOR");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -108,13 +108,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Avatar");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Avatar.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cAvatar");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cAvatar");
 				KitAPI.setitem(p, Material.BEACON, "§7Kit §cAvatar", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lAVATAR");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -127,13 +127,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "C4");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.C4.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cC4");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cC4");
 				KitAPI.setitem(p, Material.SLIME_BALL, "§7Kit §cC4", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lC4");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -146,13 +146,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "DeshFire");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.DeshFire.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cDeshFire");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cDeshFire");
 				KitAPI.setitem(p, Material.REDSTONE_BLOCK, "§7Kit §cDeshFire", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lDESHFIRE");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -165,13 +165,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Fisherman");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Fisherman.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cFisherman");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cFisherman");
 				KitAPI.setitem(p, Material.FISHING_ROD, "§7Kit §cFisherman", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lFISHERMAN");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -184,13 +184,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Gladiator");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Gladiator.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cGladiator");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cGladiator");
 				KitAPI.setitem(p, Material.IRON_FENCE, "§7Kit §cGladiator", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lGLADIATOR");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -203,13 +203,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Grappler");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Grappler.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cGrappler");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cGrappler");
 				KitAPI.setitem(p, Material.LEASH, "§7Kit §cGrappler", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lGRAPPLER");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -222,13 +222,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Hulk");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Hulk.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cHulk");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cHulk");
 				KitAPI.setitem(p, Material.SADDLE, "§7Kit §cHulk", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lHULK");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -241,13 +241,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "JellyFish");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.JellyFish.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cJellyFish");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cJellyFish");
 				KitAPI.setitem(p, Material.CLAY_BALL, "§7Kit §cJellyFish", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lJELLYFISH");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -260,13 +260,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Phantom");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Phantom.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cPhantom");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cPhantom");
 				KitAPI.setitem(p, Material.FEATHER, "§7Kit §cPhantom", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lPHANTOM");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -279,12 +279,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "QuickDropper");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.QuickDropper.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cQuickDropper");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cQuickDropper");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lQUICKDROPPER");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -297,13 +297,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Kangaroo");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Kangaroo.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cKangaroo");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cKangaroo");
 				KitUtil.darItem(p, Material.FIREWORK, 1, "§7Kit §cKangaroo", 1);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lKANGAROO");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -316,12 +316,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Magma");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Magma.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cMagma");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cMagma");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lMAGMA");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -334,13 +334,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Monk");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Monk.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cMonk");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cMonk");
 				KitAPI.setitem(p, Material.BLAZE_ROD, "§7Kit §cMonk", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lMONK");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -353,12 +353,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Ninja");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Ninja.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cNinja");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cNinja");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lNINJA");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -371,12 +371,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Poseidon");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Poseidon.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cPoseidon");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cPoseidon");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lPOSEIDON");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -389,12 +389,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Resouper");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Resouper.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cResouper");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cResouper");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lRESOUPER");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -407,12 +407,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Snai\u00e7");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Snail.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cSnail");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cSnail");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lSNAIL");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -425,13 +425,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Sonic");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Sonic.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cSonic");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cSonic");
 				KitAPI.setitem(p, Material.LAPIS_BLOCK, "§7Kit §cSonic", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lSONIC");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -444,14 +444,14 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Archer");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Archer.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cArcher");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cArcher");
 				KitAPI.setitem(p, Material.BOW, "§7Kit §cArcher", 1, Enchantment.ARROW_INFINITE, 1, false);
 				KitAPI.setitem(p, Material.ARROW, "§cArrrow", 2, Enchantment.DAMAGE_ALL, 1, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lARCHER");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -464,12 +464,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Stomper");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Stomper.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cStomper");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cStomper");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lSTOMPER");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -483,12 +483,12 @@ public class Kit implements CommandExecutor, Listener {
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Switcher.add(p.getName());
 				KitUtil.darItem(p, Material.SNOW_BALL, 32, "§7Kit §cSwitcher", 1);
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cSwicther");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cSwicther");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lSWITCHER");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -501,12 +501,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Swords");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Swords.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cSwords");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cSwords");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lSWORDS");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -519,13 +519,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Terrorista");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Terrorista.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cTerrorista");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cTerrorista");
 				KitAPI.setitem(p, Material.MAGMA_CREAM, "§7Kit §cTerrorista", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lTERRORISTA");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -538,13 +538,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "ForceField");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.ForceField.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cForceField");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cForceField");
 				KitAPI.setitem(p, Material.NETHER_FENCE, "§7Kit §cForceField", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lFORCEFIELD");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -557,13 +557,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Thor");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Thor.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cThor");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cThor");
 				KitAPI.setitem(p, Material.GOLD_AXE, "§7Kit §cThor", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lTHOR");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -576,13 +576,13 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Thresh");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Thresh.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cThresh");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cThresh");
 				KitAPI.setitem(p, Material.LEVER, "§7Kit §cThresh", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§7§lKIT §4§lTHRESH");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -595,12 +595,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Turtle");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Turtle.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cTurtle");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cTurtle");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lTURTLE");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -613,12 +613,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Viper");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Viper.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cViper");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cViper");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lVIPER");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}
@@ -631,12 +631,12 @@ public class Kit implements CommandExecutor, Listener {
 				Habilidade.setAbility(p, "Viking");
 				KitAPI.Kit.add(p.getName());
 				KitAPI.Viking.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cViking");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Selecionou o Kit: §cViking");
 				TheTitle.sendTitle(p, "§7§lKIT §4§lVIKING");
 				TheTitle.sendSubTitle(p, "§c§lFOI SELECIONADO");
 				SetArena.TeleportArenaRandom(p);
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Tem Permissão Para Usar Este Kit");
 			}
 		}

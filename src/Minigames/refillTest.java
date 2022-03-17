@@ -2,7 +2,7 @@ package Minigames;
 
 import Essencial.KitAPI;
 import Eventos.TheTitle;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -19,7 +19,7 @@ public class refillTest {
 	public refillTest(final Player p) {
 		this.rand = new Random();
 		if (KitAPI.refillTest.contains(p.getName())) {
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Já Está Treinando Seu Refil");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Já Está Treinando Seu Refil");
 			return;
 		}
 		new BukkitRunnable() {
@@ -27,7 +27,7 @@ public class refillTest {
 
 			public void run() {
 				if (this.seconds > 0) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Treino De Refil Iniciando Em: §c"
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Treino De Refil Iniciando Em: §c"
 							+ this.seconds);
 					--this.seconds;
 					return;
@@ -38,7 +38,7 @@ public class refillTest {
 					TheTitle.sendTitle(p, "§4§lTREINO §8§lDE §c§lREFIL");
 					TheTitle.sendSubTitle(p, "§8§lINICIADO");
 					p.sendMessage(
-							String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O §c§nTreino§7 §c§nDe§7 §c§nRefil§7 Iniciado");
+							String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O §c§nTreino§7 §c§nDe§7 §c§nRefil§7 Iniciado");
 					KitAPI.refillTest.add(p.getName());
 					KitAPI.refillTestTime.put(p.getName(), refillTest.this.getTime(p) + 1);
 					final ItemStack sopa = Methodos.itemStack(Material.MUSHROOM_SOUP, "§cSopa");
@@ -50,7 +50,7 @@ public class refillTest {
 				p.setLevel(refillTest.this.getTime(p));
 				if (refillTest.this.hasRefiled(p)) {
 					p.setExp(0.0f);
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Terminou Seu Refil Em: §c"
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Terminou Seu Refil Em: §c"
 							+ Stringtimer.timerChecker(KitAPI.refillTestTime.get(p.getName())) + " §7Segundos");
 					p.getInventory().clear();
 					refillTest.setitem(p, Material.BOOK, "§4➼ §cWarps", 1, Enchantment.DAMAGE_ALL, 0, false);
@@ -70,11 +70,11 @@ public class refillTest {
 				}
 				if (this.seconds >= 60) {
 					p.sendMessage(
-							String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Demorou Demais, Tente Mais Uma Vez !");
+							String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Demorou Demais, Tente Mais Uma Vez !");
 					this.cancel();
 				}
 			}
-		}.runTaskTimer(ArkuzPvP.getInstance(), 0L, 20L);
+		}.runTaskTimer(ArkuzKitPvP.getInstance(), 0L, 20L);
 	}
 
 	private int getTime(final Player p) {

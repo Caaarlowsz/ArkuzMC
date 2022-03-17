@@ -1,6 +1,6 @@
 package Invs;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -100,7 +100,7 @@ public class InvLoja implements Listener, CommandExecutor {
 			if (e.getSlot() == 14) {
 				e.setCancelled(true);
 				p.closeInventory();
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4\u27bc §7Entre Em Nossa Loja: §c" + ArkuzPvP.loja);
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4\u27bc §7Entre Em Nossa Loja: §c" + ArkuzKitPvP.loja);
 				return;
 			}
 			if (e.getSlot() == 12) {

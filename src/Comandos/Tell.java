@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -23,25 +23,25 @@ public class Tell implements CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("tell")) {
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Utilize: /Tell §c{Nick} {Msg}");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Utilize: /Tell §c{Nick} {Msg}");
 				return true;
 			}
 			final Player target = Bukkit.getPlayer(args[0]);
 			if (args[0].toLowerCase().equalsIgnoreCase("on")) {
 				Tell.telloff.remove(p);
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Tell §c§nATIVADO");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Tell §c§nATIVADO");
 			} else if (args[0].toLowerCase().equalsIgnoreCase("off")) {
 				Tell.telloff.add(p);
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Tell §4§nDESATIVADO");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Tell §4§nDESATIVADO");
 			}
 			if (args.length > 1) {
 				if (target == null) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Este Jogador Não Se Encontra Online");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Este Jogador Não Se Encontra Online");
 					return true;
 				}
 				if (Tell.telloff.contains(target)) {
 					p.sendMessage(
-							String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Tell Desse Jogador Se Encontra Desativado");
+							String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Tell Desse Jogador Se Encontra Desativado");
 					return true;
 				}
 				final StringBuilder sb = new StringBuilder();
@@ -55,20 +55,20 @@ public class Tell implements CommandExecutor {
 			}
 		} else if (label.equalsIgnoreCase("off")) {
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Utilize o Chat Publico");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Utilize o Chat Publico");
 				return true;
 			}
 			if (!Tell.gettell.containsKey(p)) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Não Há Ninguem Para Responder");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Não Há Ninguem Para Responder");
 				return true;
 			}
 			final Player deslogo = Tell.gettell.get(p);
 			if (deslogo == null) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Este Jogador Não Se Encontra Online");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Este Jogador Não Se Encontra Online");
 				return true;
 			}
 			if (Tell.telloff.contains(deslogo)) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Tell Desse Jogador Se Encontra Desativado");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Tell Desse Jogador Se Encontra Desativado");
 				return true;
 			}
 			final StringBuilder sb = new StringBuilder();

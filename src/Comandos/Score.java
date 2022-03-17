@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,12 +14,12 @@ public class Score implements CommandExecutor, Listener {
 			return true;
 		}
 		final Player p = (Player) sender;
-		if (ArkuzPvP.score.contains(p.getName())) {
-			ArkuzPvP.score.remove(p.getName());
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7ScoreBoard Ativada");
+		if (ArkuzKitPvP.score.contains(p.getName())) {
+			ArkuzKitPvP.score.remove(p.getName());
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7ScoreBoard Ativada");
 		} else {
-			ArkuzPvP.score.add(p.getName());
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7ScoreBoard Desativada");
+			ArkuzKitPvP.score.add(p.getName());
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7ScoreBoard Desativada");
 		}
 		return false;
 	}

@@ -2,7 +2,7 @@ package Kits;
 
 import java.util.HashMap;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -33,7 +33,7 @@ public class Ajnin implements Listener {
 			final Player t = (Player) e.getEntity();
 			if (Habilidade.getAbility(p).equalsIgnoreCase("Ajnin")) {
 				this.ajinhash.put(p, t);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {
@@ -58,18 +58,18 @@ public class Ajnin implements Listener {
 				if (p.getLocation().distance(t.getLocation()) < 200.0) {
 					t.teleport(p.getLocation());
 					p.sendMessage(
-							String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Player Foi Teleportado Até Você");
+							String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Player Foi Teleportado Até Você");
 					Cooldown.add(p, 3);
-					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
+					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
-									p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
+									p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
 								}
 							}, 140L);
 				} else {
 					p.sendMessage(
-							String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Ultimo Player Hitado Está Loge Demais");
+							String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Ultimo Player Hitado Está Loge Demais");
 				}
 			}
 		}

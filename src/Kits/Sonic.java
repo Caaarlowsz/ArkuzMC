@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Effect;
@@ -57,7 +57,7 @@ public class Sonic implements Listener {
 				event.setCancelled(true);
 			}
 			if (Kits.Sonic.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Aguarde o CoolDown Acabar");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Aguarde o CoolDown Acabar");
 				return;
 			}
 			Kits.Sonic.cooldownm.add(p);
@@ -94,19 +94,19 @@ public class Sonic implements Listener {
 			p.getInventory().setLeggings(Calss);
 			p.getInventory().setBoots(Bota);
 			p.updateInventory();
-			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getInventory().setArmorContents((ItemStack[]) null);
 					p.updateInventory();
 				}
 			}, 50L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					Kits.Sonic.cooldownm.remove(p);
 					Kits.Sonic.Sonic.remove(p.getName());
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 5.0f, 5.0f);
 				}
 			}, 700L);

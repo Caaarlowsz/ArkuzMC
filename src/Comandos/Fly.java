@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,42 +21,42 @@ public class Fly implements CommandExecutor, Listener {
 			if (args.length == 0) {
 				if (p.hasPermission("arkuz.fly")) {
 					if (!p.getAllowFlight()) {
-						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Habilitou o Modo Fly");
+						p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Habilitou o Modo Fly");
 						TheTitle.sendTitle(p, "§a§lFLY");
 						TheTitle.sendSubTitle(p, "§a§lATIVADO");
 						p.setAllowFlight(true);
 					} else {
-						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Desabilitou o Modo Fly");
+						p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Desabilitou o Modo Fly");
 						TheTitle.sendTitle(p, "§c§lFLY");
 						TheTitle.sendSubTitle(p, "§C§lDESATIVADO");
 						p.setAllowFlight(false);
 					}
 				} else {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissão");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Sem Permissão");
 				}
 				if (args.length == 1) {
 					if (sender.hasPermission("sword.fly")) {
 						final Player k = Bukkit.getPlayer(args[0]);
 						if (k == null) {
-							sender.sendMessage(String.valueOf(ArkuzPvP.prefix)
+							sender.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 									+ " §4➼ §7Este Player Não Está Conectado No Servidor");
 							return true;
 						}
 						if (!p.getAllowFlight()) {
-							p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Habilitou o Fly Para §c"
+							p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Habilitou o Fly Para §c"
 									+ k.getName());
 							k.setAllowFlight(true);
-							k.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Fly Foi Habilitado Por §c"
+							k.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Fly Foi Habilitado Por §c"
 									+ p.getName());
 						} else {
-							p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+							p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 									+ " §4➼ §7Você Desabilitou o Fly Para §c" + k.getName());
 							k.setAllowFlight(false);
-							k.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Fly Foi Desabilitado Por §c"
+							k.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Fly Foi Desabilitado Por §c"
 									+ p.getName());
 						}
 					} else {
-						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissaão");
+						p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Sem Permissaão");
 					}
 				}
 			}

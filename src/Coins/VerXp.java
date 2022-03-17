@@ -1,6 +1,6 @@
 package Coins;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,7 +12,7 @@ public class VerXp implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (comando.equalsIgnoreCase("mp")) {
 			p.sendMessage(
-					String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Possui §c" + XpM.getPlayerMoney(p) + " §7XP");
+					String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Possui §c" + XpM.getPlayerMoney(p) + " §7XP");
 		}
 		return false;
 	}

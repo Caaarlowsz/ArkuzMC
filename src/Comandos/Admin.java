@@ -3,7 +3,7 @@ package Comandos;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -126,7 +126,7 @@ public class Admin implements Listener, CommandExecutor {
 				&& (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR)
 				&& p.getItemInHand().getType() == Material.FIREBALL) {
 			p.chat("/admin");
-			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.chat("/admin");

@@ -1,6 +1,6 @@
 package Coins;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -22,24 +22,24 @@ public class DarXp implements CommandExecutor, Listener {
 		final Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("gratis")) {
 			if (!p.hasPermission("arkuz.gratis")) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissão");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Sem Permissão");
 			} else {
 				if (args.length == 0) {
-					sender.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Use: /Gratis {Player} {Quantidade}");
+					sender.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Use: /Gratis {Player} {Quantidade}");
 					return true;
 				}
 				final Player target = Bukkit.getPlayerExact(args[0]);
 				if (target == null || !(target instanceof Player)) {
-					sender.sendMessage(String.valueOf(ArkuzPvP.prefix)
+					sender.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 							+ " §4➼ §7Esse Player Não Está Conectado Ao Servidor");
 					return true;
 				}
 				if (isNumeric(args[1])) {
 					final int coins = Integer.parseInt(args[1]);
 					XpM.addMoney(target, coins);
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Deu Ao Jogador §c"
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Deu Ao Jogador §c"
 							+ target.getName() + " §4" + coins + " §7MP");
-					target.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Recebeu Do Jogador §c"
+					target.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Recebeu Do Jogador §c"
 							+ p.getName() + " §4" + coins + " §7MP");
 				}
 			}

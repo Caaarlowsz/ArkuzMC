@@ -2,7 +2,7 @@ package Eventos;
 
 import java.util.List;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -28,7 +28,7 @@ public class Bussola implements Listener {
 							&& p.getLocation().distance(((Entity) e).getLocation()) > 0.0) {
 						p.setCompassTarget(((Entity) e).getLocation());
 						p.sendMessage(
-								String.valueOf(ArkuzPvP.prefix) + " �4\u27bc �7Apontado Para: �c" + ((Player) e).getName());
+								String.valueOf(ArkuzKitPvP.prefix) + " �4\u27bc �7Apontado Para: �c" + ((Player) e).getName());
 						pesquisado = true;
 						break;
 					}
@@ -38,7 +38,7 @@ public class Bussola implements Listener {
 				}
 			}
 			if (!pesquisado) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Nenhum Player Encontrado");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Nenhum Player Encontrado");
 				p.setCompassTarget(p.getWorld().getSpawnLocation());
 			}
 		}

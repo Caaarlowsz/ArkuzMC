@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -39,7 +39,7 @@ public class Vis implements CommandExecutor, Listener {
 			if (p.hasPermission("arkuz.vis")) {
 				if (!emInvisivel(p)) {
 					addInvisivel(p);
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Modo Invisivel Ativado");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Modo Invisivel Ativado");
 					p.setGameMode(GameMode.CREATIVE);
 					Player[] onlinePlayers;
 					for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
@@ -54,10 +54,10 @@ public class Vis implements CommandExecutor, Listener {
 						todos.showPlayer(p);
 					}
 					p.setGameMode(GameMode.SURVIVAL);
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Modo Invisivel Desativado");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Modo Invisivel Desativado");
 				}
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissao");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Sem Permissao");
 			}
 		}
 		return false;

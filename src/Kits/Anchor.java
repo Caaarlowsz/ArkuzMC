@@ -1,6 +1,6 @@
 package Kits;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -27,7 +27,7 @@ public class Anchor implements Listener {
 		if (Habilidade.getAbility(p).equalsIgnoreCase("Anchor")) {
 			p.setVelocity(new Vector());
 			p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 4.0f, 4.0f);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(),
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
@@ -38,7 +38,7 @@ public class Anchor implements Listener {
 		if (Habilidade.getAbility(a).equalsIgnoreCase("Anchor")) {
 			a.playSound(a.getLocation(), Sound.ANVIL_BREAK, 4.0f, 4.0f);
 			p.setVelocity(new Vector());
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(),
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {

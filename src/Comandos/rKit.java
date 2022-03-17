@@ -2,7 +2,7 @@ package Comandos;
 
 import java.util.ArrayList;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -33,11 +33,11 @@ public class rKit implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("rkit")) {
 			if (p.hasPermission("arkuz.rkit")) {
 				if (rKit.jaresetou.contains(p.getName())) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Aguarde Para Resetar Seu Kit Novamente");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Aguarde Para Resetar Seu Kit Novamente");
 					return true;
 				}
 				rKit.jaresetou.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Kit Resetado Com Sucesso");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Kit Resetado Com Sucesso");
 				p.teleport(p.getWorld().getSpawnLocation());
 				p.playSound(p.getLocation(), Sound.LEVEL_UP, 10.0f, 0.0f);
 				p.getInventory().clear();
@@ -63,17 +63,17 @@ public class rKit implements CommandExecutor {
 					final Item item = C4.bomba.get(p.getName());
 					item.remove();
 				}
-				Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						rKit.jaresetou.remove(p.getName());
 						p.sendMessage(
-								String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Já Pode Resetar Seu Kit");
+								String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Já Pode Resetar Seu Kit");
 					}
 				}, 100L);
 				return true;
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissão");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Sem Permissão");
 			}
 		}
 		return false;

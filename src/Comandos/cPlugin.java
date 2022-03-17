@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
@@ -36,9 +36,9 @@ public class cPlugin implements Listener {
 			if (msg[0].equalsIgnoreCase("/" + Loop)) {
 				e.getPlayer().sendMessage("§7 ");
 				e.getPlayer().sendMessage("§7                §6§lPLUGIN§7                ");
-				e.getPlayer().sendMessage(String.valueOf(ArkuzPvP.prefix) + " §f➼ §7Plugin Criado Por §cFleaShot ");
+				e.getPlayer().sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §f➼ §7Plugin Criado Por §cFleaShot ");
 				e.getPlayer().sendMessage(
-						String.valueOf(ArkuzPvP.prefix) + " §f➼ §7 Servidor utilizando o plugin: §a§l" + ArkuzPvP.prefix);
+						String.valueOf(ArkuzKitPvP.prefix) + " §f➼ §7 Servidor utilizando o plugin: §a§l" + ArkuzKitPvP.prefix);
 				e.getPlayer().sendMessage("§7                §6§lPLUGIN§7                ");
 				e.getPlayer().sendMessage("§7   ");
 				e.setCancelled(true);

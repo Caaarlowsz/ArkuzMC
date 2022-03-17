@@ -3,7 +3,7 @@ package Kits;
 import Essencial.Cooldown;
 import Essencial.KitUtil;
 import Eventos.Habilidade;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -28,10 +28,10 @@ public class Thor implements Listener {
 			final Location loc = p.getTargetBlock(null, 30).getLocation();
 			p.getWorld().strikeLightning(loc);
 			e.setCancelled(true);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Seu CoolDown Foi Terminado");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Seu CoolDown Foi Terminado");
 				}
 			}, 100L);
 		}

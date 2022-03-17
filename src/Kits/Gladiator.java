@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -52,7 +52,7 @@ public class Gladiator implements Listener {
 				final Location loc3 = new Location(p.getWorld(), (double) (p.getLocation().getBlockX() - 8),
 						(double) (p.getLocation().getBlockY() + 82), (double) (p.getLocation().getBlockZ() - 8));
 				if (this.lutando.containsKey(p) || this.lutando.containsKey(r)) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Ja Está Em Um Gladiator");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Ja Está Em Um Gladiator");
 					return;
 				}
 				final List<Location> cuboid = new ArrayList<Location>();
@@ -61,7 +61,7 @@ public class Gladiator implements Listener {
 						for (int bY = -1; bY <= 10; ++bY) {
 							final Block b = loc.clone().add((double) bX, (double) bY, (double) bZ).getBlock();
 							if (!b.isEmpty()) {
-								p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+								p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 										+ " §4➼ §7Você Não Pode Usar o seu Kit Aqui");
 								return;
 							}
@@ -89,13 +89,13 @@ public class Gladiator implements Listener {
 				r.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 110, 5));
 				this.lutando.put(p, r);
 				this.lutando.put(r, p);
-				this.glad1 = Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
+				this.glad1 = Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {
 							}
 						}, 4800L);
-				this.glad2 = Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
+				this.glad2 = Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {
@@ -136,7 +136,7 @@ public class Gladiator implements Listener {
 			final Player q = Bukkit.getPlayer(nome);
 			this.lutando.remove(p);
 			this.lutando.remove(q);
-			q.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Player §c" + p.getDisplayName()
+			q.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Player §c" + p.getDisplayName()
 					+ " §7Deslogou No Gladiator");
 			q.teleport((Location) this.lugar.get(q));
 			Bukkit.getScheduler().cancelTask(this.glad1);
@@ -156,8 +156,8 @@ public class Gladiator implements Listener {
 		if (this.lutando.containsKey(p)) {
 			final String nome = this.lutando.get(p).getName();
 			final Player m = Bukkit.getPlayer(nome);
-			m.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Ganhou o Gladiator");
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Perdeu o Gladiator");
+			m.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Ganhou o Gladiator");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Perdeu o Gladiator");
 			this.lutando.remove(p);
 			this.lutando.remove(m);
 			m.teleport((Location) this.lugar.get(m));
@@ -178,7 +178,7 @@ public class Gladiator implements Listener {
 		final Player p = e.getPlayer();
 		if (this.lutando.containsKey(p)) {
 			e.setCancelled(true);
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Não se Pode Usar Comandos No Gladiator");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Não se Pode Usar Comandos No Gladiator");
 		}
 	}
 }

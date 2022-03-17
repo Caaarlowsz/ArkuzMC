@@ -1,6 +1,6 @@
 package Kits;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -30,7 +30,7 @@ public class Hulk implements Listener {
 					return;
 				}
 				if (p.getPassenger() != null) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 							+ " §4➼ §7Aguarde o Player Sair Da Cabeça Do Adversario");
 					return;
 				}
@@ -39,7 +39,7 @@ public class Hulk implements Listener {
 				}
 				Cooldown.add(p, 6);
 				p.setPassenger((Entity) r);
-				r.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				r.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Um Hulk Prendeu Você Aperde SHIFT Para Se Desprender");
 			}
 		}

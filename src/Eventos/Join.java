@@ -1,7 +1,7 @@
 package Eventos;
 
 import Essencial.KitAPI;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Firework;
@@ -19,7 +19,7 @@ public class Join implements Listener {
 	@EventHandler
 	public void Entrar(final PlayerJoinEvent e) {
 		final Player p = e.getPlayer();
-		TheTitle.sendTitle(p, "§7Seja bem vindo ao " + ArkuzPvP.prefix);
+		TheTitle.sendTitle(p, "§7Seja bem vindo ao " + ArkuzKitPvP.prefix);
 		TheTitle.sendSubTitle(p, "§aAgradecemos a sua escolha");
 		p.sendMessage(" ");
 		p.sendMessage(" ");
@@ -67,7 +67,7 @@ public class Join implements Listener {
 		p.sendMessage(" ");
 		p.sendMessage(" ");
 		p.sendMessage(" ");
-		p.sendMessage("              " + ArkuzPvP.prefix);
+		p.sendMessage("              " + ArkuzKitPvP.prefix);
 		p.sendMessage("            §aOlá, §f" + p.getName() + "§a!   ");
 		p.sendMessage("    §aSeja bem vindo (a) ao nosso servidor ");
 		p.sendMessage("    §aQualquer bug deve ser reportado à §c§lStaff ");
@@ -114,7 +114,7 @@ public class Join implements Listener {
 		setitem(p, Material.PISTON_STICKY_BASE, "§4➼ §cKits", 4, Enchantment.DAMAGE_ALL, 0, false);
 		setitem(p, Material.CHEST, "§4➼ §cCaixas", 6, Enchantment.DAMAGE_ALL, 0, false);
 		setitem(p, Material.REDSTONE, "§4➼ §cOutros", 7, Enchantment.DAMAGE_ALL, 0, false);
-		TheTitle.sendTitle(p, ArkuzPvP.prefix);
+		TheTitle.sendTitle(p, ArkuzKitPvP.prefix);
 		TheTitle.sendSubTitle(p, "§c§lVOC\u00ca MORREU !");
 	}
 

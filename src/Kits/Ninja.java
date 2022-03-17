@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -34,7 +34,7 @@ public class Ninja implements Listener {
 			final Player localPlayer2 = (Player) paramEntityDamageByEntityEvent.getEntity();
 			if (KitAPI.Ninja.contains(localPlayer1.getName())) {
 				Ninja.a.put(localPlayer1, localPlayer2);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						Ninja.cooldownbk.remove(localPlayer1);
@@ -61,15 +61,15 @@ public class Ninja implements Listener {
 			if (Ninja.b.get(localPlayer1) == null || Ninja.b.get(localPlayer1) < System.currentTimeMillis()) {
 				if (localPlayer1.getLocation().distance(localPlayer2.getLocation()) < 100.0) {
 					localPlayer1.teleport(localPlayer2.getLocation());
-					localPlayer1.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Foi Teleportado");
+					localPlayer1.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Foi Teleportado");
 					Ninja.b.put(localPlayer1, System.currentTimeMillis() + 10000L);
 				} else {
-					localPlayer1.sendMessage(String.valueOf(ArkuzPvP.prefix)
+					localPlayer1.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 							+ " §4➼ §7O Utimo Player Que Você Hitou Está Longe Demais!");
 				}
 			} else {
 				localPlayer1.sendMessage(
-						String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Aguarde §c" + str + "§7 Para o Cooldown Acabar");
+						String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Aguarde §c" + str + "§7 Para o Cooldown Acabar");
 			}
 		}
 	}

@@ -2,7 +2,7 @@ package Comandos;
 
 import Essencial.ChatInterativoAPI;
 import Eventos.Habilidade;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
@@ -60,7 +60,7 @@ public class Report implements CommandExecutor, Listener {
                                     "/tp " + target.getName(), "§eTeleporte Rapido. §7(Clique)");
                             s.sendMessage("§c§m--->-----------------------------<---");
                             s.sendMessage("§c");
-                            Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(),
+                            Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(),
                                     (Runnable) new Runnable() {
                                         @Override
                                         public void run() {

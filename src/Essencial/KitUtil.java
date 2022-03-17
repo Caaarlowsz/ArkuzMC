@@ -1,6 +1,6 @@
 package Essencial;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -14,7 +14,7 @@ import org.bukkit.potion.PotionEffectType;
 
 public class KitUtil implements Listener {
 	public static void MensagemCooldown(final Player p) {
-		p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Aguarde §c" + Cooldown.CoolDown(p)
+		p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Aguarde §c" + Cooldown.CoolDown(p)
 				+ " §7Segundos De Cooldown");
 	}
 

@@ -3,7 +3,7 @@ package Warps;
 import Essencial.KitUtil;
 import Eventos.Habilidade;
 import Eventos.TheTitle;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,26 +21,26 @@ public class irWarp implements CommandExecutor, Listener {
                              final String[] args) {
         final Player p = (Player) sender;
         if (cmd.getName().equalsIgnoreCase("warp") && args.length == 0) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Use: /Warp {Warp}");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Use: /Warp {Warp}");
             return true;
         }
         if (args[0].equalsIgnoreCase("challenge")) {
-            if (ArkuzPvP.getInstance().warps.getConfigurationSection("challenge") == null) {
-                p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Warp Challenge Ainda N�o Foi Setada");
+            if (ArkuzKitPvP.getInstance().warps.getConfigurationSection("challenge") == null) {
+                p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Warp Challenge Ainda N�o Foi Setada");
                 return true;
             }
-            final World w = Bukkit.getServer().getWorld(ArkuzPvP.getInstance().warps.getString("challenge.world"));
-            final double x = ArkuzPvP.getInstance().warps.getDouble("challenge.x");
-            final double y = ArkuzPvP.getInstance().warps.getDouble("challenge.y");
-            final double z = ArkuzPvP.getInstance().warps.getDouble("challenge.z");
+            final World w = Bukkit.getServer().getWorld(ArkuzKitPvP.getInstance().warps.getString("challenge.world"));
+            final double x = ArkuzKitPvP.getInstance().warps.getDouble("challenge.x");
+            final double y = ArkuzKitPvP.getInstance().warps.getDouble("challenge.y");
+            final double z = ArkuzKitPvP.getInstance().warps.getDouble("challenge.z");
             final Location lobby = new Location(w, x, y, z);
-            lobby.setPitch((float) ArkuzPvP.getInstance().warps.getDouble("challenge.pitch"));
-            lobby.setYaw((float) ArkuzPvP.getInstance().warps.getDouble("challenge.yaw"));
+            lobby.setPitch((float) ArkuzKitPvP.getInstance().warps.getDouble("challenge.pitch"));
+            lobby.setYaw((float) ArkuzKitPvP.getInstance().warps.getDouble("challenge.yaw"));
             p.teleport(lobby);
             Habilidade.removeAbility(p);
             p.getInventory().clear();
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cLava Challenge");
-            TheTitle.sendTitle(p, ArkuzPvP.prefix);
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cLava Challenge");
+            TheTitle.sendTitle(p, ArkuzKitPvP.prefix);
             TheTitle.sendSubTitle(p, "�7�lCHALLENGE");
             Habilidade.setAbility(p, "Challenge");
             p.setFireTicks(0);
@@ -64,23 +64,23 @@ public class irWarp implements CommandExecutor, Listener {
             p.updateInventory();
             return true;
         } else if (args[0].equalsIgnoreCase("fps")) {
-            if (ArkuzPvP.getInstance().warps.getConfigurationSection("fps") == null) {
-                p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Warp FPS Ainda N�o Foi Setada");
+            if (ArkuzKitPvP.getInstance().warps.getConfigurationSection("fps") == null) {
+                p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Warp FPS Ainda N�o Foi Setada");
                 return true;
             }
-            final World w = Bukkit.getServer().getWorld(ArkuzPvP.getInstance().warps.getString("fps.world"));
-            final double x = ArkuzPvP.getInstance().warps.getDouble("fps.x");
-            final double y = ArkuzPvP.getInstance().warps.getDouble("fps.y");
-            final double z = ArkuzPvP.getInstance().warps.getDouble("fps.z");
+            final World w = Bukkit.getServer().getWorld(ArkuzKitPvP.getInstance().warps.getString("fps.world"));
+            final double x = ArkuzKitPvP.getInstance().warps.getDouble("fps.x");
+            final double y = ArkuzKitPvP.getInstance().warps.getDouble("fps.y");
+            final double z = ArkuzKitPvP.getInstance().warps.getDouble("fps.z");
             final Location lobby = new Location(w, x, y, z);
-            lobby.setPitch((float) ArkuzPvP.getInstance().warps.getDouble("fps.pitch"));
-            lobby.setYaw((float) ArkuzPvP.getInstance().warps.getDouble("fps.yaw"));
+            lobby.setPitch((float) ArkuzKitPvP.getInstance().warps.getDouble("fps.pitch"));
+            lobby.setYaw((float) ArkuzKitPvP.getInstance().warps.getDouble("fps.yaw"));
             p.teleport(lobby);
             Habilidade.removeAbility(p);
             p.getInventory().clear();
             p.setHealth(20.0);
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cFps");
-            TheTitle.sendTitle(p, ArkuzPvP.prefix);
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cFps");
+            TheTitle.sendTitle(p, ArkuzKitPvP.prefix);
             TheTitle.sendSubTitle(p, "�7�lFPS");
             Habilidade.setAbility(p, "Fps");
             p.setFireTicks(0);
@@ -93,22 +93,22 @@ public class irWarp implements CommandExecutor, Listener {
             p.updateInventory();
             return true;
         } else if (args[0].equalsIgnoreCase("main")) {
-            if (ArkuzPvP.getInstance().warps.getConfigurationSection("main") == null) {
-                p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Warp Main Ainda N�o Foi Setada");
+            if (ArkuzKitPvP.getInstance().warps.getConfigurationSection("main") == null) {
+                p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Warp Main Ainda N�o Foi Setada");
                 return true;
             }
-            final World w = Bukkit.getServer().getWorld(ArkuzPvP.getInstance().warps.getString("main.world"));
-            final double x = ArkuzPvP.getInstance().warps.getDouble("main.x");
-            final double y = ArkuzPvP.getInstance().warps.getDouble("main.y");
-            final double z = ArkuzPvP.getInstance().warps.getDouble("main.z");
+            final World w = Bukkit.getServer().getWorld(ArkuzKitPvP.getInstance().warps.getString("main.world"));
+            final double x = ArkuzKitPvP.getInstance().warps.getDouble("main.x");
+            final double y = ArkuzKitPvP.getInstance().warps.getDouble("main.y");
+            final double z = ArkuzKitPvP.getInstance().warps.getDouble("main.z");
             final Location lobby = new Location(w, x, y, z);
-            lobby.setPitch((float) ArkuzPvP.getInstance().warps.getDouble("main.pitch"));
-            lobby.setYaw((float) ArkuzPvP.getInstance().warps.getDouble("main.yaw"));
+            lobby.setPitch((float) ArkuzKitPvP.getInstance().warps.getDouble("main.pitch"));
+            lobby.setYaw((float) ArkuzKitPvP.getInstance().warps.getDouble("main.yaw"));
             p.teleport(lobby);
             Habilidade.removeAbility(p);
             p.getInventory().clear();
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cMain");
-            TheTitle.sendTitle(p, ArkuzPvP.prefix);
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cMain");
+            TheTitle.sendTitle(p, ArkuzKitPvP.prefix);
             TheTitle.sendSubTitle(p, "�7�lMAIN");
             p.setGameMode(GameMode.SURVIVAL);
             Habilidade.setAbility(p, "Main");
@@ -128,27 +128,27 @@ public class irWarp implements CommandExecutor, Listener {
         } else {
             if (args[0].equalsIgnoreCase("gladiator")) {
                 p.sendMessage(
-                        String.valueOf(ArkuzPvP.prefix) + " �4? �7Warp gladiator est� em desenvolvimento...");
+                        String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Warp gladiator est� em desenvolvimento...");
                 return true;
             }
             if (args[0].equalsIgnoreCase("knock")) {
-                if (ArkuzPvP.getInstance().warps.getConfigurationSection("knock") == null) {
-                    p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Warp Knock Ainda N�o Foi Setada");
+                if (ArkuzKitPvP.getInstance().warps.getConfigurationSection("knock") == null) {
+                    p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Warp Knock Ainda N�o Foi Setada");
                     return true;
                 }
-                final World w = Bukkit.getServer().getWorld(ArkuzPvP.getInstance().warps.getString("knock.world"));
-                final double x = ArkuzPvP.getInstance().warps.getDouble("knock.x");
-                final double y = ArkuzPvP.getInstance().warps.getDouble("knock.y");
-                final double z = ArkuzPvP.getInstance().warps.getDouble("knock.z");
+                final World w = Bukkit.getServer().getWorld(ArkuzKitPvP.getInstance().warps.getString("knock.world"));
+                final double x = ArkuzKitPvP.getInstance().warps.getDouble("knock.x");
+                final double y = ArkuzKitPvP.getInstance().warps.getDouble("knock.y");
+                final double z = ArkuzKitPvP.getInstance().warps.getDouble("knock.z");
                 final Location lobby = new Location(w, x, y, z);
-                lobby.setPitch((float) ArkuzPvP.getInstance().warps.getDouble("knock.pitch"));
-                lobby.setYaw((float) ArkuzPvP.getInstance().warps.getDouble("knock.yaw"));
+                lobby.setPitch((float) ArkuzKitPvP.getInstance().warps.getDouble("knock.pitch"));
+                lobby.setYaw((float) ArkuzKitPvP.getInstance().warps.getDouble("knock.yaw"));
                 p.teleport(lobby);
                 Habilidade.removeAbility(p);
                 p.getInventory().clear();
                 p.setGameMode(GameMode.SURVIVAL);
-                p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cKnock");
-                TheTitle.sendTitle(p, ArkuzPvP.prefix);
+                p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cKnock");
+                TheTitle.sendTitle(p, ArkuzKitPvP.prefix);
                 TheTitle.sendSubTitle(p, "�7�lKNOCK");
                 Habilidade.setAbility(p, "Knock");
                 p.setFireTicks(0);
@@ -160,23 +160,23 @@ public class irWarp implements CommandExecutor, Listener {
                 p.updateInventory();
                 return true;
             } else if (args[0].equalsIgnoreCase("textura")) {
-                if (ArkuzPvP.getInstance().warps.getConfigurationSection("textura") == null) {
-                    p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Warp Textura Ainda N�o Foi Setada");
+                if (ArkuzKitPvP.getInstance().warps.getConfigurationSection("textura") == null) {
+                    p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Warp Textura Ainda N�o Foi Setada");
                     return true;
                 }
-                final World w = Bukkit.getServer().getWorld(ArkuzPvP.getInstance().warps.getString("textura.world"));
-                final double x = ArkuzPvP.getInstance().warps.getDouble("textura.x");
-                final double y = ArkuzPvP.getInstance().warps.getDouble("textura.y");
-                final double z = ArkuzPvP.getInstance().warps.getDouble("textura.z");
+                final World w = Bukkit.getServer().getWorld(ArkuzKitPvP.getInstance().warps.getString("textura.world"));
+                final double x = ArkuzKitPvP.getInstance().warps.getDouble("textura.x");
+                final double y = ArkuzKitPvP.getInstance().warps.getDouble("textura.y");
+                final double z = ArkuzKitPvP.getInstance().warps.getDouble("textura.z");
                 final Location lobby = new Location(w, x, y, z);
-                lobby.setPitch((float) ArkuzPvP.getInstance().warps.getDouble("textura.pitch"));
-                lobby.setYaw((float) ArkuzPvP.getInstance().warps.getDouble("textura.yaw"));
+                lobby.setPitch((float) ArkuzKitPvP.getInstance().warps.getDouble("textura.pitch"));
+                lobby.setYaw((float) ArkuzKitPvP.getInstance().warps.getDouble("textura.yaw"));
                 p.teleport(lobby);
                 Habilidade.removeAbility(p);
                 p.getInventory().clear();
                 p.setGameMode(GameMode.SURVIVAL);
-                p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cTextura");
-                TheTitle.sendTitle(p, ArkuzPvP.prefix);
+                p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cTextura");
+                TheTitle.sendTitle(p, ArkuzKitPvP.prefix);
                 TheTitle.sendSubTitle(p, "�7�lTEXTURA");
                 Habilidade.setAbility(p, "Textura");
                 p.setFireTicks(0);
@@ -187,23 +187,23 @@ public class irWarp implements CommandExecutor, Listener {
                 p.updateInventory();
                 return true;
             } else if (args[0].equalsIgnoreCase("mdr")) {
-                if (ArkuzPvP.getInstance().warps.getConfigurationSection("mdr") == null) {
-                    p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Warp Mdr Ainda N�o Foi Setada");
+                if (ArkuzKitPvP.getInstance().warps.getConfigurationSection("mdr") == null) {
+                    p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Warp Mdr Ainda N�o Foi Setada");
                     return true;
                 }
-                final World w = Bukkit.getServer().getWorld(ArkuzPvP.getInstance().warps.getString("mdr.world"));
-                final double x = ArkuzPvP.getInstance().warps.getDouble("mdr.x");
-                final double y = ArkuzPvP.getInstance().warps.getDouble("mdr.y");
-                final double z = ArkuzPvP.getInstance().warps.getDouble("mdr.z");
+                final World w = Bukkit.getServer().getWorld(ArkuzKitPvP.getInstance().warps.getString("mdr.world"));
+                final double x = ArkuzKitPvP.getInstance().warps.getDouble("mdr.x");
+                final double y = ArkuzKitPvP.getInstance().warps.getDouble("mdr.y");
+                final double z = ArkuzKitPvP.getInstance().warps.getDouble("mdr.z");
                 final Location lobby = new Location(w, x, y, z);
-                lobby.setPitch((float) ArkuzPvP.getInstance().warps.getDouble("mdr.pitch"));
-                lobby.setYaw((float) ArkuzPvP.getInstance().warps.getDouble("mdr.yaw"));
+                lobby.setPitch((float) ArkuzKitPvP.getInstance().warps.getDouble("mdr.pitch"));
+                lobby.setYaw((float) ArkuzKitPvP.getInstance().warps.getDouble("mdr.yaw"));
                 p.teleport(lobby);
                 p.setGameMode(GameMode.SURVIVAL);
                 Habilidade.removeAbility(p);
                 p.getInventory().clear();
-                p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cMdr");
-                TheTitle.sendTitle(p, ArkuzPvP.prefix);
+                p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cMdr");
+                TheTitle.sendTitle(p, ArkuzKitPvP.prefix);
                 TheTitle.sendSubTitle(p, "�7�lMDR");
                 Habilidade.setAbility(p, "Mdr");
                 p.setHealth(20.0);
@@ -217,24 +217,24 @@ public class irWarp implements CommandExecutor, Listener {
                 if (!args[0].equalsIgnoreCase("rdm")) {
                     return false;
                 }
-                if (ArkuzPvP.getInstance().warps.getConfigurationSection("rdm") == null) {
-                    p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Warp Rdm Ainda N�o Foi Setada");
+                if (ArkuzKitPvP.getInstance().warps.getConfigurationSection("rdm") == null) {
+                    p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Warp Rdm Ainda N�o Foi Setada");
                     return true;
                 }
-                final World w = Bukkit.getServer().getWorld(ArkuzPvP.getInstance().warps.getString("rdm.world"));
-                final double x = ArkuzPvP.getInstance().warps.getDouble("rdm.x");
-                final double y = ArkuzPvP.getInstance().warps.getDouble("rdm.y");
-                final double z = ArkuzPvP.getInstance().warps.getDouble("rdm");
+                final World w = Bukkit.getServer().getWorld(ArkuzKitPvP.getInstance().warps.getString("rdm.world"));
+                final double x = ArkuzKitPvP.getInstance().warps.getDouble("rdm.x");
+                final double y = ArkuzKitPvP.getInstance().warps.getDouble("rdm.y");
+                final double z = ArkuzKitPvP.getInstance().warps.getDouble("rdm");
                 final Location lobby = new Location(w, x, y, z);
-                lobby.setPitch((float) ArkuzPvP.getInstance().warps.getDouble("rdm.pitch"));
-                lobby.setYaw((float) ArkuzPvP.getInstance().warps.getDouble("rdm.yaw"));
+                lobby.setPitch((float) ArkuzKitPvP.getInstance().warps.getDouble("rdm.pitch"));
+                lobby.setYaw((float) ArkuzKitPvP.getInstance().warps.getDouble("rdm.yaw"));
                 p.teleport(lobby);
                 Habilidade.removeAbility(p);
                 p.getInventory().clear();
                 p.setHealth(20.0);
                 p.setGameMode(GameMode.SURVIVAL);
-                p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cRdm");
-                TheTitle.sendTitle(p, ArkuzPvP.prefix);
+                p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " �4? �7Voc� Foi Teleportado Para: �cRdm");
+                TheTitle.sendTitle(p, ArkuzKitPvP.prefix);
                 TheTitle.sendSubTitle(p, "�7�lRDM");
                 Habilidade.setAbility(p, "Rdm");
                 KitUtil.darItemEnchant(p, Material.STONE_SWORD, 1, "�aEspada", 0, Enchantment.DAMAGE_ALL, 1, true);

@@ -2,7 +2,7 @@ package Kits;
 
 import java.util.Random;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -34,14 +34,14 @@ public class Monk implements Listener {
 				jogadorClicado.setItemInHand(ItemSelecionado);
 				jogadorClicado.getInventory().setItem(random, ItemMudado);
 				jogadorClicado
-						.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Um Player Usou o Monnk Em Você");
-				p.sendMessage(String.valueOf(String.valueOf(ArkuzPvP.prefix)
+						.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Um Player Usou o Monnk Em Você");
+				p.sendMessage(String.valueOf(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Usou o Monk No Player: §c" + jogadorClicado.getName()));
 				Cooldown.add(p, 20);
-				Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
-						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
+						p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
 					}
 				}, 400L);
 			}

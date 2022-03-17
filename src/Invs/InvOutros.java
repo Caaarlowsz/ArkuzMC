@@ -2,7 +2,7 @@ package Invs;
 
 import Coins.XpM;
 import Score.ScoreBoarding;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -83,9 +83,9 @@ public class InvOutros implements Listener, CommandExecutor {
 		final ArrayList<String> descpyro1 = new ArrayList<String>();
 		descpyro1.add("§a➼ XP: §7" + XpM.getPlayerMoney(p));
 		descpyro1.add("§9➼ Kills: §7"
-				+ ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+				+ ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 		descpyro1.add("§4➼ Mortes: §7"
-				+ ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+				+ ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 		descpyro1.add("§8➼ Rank: §7" + ScoreBoarding.Rank(p));
 		metapyro.setLore((List<String>) descpyro1);
 		pyro.setItemMeta(metapyro);

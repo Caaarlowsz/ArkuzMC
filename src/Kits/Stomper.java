@@ -1,6 +1,6 @@
 package Kits;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -34,7 +34,7 @@ public class Stomper implements Listener {
 					} else {
 						plr.damage(e.getDamage(), (Entity) p);
 						plr.sendMessage(
-								String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Foi Stompado Por: " + p.getName());
+								String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Foi Stompado Por: " + p.getName());
 					}
 				}
 			}

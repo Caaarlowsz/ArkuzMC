@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -137,7 +137,7 @@ public class ClearChat implements CommandExecutor, Listener {
 				Bukkit.getServer().broadcastMessage("");
 				Bukkit.getServer().broadcastMessage("");
 				Bukkit.getServer().broadcastMessage("");
-				Bukkit.getServer().broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Chat Limpo");
+				Bukkit.getServer().broadcastMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Chat Limpo");
 			}
 			return false;
 		}

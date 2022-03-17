@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,10 +13,10 @@ public class Aplicar implements CommandExecutor, Listener {
         if (cmd.getName().equalsIgnoreCase("aplicar")) {
             p.sendMessage("§7 ");
             p.sendMessage("§7                §4§lAPLICAR§7                ");
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Não mande mais de 1 vez o formulário !");
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Link: " + ArkuzPvP.form);
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Não mande mais de 1 vez o formulário !");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Link: " + ArkuzKitPvP.form);
             p.sendMessage(
-                    String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Pedir Para Ler o Form Resulta Em Reprovação");
+                    String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Pedir Para Ler o Form Resulta Em Reprovação");
             p.sendMessage("§7                §4§lAPLICAR§7                ");
             p.sendMessage("§7   ");
         }

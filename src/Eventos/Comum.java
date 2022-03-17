@@ -1,6 +1,6 @@
 package Eventos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import net.minecraft.server.v1_7_R4.EntityPlayer;
 import net.minecraft.server.v1_7_R4.EnumClientCommand;
 import net.minecraft.server.v1_7_R4.PacketPlayInClientCommand;
@@ -58,7 +58,7 @@ public class Comum implements Listener {
 		final HelpTopic topic = Bukkit.getServer().getHelpMap().getHelpTopic(msg);
 		if (topic == null) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Comando Inexistente");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Comando Inexistente");
 		}
 	}
 
@@ -136,7 +136,7 @@ public class Comum implements Listener {
 
 	@EventHandler
 	public void aoPing(final ServerListPingEvent e) {
-		e.setMotd(ArkuzPvP.motd);
+		e.setMotd(ArkuzKitPvP.motd);
 	}
 
 	@EventHandler
@@ -147,15 +147,15 @@ public class Comum implements Listener {
 			final Player k = p.getKiller();
 			final Location l = k.getLocation();
 			final Location lp = p.getLocation();
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §6➼ §7Você Morreu Para " + ChatColor.DARK_RED
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §6➼ §7Você Morreu Para " + ChatColor.DARK_RED
 					+ k.getName());
-			k.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §6➼ §7Você Ganhou §c50§7 XP");
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §6➼ §7Você Perdeu §c25§7 XP");
-			k.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §6➼ §7Você Matou " + ChatColor.RED + p.getName());
+			k.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §6➼ §7Você Ganhou §c50§7 XP");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §6➼ §7Você Perdeu §c25§7 XP");
+			k.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §6➼ §7Você Matou " + ChatColor.RED + p.getName());
 			k.playSound(l, Sound.ARROW_HIT, 10.0f, 1.0f);
 			p.playSound(lp, Sound.ANVIL_USE, 10.0f, 1.0f);
 		}
-		Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				e.getEntity().setFlying(false);
@@ -170,7 +170,7 @@ public class Comum implements Listener {
 
 	@EventHandler
 	public void onItemDrop(final ItemSpawnEvent e) {
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(),
 				(Runnable) new Runnable() {
 					@Override
 					public void run() {
@@ -190,7 +190,7 @@ public class Comum implements Listener {
 		final Player p = event.getPlayer();
 		if (event.getMessage().toLowerCase().startsWith("/me")) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Comando Inexistente");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Comando Inexistente");
 		}
 	}
 
@@ -231,7 +231,7 @@ public class Comum implements Listener {
 		final Player p = event.getPlayer();
 		if (event.getMessage().toLowerCase().startsWith("/kill")) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Use: /Suicide");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Use: /Suicide");
 		}
 	}
 
@@ -243,7 +243,7 @@ public class Comum implements Listener {
 				&& p.hasPermission("arkuz.reload")) {
 			event.setCancelled(true);
 			Bukkit.reload();
-			Bukkit.broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Servidor Foi Reiniciado");
+			Bukkit.broadcastMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Servidor Foi Reiniciado");
 		}
 	}
 }

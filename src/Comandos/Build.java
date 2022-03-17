@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -27,30 +27,30 @@ public final class Build implements Listener, CommandExecutor {
 				if (args.length == 0) {
 					if (!Build.embuild.contains(p)) {
 						Build.embuild.add(p);
-						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Modo Build Foi Ativado");
+						p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Modo Build Foi Ativado");
 					} else {
 						Build.embuild.remove(p);
-						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Modo Build Foi Desativado");
+						p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Modo Build Foi Desativado");
 					}
 				} else {
 					final Player t = Bukkit.getPlayer(args[0]);
 					if (t == null) {
-						p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+						p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 								+ " §4➼ §7Este Player Não Está Conectado Ao Servidor");
 						return true;
 					}
 					if (!Build.embuild.contains(t)) {
 						Build.embuild.add(t);
-						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Ativou o Modo Build Para §c"
+						p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Ativou o Modo Build Para §c"
 								+ t.getName());
 					} else {
 						Build.embuild.remove(t);
-						p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+						p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 								+ " §4➼ §7Você Desativou o Modo Build Para §c" + t.getName());
 					}
 				}
 			} else {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissão");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Sem Permissão");
 			}
 		}
 		return false;

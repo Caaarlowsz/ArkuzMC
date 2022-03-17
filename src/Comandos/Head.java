@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -22,7 +22,7 @@ public class Head implements CommandExecutor, Listener {
 		if (sender instanceof Player) {
 			final Player p = (Player) sender;
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Use: /Head {Player}");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Use: /Head {Player}");
 			}
 			if (args.length != 0 && args.length == 1) {
 				if (p.hasPermission("arkuz.head")) {
@@ -32,9 +32,9 @@ public class Head implements CommandExecutor, Listener {
 					skullMeta.setOwner(args[0]);
 					skullItem.setItemMeta((ItemMeta) skullMeta);
 					p.getInventory().addItem(new ItemStack[] { skullItem });
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7A Head Foi Adicionada Ao Seu inventario");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7A Head Foi Adicionada Ao Seu inventario");
 				} else {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissão");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Sem Permissão");
 				}
 			}
 		}

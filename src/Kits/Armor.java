@@ -2,7 +2,7 @@ package Kits;
 
 import java.util.HashMap;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -46,14 +46,14 @@ public class Armor implements Listener {
 			}
 			Armor.salvararmor.put(p.getName(), p.getInventory().getArmorContents());
 			KitUtil.tirarArmadura(p);
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Agora Você Recebeu Uma Armadura Temporaria!");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Agora Você Recebeu Uma Armadura Temporaria!");
 			p.getInventory()
 					.setArmorContents(new ItemStack[] { darArmaduraI(Material.GOLD_HELMET),
 							darArmaduraI(Material.GOLD_CHESTPLATE), darArmaduraI(Material.GOLD_LEGGINGS),
 							darArmaduraI(Material.GOLD_BOOTS) });
 			p.updateInventory();
 			Cooldown.add(p, 25);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitUtil.tirarArmadura(p);
@@ -62,10 +62,10 @@ public class Armor implements Listener {
 					p.updateInventory();
 				}
 			}, 200L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu CoolDown Acabou");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu CoolDown Acabou");
 				}
 			}, 500L);
 		}

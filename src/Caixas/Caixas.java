@@ -2,7 +2,7 @@ package Caixas;
 
 import Coins.XpM;
 import Score.ScoreBoarding;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -53,11 +53,11 @@ public class Caixas implements Listener, CommandExecutor {
             if (e.getCurrentItem().isSimilar(Caixas.todososkits)) {
                 if (XpM.getPlayerMoney(p) < 50000) {
                     p.sendMessage(
-                            String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
+                            String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
                 } else {
                     XpM.getPlayerMoney(p);
                     XpM.removeMoney(p, 50000);
-                    p.sendMessage(String.valueOf(ArkuzPvP.prefix) + "§7Você Comprou §aTodos Os Kits§7 Aproveite");
+                    p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + "§7Você Comprou §aTodos Os Kits§7 Aproveite");
                     Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                             "pex user " + p.getName() + " add kit.*");
                     ScoreBoarding.setScoreBoard(p);
@@ -66,11 +66,11 @@ public class Caixas implements Listener, CommandExecutor {
             if (e.getCurrentItem().isSimilar(Caixas.fly)) {
                 if (XpM.getPlayerMoney(p) < 7000) {
                     p.sendMessage(
-                            String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
+                            String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
                 } else {
                     XpM.getPlayerMoney(p);
                     XpM.removeMoney(p, 7000);
-                    p.sendMessage(String.valueOf(ArkuzPvP.prefix) + "§7Você Comprou §aFly§7 Aproveite");
+                    p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + "§7Você Comprou §aFly§7 Aproveite");
                     Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                             "pex user " + p.getName() + " add kitpvp.fly");
                     ScoreBoarding.setScoreBoard(p);
@@ -79,11 +79,11 @@ public class Caixas implements Listener, CommandExecutor {
             if (e.getCurrentItem().isSimilar(Caixas.tag)) {
                 if (XpM.getPlayerMoney(p) < 4000) {
                     p.sendMessage(
-                            String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
+                            String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
                 } else {
                     XpM.getPlayerMoney(p);
                     XpM.removeMoney(p, 4000);
-                    p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c");
+                    p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c");
                     Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                             "pex user " + p.getName() + " add tag.mc");
                     ScoreBoarding.setScoreBoard(p);
@@ -92,7 +92,7 @@ public class Caixas implements Listener, CommandExecutor {
             if (e.getCurrentItem().isSimilar(Caixas.randomkit2)) {
                 if (XpM.getPlayerMoney(p) < 5000) {
                     p.sendMessage(
-                            String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
+                            String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
                 } else {
                     XpM.removeMoney(p, 5000);
                     ScoreBoarding.setScoreBoard(p);
@@ -102,7 +102,7 @@ public class Caixas implements Listener, CommandExecutor {
             if (e.getCurrentItem().isSimilar(Caixas.randomkit3)) {
                 if (XpM.getPlayerMoney(p) < 1000) {
                     p.sendMessage(
-                            String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
+                            String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
                 } else {
                     XpM.removeMoney(p, 1000);
                     ScoreBoarding.setScoreBoard(p);
@@ -112,7 +112,7 @@ public class Caixas implements Listener, CommandExecutor {
             if (e.getCurrentItem().isSimilar(Caixas.randomkit)) {
                 if (XpM.getPlayerMoney(p) < 3000) {
                     p.sendMessage(
-                            String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
+                            String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Não Possui Coins o Suficiente");
                 } else {
                     XpM.removeMoney(p, 3000);
                     ScoreBoarding.setScoreBoard(p);
@@ -198,64 +198,64 @@ public class Caixas implements Listener, CommandExecutor {
         final Random r = new Random();
         final int o = r.nextInt(14);
         if (o == 0) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Magma");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Magma");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.magma");
         } else if (o == 1) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Sonic");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Sonic");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.sonic");
         } else if (o == 2) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Resouper");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Resouper");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.resouper");
         } else if (o == 3) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Armor");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Armor");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.armor");
         } else if (o == 4) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Switcher");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Switcher");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.switcher");
         } else if (o == 5) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Thresh");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Thresh");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.thresh");
         } else if (o == 6) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Monk");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Monk");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.monk");
             XpM.addMoney(p, 1000);
         } else if (o == 7) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Turtle");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Turtle");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.turtle");
         } else if (o == 8) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Ajnin");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Ajnin");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.ajnin");
         } else if (o == 9) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Archer");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Archer");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.archer");
         } else if (o == 10) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Thor");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Thor");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.thor");
         } else if (o == 11) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Ninja");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Ninja");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.ninja");
         } else if (o == 12) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Resouper");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Resouper");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.resouper");
         } else if (o == 13) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Ajnin");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Ajnin");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.ajnin");
         } else if (o == 14) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Thor");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Thor");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.thor");
             if (o == 7 || o == 8 || o == 9 || o == 10 || o == 11 || o == 12 || o != 13) {
@@ -267,64 +267,64 @@ public class Caixas implements Listener, CommandExecutor {
         final Random r = new Random();
         final int o = r.nextInt(14);
         if (o == 0) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit ForceField");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit ForceField");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.forcefield");
         } else if (o == 1) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Avatar");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Avatar");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.avatar");
         } else if (o == 2) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Gladiator");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Gladiator");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.gladiator");
         } else if (o == 3) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Viking");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Viking");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.viking");
         } else if (o == 4) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cSwords");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cSwords");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.swords");
         } else if (o == 5) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cC4");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cC4");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.c4");
         } else if (o == 6) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Terrorista");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Terrorista");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.terrorista");
             XpM.addMoney(p, 1000);
         } else if (o == 7) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Turtle");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Turtle");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.turtle");
         } else if (o == 8) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cStomper");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cStomper");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.stomper");
         } else if (o == 9) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Ajnin");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Ajnin");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.ajnin");
         } else if (o == 10) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Phantom");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Phantom");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.phantom");
         } else if (o == 11) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit DeshFire");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit DeshFire");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.deshfire");
         } else if (o == 12) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Stomper");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Stomper");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.stomper");
         } else if (o == 13) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit ForceField");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit ForceField");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.resouper");
         } else if (o == 14) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Kangaroo");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §cKit Kangaroo");
             Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
                     "pex user " + p.getName() + " add kit.kangaroo");
             if (o == 7 || o == 8 || o == 9 || o == 10 || o == 11 || o == 12 || o != 13) {
@@ -336,49 +336,49 @@ public class Caixas implements Listener, CommandExecutor {
         final Random r = new Random();
         final int o = r.nextInt(14);
         if (o == 0) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c500 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c500 Coins");
             XpM.addMoney(p, 500);
         } else if (o == 1) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c1000 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c1000 Coins");
             XpM.addMoney(p, 1000);
         } else if (o == 2) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c1500 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c1500 Coins");
             XpM.addMoney(p, 1500);
         } else if (o == 3) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c800 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c800 Coins");
             XpM.addMoney(p, 800);
         } else if (o == 4) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c400 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c400 Coins");
             XpM.addMoney(p, 400);
         } else if (o == 5) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c300 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c300 Coins");
             XpM.addMoney(p, 300);
         } else if (o == 6) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c200 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c200 Coins");
             XpM.addMoney(p, 200);
         } else if (o == 7) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c100 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c100 Coins");
             XpM.addMoney(p, 100);
         } else if (o == 8) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c1100 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c1100 Coins");
             XpM.addMoney(p, 1100);
         } else if (o == 9) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c1200 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c1200 Coins");
             XpM.addMoney(p, 1200);
         } else if (o == 10) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §1300 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §1300 Coins");
             XpM.addMoney(p, 1300);
         } else if (o == 11) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c1400 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c1400 Coins");
             XpM.addMoney(p, 1400);
         } else if (o == 12) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c1500 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c1500 Coins");
             XpM.addMoney(p, 1500);
         } else if (o == 13) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c2000 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c2000 Coins");
             XpM.addMoney(p, 2000);
         } else if (o == 14) {
-            p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Adquiriu §c4000 Coins");
+            p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Adquiriu §c4000 Coins");
             XpM.addMoney(p, 4000);
             if (o == 7 || o == 8 || o == 9 || o == 10 || o == 11 || o == 12 || o != 13) {
             }

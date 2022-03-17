@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,12 +17,12 @@ public class PvP implements CommandExecutor, Listener {
 		if (p.getWorld().getPVP()) {
 			p.getWorld().setPVP(false);
 			Bukkit.getServer()
-					.broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O PvP Do Servidor Foi §cDesabilitado");
+					.broadcastMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O PvP Do Servidor Foi §cDesabilitado");
 			return true;
 		}
 		p.getWorld().setPVP(true);
 		Bukkit.getServer()
-				.broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O PvP Do Servidor Foi §aHabilitado");
+				.broadcastMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O PvP Do Servidor Foi §aHabilitado");
 		return true;
 	}
 }

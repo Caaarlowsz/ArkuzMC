@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,18 +13,18 @@ public class GivePermission implements CommandExecutor, Listener {
 		final Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("givepermission")) {
 			if (!sender.hasPermission("arkuz.givepermission")) {
-				sender.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				sender.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ "➼ §cDesculpe, mas você não tem permissão para fazer isso.");
 				return true;
 			}
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ "➼ §cOps! Use isso De Maneira Correta: §f/givepermission <jogador> <permissao> ");
 				p.sendMessage("§6§l(Para ver a Lista de permissões, use §f§l/permissionslist");
 				return true;
 			}
 			if (args.length != 2) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ "➼ §cOps! Use isso De Maneira Correta: §f/givepermission <nick> <permission>");
 				return true;
 			}

@@ -1,6 +1,6 @@
 package Score;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,13 +11,13 @@ public class Status implements Listener {
 	@EventHandler
 	void aoLogar(final PlayerJoinEvent evento) {
 		final Player jogador = evento.getPlayer();
-		if (ArkuzPvP.getInstance().getConfig().get("status." + jogador.getName().toLowerCase() + ".kills") == null) {
-			ArkuzPvP.getInstance().getConfig().set("status." + jogador.getName().toLowerCase() + ".kills", (Object) 0);
-			ArkuzPvP.getInstance().saveConfig();
+		if (ArkuzKitPvP.getInstance().getConfig().get("status." + jogador.getName().toLowerCase() + ".kills") == null) {
+			ArkuzKitPvP.getInstance().getConfig().set("status." + jogador.getName().toLowerCase() + ".kills", (Object) 0);
+			ArkuzKitPvP.getInstance().saveConfig();
 		}
-		if (ArkuzPvP.getInstance().getConfig().get("status." + jogador.getName().toLowerCase() + ".mortes") == null) {
-			ArkuzPvP.getInstance().getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes", (Object) 0);
-			ArkuzPvP.getInstance().saveConfig();
+		if (ArkuzKitPvP.getInstance().getConfig().get("status." + jogador.getName().toLowerCase() + ".mortes") == null) {
+			ArkuzKitPvP.getInstance().getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes", (Object) 0);
+			ArkuzKitPvP.getInstance().saveConfig();
 		}
 	}
 
@@ -25,9 +25,9 @@ public class Status implements Listener {
 	void aoMatar(final PlayerDeathEvent evento) {
 		if (evento.getEntity().getKiller() instanceof Player) {
 			final Player jogador = evento.getEntity().getKiller();
-			final int kills = ArkuzPvP.getInstance().getConfig().getInt("status." + jogador.getName().toLowerCase() + ".kills");
-			ArkuzPvP.getInstance().getConfig().set("status." + jogador.getName().toLowerCase() + ".kills", (Object) (kills + 1));
-			ArkuzPvP.getInstance().saveConfig();
+			final int kills = ArkuzKitPvP.getInstance().getConfig().getInt("status." + jogador.getName().toLowerCase() + ".kills");
+			ArkuzKitPvP.getInstance().getConfig().set("status." + jogador.getName().toLowerCase() + ".kills", (Object) (kills + 1));
+			ArkuzKitPvP.getInstance().saveConfig();
 		}
 	}
 
@@ -35,13 +35,13 @@ public class Status implements Listener {
 	void aoMorrer(final PlayerDeathEvent evento) {
 		if (evento.getEntity() instanceof Player) {
 			final Player jogador = evento.getEntity();
-			final int mortes = ArkuzPvP.getInstance().getConfig().getInt("status." + jogador.getName().toLowerCase() + ".mortes");
-			ArkuzPvP.getInstance().getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes", (Object) (mortes + 1));
-			ArkuzPvP.getInstance().saveConfig();
+			final int mortes = ArkuzKitPvP.getInstance().getConfig().getInt("status." + jogador.getName().toLowerCase() + ".mortes");
+			ArkuzKitPvP.getInstance().getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes", (Object) (mortes + 1));
+			ArkuzKitPvP.getInstance().saveConfig();
 		}
 	}
 
 	public static int getKills(final Player p) {
-		return ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills");
+		return ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills");
 	}
 }

@@ -2,7 +2,7 @@ package Comandos;
 
 import Essencial.HorarioAPI;
 import Essencial.ListKits;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -53,7 +53,7 @@ public class SorteioKit implements CommandExecutor, Listener {
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + random.getName() + " add kit." + Kit.get(x));
 				}
-			}.runTaskLater((Plugin) ArkuzPvP.getInstance(), 200L);
+			}.runTaskLater((Plugin) ArkuzKitPvP.getInstance(), 200L);
 		}
 		return false;
 	}

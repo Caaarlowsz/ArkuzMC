@@ -1,6 +1,6 @@
 package Essencial;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -18,7 +18,7 @@ public class Cooldown implements Listener {
 		final long CoolDownLength = System.currentTimeMillis() + seconds * 1000;
 		Cooldown.run.remove(p);
 		Cooldown.run.put(p, CoolDownLength);
-		Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				Cooldown.run.remove(p);

@@ -2,7 +2,7 @@ package Eventos;
 
 import java.util.HashMap;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -37,7 +37,7 @@ public class AntSpam implements Listener {
 			if (AntSpam.chat.get(p) < System.currentTimeMillis() || p.hasPermission("arkuz.spam")) {
 				return;
 			}
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Pare De Floodar Ou Será §cPunido");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Pare De Floodar Ou Será §cPunido");
 			e.setCancelled(true);
 		}
 	}

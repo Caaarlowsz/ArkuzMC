@@ -2,7 +2,7 @@ package Kits;
 
 import java.util.HashMap;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Location;
@@ -48,11 +48,11 @@ public class C4 implements Listener {
 					C4.bomba.put(p.getName(), item);
 					final ItemStack itemb = new ItemStack(Material.STONE_BUTTON);
 					final ItemMeta itembm = itemb.getItemMeta();
-					itembm.setDisplayName(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Kit §cC4");
+					itembm.setDisplayName(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Kit §cC4");
 					itemb.setItemMeta(itembm);
 					p.getInventory().setItemInHand(itemb);
 					p.updateInventory();
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Bomba Implantada");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Bomba Implantada");
 				} else if (p.getItemInHand().getType() == Material.STONE_BUTTON) {
 					final ItemStack itemb2 = new ItemStack(Material.SLIME_BALL);
 					final ItemMeta itembm2 = itemb2.getItemMeta();
@@ -65,13 +65,13 @@ public class C4 implements Listener {
 					C4.bomba.remove(p.getName());
 					item2.remove();
 					p.updateInventory();
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Bomba Explodida");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Bomba Explodida");
 					Cooldown.add(p, 20);
-					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
+					Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
-									p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu CoolDown Acabou");
+									p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu CoolDown Acabou");
 								}
 							}, 400L);
 				}
@@ -83,14 +83,14 @@ public class C4 implements Listener {
 				}
 				final ItemStack itemb2 = new ItemStack(Material.SLIME_BALL);
 				final ItemMeta itembm2 = itemb2.getItemMeta();
-				itembm2.setDisplayName(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Kit §cC4");
+				itembm2.setDisplayName(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Kit §cC4");
 				itemb2.setItemMeta(itembm2);
 				p.getInventory().setItemInHand(itemb2);
 				final Item item2 = C4.bomba.get(p.getName());
 				C4.bomba.remove(p.getName());
 				item2.remove();
 				p.updateInventory();
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Bomba Desarmada");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Bomba Desarmada");
 			}
 		}
 	}

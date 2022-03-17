@@ -1,6 +1,6 @@
 package Invs;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -58,12 +58,12 @@ public class InvLojakits implements Listener, CommandExecutor {
 					XpM.removeMoney(p, 4000);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kit.avatar");
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Kit §c§nAVATAR§7 Adquirido Com Sucesso");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Kit §c§nAVATAR§7 Adquirido Com Sucesso");
 					ScoreBoarding.setScoreBoard(p);
 					e.setCancelled(true);
 					p.closeInventory();
 				} else if (XpM.getPlayerMoney(p) < 4000) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 							+ " §4➼ §7Você Não Tem XP o Suficiente Para Esta Compra");
 					e.setCancelled(true);
 					p.closeInventory();
@@ -74,12 +74,12 @@ public class InvLojakits implements Listener, CommandExecutor {
 					XpM.removeMoney(p, 15000);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kit.Stomper");
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Kit §c§nSTOMPER§7 Adquirido Com Sucesso");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Kit §c§nSTOMPER§7 Adquirido Com Sucesso");
 					ScoreBoarding.setScoreBoard(p);
 					e.setCancelled(true);
 					p.closeInventory();
 				} else if (XpM.getPlayerMoney(p) < 15000) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 							+ " §4➼ §7Você Não Tem XP o Suficiente Para Esta Compra");
 					e.setCancelled(true);
 					p.closeInventory();
@@ -90,12 +90,12 @@ public class InvLojakits implements Listener, CommandExecutor {
 					XpM.removeMoney(p, 1000);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kit.thor");
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Kit §c§nTHOR§7 Adquirido Com Sucesso");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Kit §c§nTHOR§7 Adquirido Com Sucesso");
 					e.setCancelled(true);
 					p.closeInventory();
 					ScoreBoarding.setScoreBoard(p);
 				} else if (XpM.getPlayerMoney(p) < 1000) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 							+ " §4➼ §7Você Não Tem XP o Suficiente Para Esta Compra");
 					e.setCancelled(true);
 					p.closeInventory();
@@ -106,12 +106,12 @@ public class InvLojakits implements Listener, CommandExecutor {
 					XpM.removeMoney(p, 5000);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kit.swords");
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Kit §c§nSWORDS§7 Adquirido Com Sucesso");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Kit §c§nSWORDS§7 Adquirido Com Sucesso");
 					e.setCancelled(true);
 					p.closeInventory();
 					ScoreBoarding.setScoreBoard(p);
 				} else if (XpM.getPlayerMoney(p) < 5000) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 							+ " §4➼ §7Você Não Tem XP o Suficiente Para Esta Compra");
 					e.setCancelled(true);
 					p.closeInventory();
@@ -122,12 +122,12 @@ public class InvLojakits implements Listener, CommandExecutor {
 					XpM.removeMoney(p, 4000);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kit.forcefield");
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Kit §c§nFORCEFIELD§7 Adquirido");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Kit §c§nFORCEFIELD§7 Adquirido");
 					e.setCancelled(true);
 					p.closeInventory();
 					ScoreBoarding.setScoreBoard(p);
 				} else if (XpM.getPlayerMoney(p) < 4000) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 							+ " §4➼ §7Você Não Tem XP o Suficiente Para Esta Compra");
 					e.setCancelled(true);
 					p.closeInventory();

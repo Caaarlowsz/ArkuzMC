@@ -1,6 +1,6 @@
 package Eventos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import net.minecraft.server.v1_7_R4.ChatSerializer;
 import net.minecraft.server.v1_7_R4.IChatBaseComponent;
 import net.minecraft.server.v1_7_R4.Packet;
@@ -24,16 +24,16 @@ public class TabPersonalizado implements Listener {
 	@EventHandler
 	void TabDoServidor(final PlayerJoinEvent e) {
 		final Player jogador = e.getPlayer();
-		Bukkit.getScheduler().scheduleSyncRepeatingTask((Plugin) ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncRepeatingTask((Plugin) ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				final PlayerConnection connect = ((CraftPlayer) jogador).getHandle().playerConnection;
 				final IChatBaseComponent top = ChatSerializer
-						.a("{'extra': [{text: '', color: 'aqua'}],'color': gold, 'text': '     §4------={" + ArkuzPvP.prefix
+						.a("{'extra': [{text: '', color: 'aqua'}],'color': gold, 'text': '     §4------={" + ArkuzKitPvP.prefix
 								+ "§c}=------\n       '}");
 				final IChatBaseComponent bottom = ChatSerializer.a(
 						"{'extra': [{'color': 'aqua', 'text': '  \n§4\u27bc  §7Twiter §cEm Breve \n§4\u27bc §7Site §c"
-								+ ArkuzPvP.loja
+								+ ArkuzKitPvP.loja
 								+ "\n§4\u27bc §7TS §cEm Breve', 'underline': 'true'}], 'color': 'gold', 'text': ''}");
 				if (((CraftPlayer) jogador).getHandle().playerConnection.networkManager
 						.getVersion() < TabPersonalizado.VERSION) {

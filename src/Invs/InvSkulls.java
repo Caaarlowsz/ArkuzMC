@@ -1,6 +1,6 @@
 package Invs;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -105,7 +105,7 @@ public class InvSkulls implements Listener {
 		if (p.getOpenInventory().getTitle().equalsIgnoreCase("§8{ §cSkulls §8}")) {
 			if (e.getCurrentItem().getType() == Material.WORKBENCH) {
 				p.getInventory().setHelmet(new ItemStack(Material.WORKBENCH));
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Alterou Sua Skulls Para: §c§nCrafting Table");
 				InvSkulls.comchapeu.remove(p.getName());
 				InvSkulls.comchapeu.add(p.getName());
@@ -114,7 +114,7 @@ public class InvSkulls implements Listener {
 			if (e.getCurrentItem().getType() == Material.FURNACE) {
 				p.getInventory().setHelmet(new ItemStack(Material.FURNACE));
 				p.sendMessage(
-						String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nFornalha");
+						String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nFornalha");
 				InvSkulls.comchapeu.remove(p.getName());
 				InvSkulls.comchapeu.add(p.getName());
 				p.closeInventory();
@@ -122,25 +122,25 @@ public class InvSkulls implements Listener {
 			if (e.getCurrentItem().getType() == Material.REDSTONE) {
 				if (!InvSkulls.comchapeu.contains(p.getName())) {
 					p.sendMessage(
-							String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Não Está Com Uma Skull");
+							String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Não Está Com Uma Skull");
 				} else {
 					p.getInventory().setHelmet(new ItemStack(Material.AIR));
 					p.sendMessage(
-							String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nNenhuma");
+							String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nNenhuma");
 					InvSkulls.comchapeu.remove(p.getName());
 				}
 				p.closeInventory();
 			}
 			if (e.getCurrentItem().getType() == Material.GLASS) {
 				p.getInventory().setHelmet(new ItemStack(Material.GLASS));
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nVidro");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nVidro");
 				InvSkulls.comchapeu.remove(p.getName());
 				InvSkulls.comchapeu.add(p.getName());
 				p.closeInventory();
 			}
 			if (e.getCurrentItem().getType() == Material.TNT) {
 				p.getInventory().setHelmet(new ItemStack(Material.TNT));
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nTNT");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nTNT");
 				InvSkulls.comchapeu.remove(p.getName());
 				InvSkulls.comchapeu.remove(p.getName());
 				InvSkulls.comchapeu.add(p.getName());
@@ -149,7 +149,7 @@ public class InvSkulls implements Listener {
 			if (e.getCurrentItem().getType() == Material.DIAMOND_BLOCK) {
 				p.getInventory().setHelmet(new ItemStack(Material.DIAMOND_BLOCK));
 				p.sendMessage(
-						String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nDiamante");
+						String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nDiamante");
 				InvSkulls.comchapeu.remove(p.getName());
 				InvSkulls.comchapeu.add(p.getName());
 				p.closeInventory();
@@ -160,7 +160,7 @@ public class InvSkulls implements Listener {
 			if (e.getCurrentItem().getType() == Material.BOOKSHELF) {
 				p.getInventory().setHelmet(new ItemStack(Material.BOOKSHELF));
 				p.sendMessage(
-						String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nEstante");
+						String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nEstante");
 				InvSkulls.comchapeu.remove(p.getName());
 				InvSkulls.comchapeu.add(p.getName());
 				p.closeInventory();
@@ -168,7 +168,7 @@ public class InvSkulls implements Listener {
 			if (e.getCurrentItem().getType() == Material.MOB_SPAWNER) {
 				p.getInventory().setHelmet(new ItemStack(Material.MOB_SPAWNER));
 				p.sendMessage(
-						String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nMob Spawner");
+						String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Alterou Sua Skulls Para: §c§nMob Spawner");
 				InvSkulls.comchapeu.remove(p.getName());
 				InvSkulls.comchapeu.add(p.getName());
 				p.closeInventory();

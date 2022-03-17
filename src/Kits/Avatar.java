@@ -3,7 +3,7 @@ package Kits;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Location;
@@ -119,11 +119,11 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile(Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("ar", (MetadataValue) new FixedMetadataValue(ArkuzPvP.getInstance(), (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			h.setMetadata("ar", (MetadataValue) new FixedMetadataValue(ArkuzKitPvP.getInstance(), (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
 				}
 			}, 600L);
 		}
@@ -164,11 +164,11 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile(Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("agua", (MetadataValue) new FixedMetadataValue(ArkuzPvP.getInstance(), (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			h.setMetadata("agua", (MetadataValue) new FixedMetadataValue(ArkuzKitPvP.getInstance(), (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu CoolDown Acabou");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu CoolDown Acabou");
 				}
 			}, 600L);
 		}
@@ -208,11 +208,11 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile(Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("terra", (MetadataValue) new FixedMetadataValue(ArkuzPvP.getInstance(), (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			h.setMetadata("terra", (MetadataValue) new FixedMetadataValue(ArkuzKitPvP.getInstance(), (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Cooldown Acabou");
 				}
 			}, 600L);
 		}
@@ -255,11 +255,11 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile(Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("fogo", (MetadataValue) new FixedMetadataValue(ArkuzPvP.getInstance(), (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			h.setMetadata("fogo", (MetadataValue) new FixedMetadataValue(ArkuzKitPvP.getInstance(), (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu CoolDown Acabou");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu CoolDown Acabou");
 				}
 			}, 600L);
 		}

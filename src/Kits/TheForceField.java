@@ -1,7 +1,7 @@
 package Kits;
 
 import Essencial.KitAPI;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -35,30 +35,30 @@ public class TheForceField implements Listener {
 				event.setCancelled(true);
 			}
 			if (TheForceField.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Aguarde o CoolDown Acabar");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Aguarde o CoolDown Acabar");
 				return;
 			}
 			final Location loc = p.getLocation();
 			p.getWorld().playSound(loc, Sound.MAGMACUBE_WALK2, 0.5f, 0.5f);
 			TheForceField.cooldownm.add(p);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.ForceField1.add(p.getName());
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Virou Um Hask Zaronimous");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Virou Um Hask Zaronimous");
 				}
 			}, 0L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.ForceField1.remove(p.getName());
 				}
 			}, 50L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					TheForceField.cooldownm.remove(p);
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu CoolDown Acabou");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu CoolDown Acabou");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 0.5f, 0.5f);
 				}
 			}, 500L);
@@ -75,7 +75,7 @@ public class TheForceField implements Listener {
 						((Player) pertos).damage(3.0);
 					}
 					pertos.setVelocity(new Vector(0.1, 0.0, 0.1));
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
 						}

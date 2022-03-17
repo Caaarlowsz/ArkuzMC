@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,7 +12,7 @@ public class Suicide implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("suicide")) {
 			p.setHealth(0.0);
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Morreu");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Morreu");
 		}
 		return false;
 	}

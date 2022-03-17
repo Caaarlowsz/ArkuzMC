@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,7 +16,7 @@ public class StaffChat implements Listener, CommandExecutor {
 	ArrayList<String> staff;
 
 	public StaffChat() {
-		this.staff = ArkuzPvP.staff;
+		this.staff = ArkuzKitPvP.staff;
 	}
 
 	@EventHandler
@@ -43,10 +43,10 @@ public class StaffChat implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("sc") && p.hasPermission("arkuz.sc")) {
 			if (this.isStaffChatting(p)) {
 				this.staff.remove(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Saiu Do Chat Da Staff");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Saiu Do Chat Da Staff");
 			} else {
 				this.staff.add(p.getName());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Está No Chat Da Staff");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Está No Chat Da Staff");
 			}
 		}
 		return false;

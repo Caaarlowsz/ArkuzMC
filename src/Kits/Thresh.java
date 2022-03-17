@@ -1,7 +1,7 @@
 package Kits;
 
 import Essencial.KitAPI;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -44,10 +44,10 @@ public class Thresh implements Listener {
 				Thresh.tiros.put(p.getName(), tiro);
 				Thresh.cooldown.put(p.getName(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(15L));
 				p.playSound(p.getLocation(), Sound.GLASS, 1.0f, 1.0f);
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Usou Seu Thresh!");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Usou Seu Thresh!");
 				return;
 			}
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Aguarde o CoolDown Acabar");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Aguarde o CoolDown Acabar");
 		}
 	}
 
@@ -68,7 +68,7 @@ public class Thresh implements Listener {
 					hit.teleport(ploc);
 					hit.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 1));
 					hit.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 1));
-					hit.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Foi Pego Por Um Thresh");
+					hit.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Foi Pego Por Um Thresh");
 				}
 			}
 		}

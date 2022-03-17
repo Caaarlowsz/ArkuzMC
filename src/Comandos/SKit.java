@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -34,39 +34,39 @@ public class SKit implements Listener, CommandExecutor {
 		final Player p = (Player) Sender;
 		if (Label.equalsIgnoreCase("skit") && Sender instanceof Player) {
 			if (!p.hasPermission("arkuz.skit")) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §6➼ §7Sem Permissão");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §6➼ §7Sem Permissão");
 				return true;
 			}
 			if (Args.length == 0) {
 				p.sendMessage("       ");
 				p.sendMessage("§6§m--------------------------------------------");
-				p.sendMessage("                " + ArkuzPvP.prefix);
+				p.sendMessage("                " + ArkuzKitPvP.prefix);
 				p.sendMessage("      §4➼ §7Mini Tutorial De Como Usar o /SKit  ");
 				p.sendMessage("");
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Utilize /SKit Criar [Kit] [Blocos]");
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Utilize /SKit Aplicar [Kit] [Blocos]");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Utilize /SKit Criar [Kit] [Blocos]");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Utilize /SKit Aplicar [Kit] [Blocos]");
 				p.sendMessage("§6§m--------------------------------------------");
 				p.sendMessage("       ");
 				return true;
 			}
 			if (Args[0].equalsIgnoreCase("criar")) {
 				if (Args.length == 1) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Use: /SKit Para Ver o MiniTutorial");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Use: /SKit Para Ver o MiniTutorial");
 					return true;
 				}
 				final String nome = Args[1];
 				this.itens.put(nome, p.getInventory().getContents());
 				this.armor.put(nome, p.getInventory().getArmorContents());
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Kit: §c" + Args[1] + " §7Foi Criado");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Kit: §c" + Args[1] + " §7Foi Criado");
 				return true;
 			} else if (Args[0].equalsIgnoreCase("aplicar")) {
 				if (Args.length <= 2) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Utlize /SKit Para Ver o MiniTutorial");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Utlize /SKit Para Ver o MiniTutorial");
 					return true;
 				}
 				final String nome = Args[1];
 				if (!this.itens.containsKey(nome) && !this.armor.containsKey(nome)) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Kit §c" + nome + " §7Não Existe");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Kit §c" + nome + " §7Não Existe");
 					return true;
 				}
 				if (this.isInt(Args[2])) {
@@ -79,10 +79,10 @@ public class SKit implements Listener, CommandExecutor {
 						}
 					}
 					Bukkit.getServer().broadcastMessage("");
-					Bukkit.getServer().broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Kit §c" + nome
+					Bukkit.getServer().broadcastMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Kit §c" + nome
 							+ " §7Foi Aplicado Em Um Raio De §c" + n + " §7Blocos");
 					Bukkit.getServer().broadcastMessage("");
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Voc\u00ea Aplicou o Kit §c" + nome
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Voc\u00ea Aplicou o Kit §c" + nome
 							+ " §7Em Um Raio De §c" + n + " §7Blocos");
 					return true;
 				}

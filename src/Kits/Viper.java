@@ -1,7 +1,7 @@
 package Kits;
 
 import Essencial.KitAPI;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,7 +26,7 @@ public class Viper implements Listener {
 		}
 		if (Math.random() > 0.4 && Math.random() > 0.1) {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 80, 0));
-			d.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §6➼ §7Você Infectou o Player §e " + p.getDisplayName());
+			d.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §6➼ §7Você Infectou o Player §e " + p.getDisplayName());
 		}
 	}
 }

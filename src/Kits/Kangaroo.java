@@ -2,7 +2,7 @@ package Kits;
 
 import java.util.ArrayList;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -58,7 +58,7 @@ public class Kangaroo implements Listener {
 				p.setVelocity(vector);
 			}
 			if (this.naofugir.contains(p.getName())) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix)
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix)
 						+ " §4➼ §7Você Não Pode Utilizar Seu Kit Em Combate");
 			}
 		}
@@ -98,7 +98,7 @@ public class Kangaroo implements Listener {
 			if (kangaroo instanceof Player && p instanceof Player
 					&& kangaroo.getInventory().contains(Material.FIREWORK)) {
 				this.naofugir.add(kangaroo.getName());
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {

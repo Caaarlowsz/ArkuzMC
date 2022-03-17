@@ -1,7 +1,7 @@
 package Invs;
 
 import Caixas.InvEscolha;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -564,7 +564,7 @@ public class InvKits implements Listener, CommandExecutor {
 			if (e.getCurrentItem().getType() == Material.DIAMOND) {
 				e.setCancelled(true);
 				p.closeInventory();
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Entrem Em Nossa Loja: §c" + ArkuzPvP.loja);
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Entrem Em Nossa Loja: §c" + ArkuzKitPvP.loja);
 				return;
 			}
 			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§7{ §aProximo §7}")) {

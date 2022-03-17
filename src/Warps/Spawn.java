@@ -3,7 +3,7 @@ package Warps;
 import Essencial.KitAPI;
 import Eventos.Habilidade;
 import Eventos.TheTitle;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -31,16 +31,16 @@ public class Spawn implements Listener, CommandExecutor {
 			p.getInventory().setHelmet((ItemStack) null);
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.sendMessage("§7Voce esta sendo teleportado ao §a§lSPAWN");
-			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					final World w = Bukkit.getServer().getWorld(ArkuzPvP.getInstance().getConfig().getString("spawn.world"));
-					final double x = ArkuzPvP.getInstance().getConfig().getDouble("spawn.x");
-					final double y = ArkuzPvP.getInstance().getConfig().getDouble("spawn.y");
-					final double z = ArkuzPvP.getInstance().getConfig().getDouble("spawn.z");
+					final World w = Bukkit.getServer().getWorld(ArkuzKitPvP.getInstance().getConfig().getString("spawn.world"));
+					final double x = ArkuzKitPvP.getInstance().getConfig().getDouble("spawn.x");
+					final double y = ArkuzKitPvP.getInstance().getConfig().getDouble("spawn.y");
+					final double z = ArkuzKitPvP.getInstance().getConfig().getDouble("spawn.z");
 					final Location lobby = new Location(w, x, y, z);
-					lobby.setPitch((float) ArkuzPvP.getInstance().getConfig().getDouble("spawn.pitch"));
-					lobby.setYaw((float) ArkuzPvP.getInstance().getConfig().getDouble("spawn.yaw"));
+					lobby.setPitch((float) ArkuzKitPvP.getInstance().getConfig().getDouble("spawn.pitch"));
+					lobby.setYaw((float) ArkuzKitPvP.getInstance().getConfig().getDouble("spawn.yaw"));
 					KitAPI.remove(p);
 					Habilidade.removeAbility(p);
 					p.getInventory().setBoots((ItemStack) null);
@@ -54,9 +54,9 @@ public class Spawn implements Listener, CommandExecutor {
 					p.setFireTicks(0);
 					p.setFoodLevel(20000);
 					p.setHealth(20.0);
-					TheTitle.sendTitle(p, ArkuzPvP.prefix);
+					TheTitle.sendTitle(p, ArkuzKitPvP.prefix);
 					TheTitle.sendSubTitle(p, "§7§lSPAWN");
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Voce Foi Teleportado Para: §cSpawn");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Voce Foi Teleportado Para: §cSpawn");
 					KitAPI.setitem(p, Material.PAPER, "§4➼ §cWarps", 1, Enchantment.DAMAGE_ALL, 0, false);
 					KitAPI.setitem(p, Material.BOOK, "§4➼ §cLoja", 2, Enchantment.DAMAGE_ALL, 0, false);
 					KitAPI.setitem(p, Material.PISTON_STICKY_BASE, "§4➼ §cKits", 4, Enchantment.DAMAGE_ALL, 0,

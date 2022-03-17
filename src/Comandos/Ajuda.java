@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,7 +12,7 @@ public class Ajuda implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		cmd.getName().equalsIgnoreCase("ajuda");
 		p.sendMessage(" ");
-		p.sendMessage("§a*Ola, Bem-Vindo a ferramente de §aAjuda§7 do: " + ArkuzPvP.prefix);
+		p.sendMessage("§a*Ola, Bem-Vindo a ferramente de §aAjuda§7 do: " + ArkuzKitPvP.prefix);
 		p.sendMessage(" ");
 		p.sendMessage("§b* §7Deseja tornar-se §bYoutuber§7? Utilize o comando: §b/youtuber§7.");
 		p.sendMessage(" ");

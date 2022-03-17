@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -17,12 +17,12 @@ public class Ping implements CommandExecutor, Listener {
 			final int ping = ((CraftPlayer) p).getHandle().ping;
 			if (c.equalsIgnoreCase("ping")) {
 				if (args.length == 0) {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Ping e de: §c" + ping + " §7Ms");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Ping e de: §c" + ping + " §7Ms");
 				} else if (p.getServer().getPlayer(args[0]) != null) {
 					final String player2 = args[0];
 					final Player target = Bukkit.getServer().getPlayer(args[0]);
 					final int ping2 = ((CraftPlayer) target).getHandle().ping;
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Player: §c" + player2
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Player: §c" + player2
 							+ " §7Tem Um Ping De: §c" + ChatColor.WHITE + ping2 + ChatColor.GREEN + " ms!");
 				} else {
 					final String player2 = args[0];

@@ -2,8 +2,7 @@ package Score;
 
 import Coins.XpM;
 import Eventos.Habilidade;
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
-import net.md_5.bungee.api.ChatColor;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -14,7 +13,7 @@ import org.bukkit.scoreboard.Scoreboard;
 import java.util.Random;
 
 public class ScoreBoarding implements Listener {
-	public static ArkuzPvP plugin;
+	public static ArkuzKitPvP plugin;
 
 	public static String Rank(final Player p) {
 		final double a = Status.getKills(p);
@@ -174,13 +173,13 @@ public class ScoreBoarding implements Listener {
 		final Random r = new Random();
 		final int animar = r.nextInt(12);
 		if (animar == 1) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
-			scoreboard.add("   " + ArkuzPvP.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzKitPvP.prefix);
+			scoreboard.add("   " + ArkuzKitPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"§fKills: §7" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"§fDeaths: §e" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
 			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
 			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
@@ -192,13 +191,13 @@ public class ScoreBoarding implements Listener {
 			scoreboard.send(p);
 		}
 		if (animar == 2) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
-			scoreboard.add("   " + ArkuzPvP.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzKitPvP.prefix);
+			scoreboard.add("   " + ArkuzKitPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"§fKills: §7" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"§fDeaths: §e" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
 			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
 			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
@@ -210,13 +209,13 @@ public class ScoreBoarding implements Listener {
 			scoreboard.send(p);
 		}
 		if (animar == 3) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
-			scoreboard.add("   " + ArkuzPvP.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzKitPvP.prefix);
+			scoreboard.add("   " + ArkuzKitPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"§fKills: §7" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"§fDeaths: §e" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
 			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
 			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
@@ -228,13 +227,13 @@ public class ScoreBoarding implements Listener {
 			scoreboard.send(p);
 		}
 		if (animar == 4) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
-			scoreboard.add("   " + ArkuzPvP.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzKitPvP.prefix);
+			scoreboard.add("   " + ArkuzKitPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"§fKills: §7" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"§fDeaths: §e" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
 			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
 			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
@@ -246,13 +245,13 @@ public class ScoreBoarding implements Listener {
 			scoreboard.send(p);
 		}
 		if (animar == 5) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
-			scoreboard.add("   " + ArkuzPvP.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzKitPvP.prefix);
+			scoreboard.add("   " + ArkuzKitPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"§fKills: §7" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"§fDeaths: §e" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
 			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
 			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
@@ -264,13 +263,13 @@ public class ScoreBoarding implements Listener {
 			scoreboard.send(p);
 		}
 		if (animar == 6) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
-			scoreboard.add("   " + ArkuzPvP.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzKitPvP.prefix);
+			scoreboard.add("   " + ArkuzKitPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"§fKills: §7" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"§fDeaths: §e" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
 			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
 			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
@@ -282,13 +281,13 @@ public class ScoreBoarding implements Listener {
 			scoreboard.send(p);
 		}
 		if (animar == 7) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
-			scoreboard.add("   " + ArkuzPvP.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzKitPvP.prefix);
+			scoreboard.add("   " + ArkuzKitPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"§fKills: §7" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"§fDeaths: §e" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
 			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
 			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));
@@ -300,13 +299,13 @@ public class ScoreBoarding implements Listener {
 			scoreboard.send(p);
 		}
 		if (animar == 8) {
-			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzPvP.prefix);
-			scoreboard.add("   " + ArkuzPvP.loja);
+			final SimpleScoreboard scoreboard = new SimpleScoreboard(ArkuzKitPvP.prefix);
+			scoreboard.add("   " + ArkuzKitPvP.loja);
 			scoreboard.blankLine();
 			scoreboard.add(
-					"§fKills: §7" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+					"§fKills: §7" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 			scoreboard.add(
-					"§fDeaths: §e" + ArkuzPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+					"§fDeaths: §e" + ArkuzKitPvP.getInstance().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 			scoreboard.blankLine();
 			scoreboard.add("§fMoedas: §e" + XpM.getPlayerMoney(p));
 			scoreboard.add("§fKit: §7" + Habilidade.getAbility(p));

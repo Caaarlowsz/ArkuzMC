@@ -2,7 +2,7 @@ package Comandos;
 
 import java.util.HashMap;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -44,7 +44,7 @@ public class AutoSoup implements CommandExecutor, Listener {
 		final Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("autosoup")) {
 			if (!p.hasPermission("arkuz.admin")) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissão");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Sem Permissão");
 				return true;
 			}
 			final Player testando = p.getServer().getPlayer(args[0]);
@@ -54,7 +54,7 @@ public class AutoSoup implements CommandExecutor, Listener {
 			testando.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 70, 999));
 			testando.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 70, 999));
 			this.sopa.setItemMeta(this.msopa);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					testando.getInventory().clear();
@@ -64,7 +64,7 @@ public class AutoSoup implements CommandExecutor, Listener {
 					testando.getInventory().setItem(12, AutoSoup.this.sopa2);
 				}
 			}, 20L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzPvP.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					testando.getInventory().clear();

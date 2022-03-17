@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -44,7 +44,7 @@ public class Fake implements Listener, CommandExecutor {
 			if (cmd.getName().equalsIgnoreCase("fake")) {
 				if (p.hasPermission("arkuz.fake")) {
 					if (args.length == 0) {
-						p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Utilize: §c/fake (Nick)");
+						p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Utilize: §c/fake (Nick)");
 						return false;
 					}
 					if (args.length == 1) {
@@ -56,16 +56,16 @@ public class Fake implements Listener, CommandExecutor {
 								p.setDisplayName((String) Fake.fake.get(p.getName()));
 								p.setPlayerListName("§f" + Fake.fake.get(p.getName()));
 								mudarNome(p, Fake.fake.get(p.getName()));
-								p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Você Resetou Seu Fake");
+								p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Você Resetou Seu Fake");
 							}
 						} else if (!Fake.fakes.contains(args[0])) {
 							if (Fake.usandoFake.contains(p)) {
 								p.sendMessage(
-										String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Para Tirar o Fake Use: §c/fake *");
+										String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Para Tirar o Fake Use: §c/fake *");
 								return true;
 							}
 							if (args[0].length() > 16) {
-								p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Escolha Um Nick Menor");
+								p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Escolha Um Nick Menor");
 								return true;
 							}
 							final String nome = p.getName();
@@ -77,12 +77,12 @@ public class Fake implements Listener, CommandExecutor {
 							Fake.fake.put(p.getName(), nome);
 							p.setDisplayName(args[0]);
 							p.setPlayerListName(args[0]);
-							p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Seu Nick Foi Alterado Para: §c"
+							p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Seu Nick Foi Alterado Para: §c"
 									+ args[0]);
 						}
 					}
 				} else {
-					p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissão");
+					p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Sem Permissão");
 				}
 			}
 		}
@@ -139,7 +139,7 @@ public class Fake implements Listener, CommandExecutor {
 		Preconditions.checkNotNull((Object) forWhom, (Object) "forWhom");
 		if (player != forWhom && player.getWorld() == forWhom.getWorld() && forWhom.canSee(player)) {
 			forWhom.hidePlayer(player);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzPvP.getInstance(),
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) ArkuzKitPvP.getInstance(),
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {

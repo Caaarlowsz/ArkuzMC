@@ -1,6 +1,6 @@
 package Comandos;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP;
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,20 +21,20 @@ public class Chat implements CommandExecutor, Listener {
 		final Player p = (Player) Sender;
 		if (Cmd.getName().equalsIgnoreCase("chat")) {
 			if (!p.hasPermission("arkuz.chat")) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Sem Permissão");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Sem Permissão");
 				return true;
 			}
 			if (Args.length == 0) {
-				p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Use: /Chat {Mutar|Desmutar}");
+				p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Use: /Chat {Mutar|Desmutar}");
 				return true;
 			}
 			if (Args[0].equalsIgnoreCase("mutar")) {
 				Chat.c = true;
-				Bukkit.broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Chat Foi §4MUTADO");
+				Bukkit.broadcastMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Chat Foi §4MUTADO");
 			}
 			if (Args[0].equalsIgnoreCase("desmutar")) {
 				Chat.c = false;
-				Bukkit.broadcastMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7O Chat Foi §cDESMUTADO");
+				Bukkit.broadcastMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7O Chat Foi §cDESMUTADO");
 			}
 		}
 		return false;
@@ -45,7 +45,7 @@ public class Chat implements CommandExecutor, Listener {
 		final Player p = e.getPlayer();
 		if (!p.hasPermission("sword.chat") && Chat.c) {
 			e.setCancelled(true);
-			p.sendMessage(String.valueOf(ArkuzPvP.prefix) + " §4➼ §7Não é Possivel Falar Com o Chat Mutado");
+			p.sendMessage(String.valueOf(ArkuzKitPvP.prefix) + " §4➼ §7Não é Possivel Falar Com o Chat Mutado");
 		}
 	}
 }
