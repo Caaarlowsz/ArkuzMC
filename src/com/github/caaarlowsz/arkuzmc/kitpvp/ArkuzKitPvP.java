@@ -24,6 +24,8 @@ import org.bukkit.Material;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.HandlerList;
+import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.PluginManager;
@@ -40,6 +42,7 @@ import java.util.Set;
 public final class ArkuzKitPvP extends JavaPlugin implements KitPvP {
 
     private final Set<Kit> kits = new LinkedHashSet<>();
+    private final PluginManager pm = Bukkit.getPluginManager();
 
     @Override
     public Set<Kit> getKits() {
@@ -53,11 +56,15 @@ public final class ArkuzKitPvP extends JavaPlugin implements KitPvP {
 
     @Override
     public void addKit(Kit kit) {
+        if (Listener.class.isAssignableFrom(kit.getClass()))
+            pm.registerEvents((Listener) kit, this);
         this.getKits().add(kit);
     }
 
     @Override
     public void removeKit(Kit kit) {
+        if (Listener.class.isAssignableFrom(kit.getClass()))
+            HandlerList.unregisterAll((Listener) kit);
         this.getKits().remove(kit);
     }
 
