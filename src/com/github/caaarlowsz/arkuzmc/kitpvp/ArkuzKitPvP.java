@@ -15,19 +15,18 @@ import Warps.SetSpawn;
 import Warps.SetWarp;
 import Warps.Spawn;
 import Warps.irWarp;
+import com.github.caaarlowsz.arkuzmc.kitpvp.kit.ArkuzAjninKit;
 import com.github.caaarlowsz.arkuzmc.kitpvp.kit.ArkuzKit;
+import com.github.caaarlowsz.arkuzmc.kitpvp.kit.ArkuzPvPKit;
 import com.github.caaarlowsz.kitpvpapi.Kit;
 import com.github.caaarlowsz.kitpvpapi.KitPvP;
 import com.github.caaarlowsz.kitpvpapi.KitPvPAPI;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -36,7 +35,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
 public final class ArkuzKitPvP extends JavaPlugin implements KitPvP {
@@ -77,38 +75,72 @@ public final class ArkuzKitPvP extends JavaPlugin implements KitPvP {
         super.onEnable();
         KitPvPAPI.setInstance(this);
 
-        this.addKit(new ArkuzKit("PvP"));
+        this.addKit(new ArkuzPvPKit());
+
+        final PluginManager Eventos = Bukkit.getPluginManager();
+        Eventos.registerEvents(new ArkuzAjninKit(), this);
         this.addKit(new ArkuzKit("Ajnin"));
         this.addKit(new ArkuzKit("Archer"));
+        Eventos.registerEvents(new Armor(), this);
         this.addKit(new ArkuzKit("Armor"));
+        Eventos.registerEvents(new Avatar(), this);
         this.addKit(new ArkuzKit("Avatar"));
+        Eventos.registerEvents(new C4(), this);
         this.addKit(new ArkuzKit("C4"));
+        Eventos.registerEvents(new DeshFire(), this);
         this.addKit(new ArkuzKit("DeshFire"));
+        Eventos.registerEvents(new Fisherman(), this);
         this.addKit(new ArkuzKit("Fisherman"));
+        Eventos.registerEvents(new Kangaroo(), this);
         this.addKit(new ArkuzKit("Kangaroo"));
+        Eventos.registerEvents(new Magma(), this);
         this.addKit(new ArkuzKit("Magma"));
+        Eventos.registerEvents(new Monk(), this);
         this.addKit(new ArkuzKit("Monk"));
+        Eventos.registerEvents(new Ninja(), this);
         this.addKit(new ArkuzKit("Ninja"));
+        Eventos.registerEvents(new Gladiator(), this);
         this.addKit(new ArkuzKit("Gladiator"));
+        Eventos.registerEvents(new Poseidon(), this);
         this.addKit(new ArkuzKit("Poseidon"));
+        Eventos.registerEvents(new Resouper(), this);
         this.addKit(new ArkuzKit("Resouper"));
+        Eventos.registerEvents(new Snail(), this);
         this.addKit(new ArkuzKit("Snail"));
+        Eventos.registerEvents(new Sonic(), this);
         this.addKit(new ArkuzKit("Sonic"));
+        Eventos.registerEvents(new Stomper(), this);
         this.addKit(new ArkuzKit("Stomper"));
+        Eventos.registerEvents(new Switcher(), this);
         this.addKit(new ArkuzKit("Switcher"));
+        Eventos.registerEvents(new Swords(), this);
         this.addKit(new ArkuzKit("Swords"));
+        Eventos.registerEvents(new Terrorista(), this);
         this.addKit(new ArkuzKit("Terrorista"));
+        Eventos.registerEvents(new TheForceField(), this);
         this.addKit(new ArkuzKit("ForceField"));
+        Eventos.registerEvents(new Thor(), this);
         this.addKit(new ArkuzKit("Thor"));
+        Eventos.registerEvents(new Thresh(), this);
         this.addKit(new ArkuzKit("Thresh"));
+        Eventos.registerEvents(new Turtle(), this);
         this.addKit(new ArkuzKit("Turtle"));
+        Eventos.registerEvents(new Viking(), this);
         this.addKit(new ArkuzKit("Viking"));
+        Eventos.registerEvents(new Viper(), this);
         this.addKit(new ArkuzKit("Viper"));
+        Eventos.registerEvents(new Grappler(), this);
         this.addKit(new ArkuzKit("Grappler"));
+        Eventos.registerEvents(new JellyFish(), this);
         this.addKit(new ArkuzKit("JellyFish"));
+        Eventos.registerEvents(new QuickDropper(), this);
         this.addKit(new ArkuzKit("QuickDropper"));
+        Eventos.registerEvents(new Phantom(), this);
+        Eventos.registerEvents(new Phantom(), this);
         this.addKit(new ArkuzKit("Phantom"));
+        Eventos.registerEvents(new Hulk(), this);
         this.addKit(new ArkuzKit("Hulk"));
+        Eventos.registerEvents(new Anchor(), this);
         this.addKit(new ArkuzKit("Anchor"));
 
         //TODO: Remover quando melhorar a classe principal
@@ -344,42 +376,6 @@ public final class ArkuzKitPvP extends JavaPlugin implements KitPvP {
         this.getCommand("sortearvip").setExecutor(new SorteioVip());
         this.getCommand("sortearkit").setExecutor(new SorteioKit());
         this.getCommand("fake").setExecutor(new Fake());
-    }
-
-    public void Kits() {
-        final PluginManager Eventos = Bukkit.getPluginManager();
-        Eventos.registerEvents(new Ajnin(), this);
-        Eventos.registerEvents(new Anchor(), this);
-        Eventos.registerEvents(new Armor(), this);
-        Eventos.registerEvents(new Avatar(), this);
-        Eventos.registerEvents(new C4(), this);
-        Eventos.registerEvents(new DeshFire(), this);
-        Eventos.registerEvents(new Fisherman(), this);
-        Eventos.registerEvents(new Gladiator(), this);
-        Eventos.registerEvents(new Hulk(), this);
-        Eventos.registerEvents(new JellyFish(), this);
-        Eventos.registerEvents(new Kangaroo(), this);
-        Eventos.registerEvents(new Magma(), this);
-        Eventos.registerEvents(new Monk(), this);
-        Eventos.registerEvents(new Ninja(), this);
-        Eventos.registerEvents(new Phantom(), this);
-        Eventos.registerEvents(new Poseidon(), this);
-        Eventos.registerEvents(new Resouper(), this);
-        Eventos.registerEvents(new Snail(), this);
-        Eventos.registerEvents(new Sonic(), this);
-        Eventos.registerEvents(new Stomper(), this);
-        Eventos.registerEvents(new Switcher(), this);
-        Eventos.registerEvents(new Swords(), this);
-        Eventos.registerEvents(new Terrorista(), this);
-        Eventos.registerEvents(new Grappler(), this);
-        Eventos.registerEvents(new TheForceField(), this);
-        Eventos.registerEvents(new Thor(), this);
-        Eventos.registerEvents(new Thresh(), this);
-        Eventos.registerEvents(new QuickDropper(), this);
-        Eventos.registerEvents(new Turtle(), this);
-        Eventos.registerEvents(new Phantom(), this);
-        Eventos.registerEvents(new Viking(), this);
-        Eventos.registerEvents(new Viper(), this);
     }
 
     public void save() {
