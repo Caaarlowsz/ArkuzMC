@@ -19,7 +19,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import Essencial.Cooldown;
 import Essencial.KitAPI;
 import Eventos.Habilidade;
-import Kits.C4;
+import com.github.caaarlowsz.arkuzmc.kitpvp.kit.ArkuzC4Kit;
 
 public class rKit implements CommandExecutor {
 	public static ArrayList<String> jaresetou;
@@ -59,8 +59,8 @@ public class rKit implements CommandExecutor {
 				setitem(p, Material.PISTON_STICKY_BASE, "§4➼ §cKits", 4, Enchantment.DAMAGE_ALL, 0, false);
 				setitem(p, Material.CHEST, "§4➼ §cCaixas", 6, Enchantment.DAMAGE_ALL, 0, false);
 				setitem(p, Material.REDSTONE, "§4➼ §cOutros", 7, Enchantment.DAMAGE_ALL, 0, false);
-				if (C4.bomba.containsKey(p.getName())) {
-					final Item item = C4.bomba.get(p.getName());
+				if (ArkuzC4Kit.bombMap.containsKey(p.getName())) {
+					final Item item = ArkuzC4Kit.bombMap.get(p.getName());
 					item.remove();
 				}
 				Bukkit.getScheduler().scheduleSyncDelayedTask(ArkuzKitPvP.getInstance(), (Runnable) new Runnable() {
