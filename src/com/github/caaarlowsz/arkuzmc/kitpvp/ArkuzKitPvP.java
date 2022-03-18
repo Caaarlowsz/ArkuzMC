@@ -16,6 +16,7 @@ import Warps.SetWarp;
 import Warps.Spawn;
 import Warps.irWarp;
 import com.github.caaarlowsz.arkuzmc.kitpvp.kit.ArkuzAjninKit;
+import com.github.caaarlowsz.arkuzmc.kitpvp.kit.ArkuzArcherKit;
 import com.github.caaarlowsz.arkuzmc.kitpvp.kit.ArkuzKit;
 import com.github.caaarlowsz.arkuzmc.kitpvp.kit.ArkuzPvPKit;
 import com.github.caaarlowsz.kitpvpapi.Kit;
@@ -77,9 +78,9 @@ public final class ArkuzKitPvP extends JavaPlugin implements KitPvP {
 
         this.addKit(new ArkuzPvPKit());
         this.addKit(new ArkuzAjninKit());
+        this.addKit(new ArkuzArcherKit());
 
         final PluginManager Eventos = Bukkit.getPluginManager();
-        this.addKit(new ArkuzKit("Archer"));
         Eventos.registerEvents(new Armor(), this);
         this.addKit(new ArkuzKit("Armor"));
         Eventos.registerEvents(new Avatar(), this);
