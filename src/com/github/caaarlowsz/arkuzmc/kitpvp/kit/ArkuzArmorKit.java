@@ -60,7 +60,7 @@ public final class ArkuzArmorKit extends ArkuzKit implements Listener {
 		}
 	}
 
-	@EventHandler
+	@EventHandler(priority = EventPriority.NORMAL)
 	private void onInventoryClick(InventoryClickEvent event) {
 		if (event.getWhoClicked() instanceof Player && event.getSlotType().equals(SlotType.ARMOR)) {
 			Player player = (Player) event.getWhoClicked();
