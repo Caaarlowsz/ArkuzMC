@@ -28,7 +28,7 @@ import Essencial.KitAPI;
 
 public final class ArkuzDeshFireKit extends ArkuzKit implements Listener {
 
-	public static List<Player> cooldownm = new ArrayList<Player>();
+	private static final List<Player> cooldownList = new ArrayList<Player>();
 
 	private static final Map<UUID, ItemStack[]> armorMap = new HashMap<>();
 
@@ -42,8 +42,8 @@ public final class ArkuzDeshFireKit extends ArkuzKit implements Listener {
 		if (KitAPI.DeshFire.contains(player.getName()) && event.hasItem()
 				&& event.getMaterial() == Material.REDSTONE_BLOCK) {
 			event.setCancelled(true);
-			if (!cooldownm.contains(player)) {
-				cooldownm.add(player);
+			if (!cooldownList.contains(player)) {
+				cooldownList.add(player);
 				player.setVelocity(player.getEyeLocation().getDirection().multiply(6).add(new Vector()));
 				player.getWorld().playEffect(player.getLocation(), Effect.SMOKE, 10, 0);
 
@@ -90,7 +90,7 @@ public final class ArkuzDeshFireKit extends ArkuzKit implements Listener {
 					player.updateInventory();
 				}, 50L);
 				Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(), () -> {
-					cooldownm.remove(player);
+					cooldownList.remove(player);
 					player.getWorld().playSound(player.getLocation(), Sound.BURP, 5F, 5F);
 					player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu CoolDown Acabou");
 				}, 700L);
