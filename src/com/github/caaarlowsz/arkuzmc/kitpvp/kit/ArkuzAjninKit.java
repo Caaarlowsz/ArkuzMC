@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,7 +13,8 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
-import org.bukkit.plugin.Plugin;
+
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 
 import Essencial.Cooldown;
 import Essencial.KitUtil;
@@ -23,7 +23,6 @@ import Eventos.Habilidade;
 public final class ArkuzAjninKit extends ArkuzKit implements Listener {
 
 	private static final Map<UUID, UUID> targetMap = new HashMap<>();
-	private static final Map<UUID, Long> cooldownMap = new HashMap<>();
 
 	public ArkuzAjninKit() {
 		super("Ajnin");
@@ -40,20 +39,22 @@ public final class ArkuzAjninKit extends ArkuzKit implements Listener {
 
 	@EventHandler(priority = EventPriority.NORMAL)
 	private void onPlayerToggleSneak(PlayerToggleSneakEvent event) {
-		 Player player = event.getPlayer();
-		 if (event.isSneaking() && Habilidade.getAbility(player).equals(this.getName()) && targetMap.containsKey(player.getUniqueId())) {
-			 if (!Cooldown.add(player)) {
-				 Player target = Bukkit.getPlayer(targetMap.get(player.getUniqueId()));
-				 if (target != null && !target.isDead() && player.getLocation().distance(target.getLocation()) < 200D) {
-					 Cooldown.add(player, 3);
-					 target.teleport(player.getLocation());
-					 player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7O Player Foi Teleportado Até Você");
-					 Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(), ()-> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu Cooldown Acabou"), 140L);
-				 } else
-					 player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7O Ultimo Player Hitado Está Loge Demais");
-			 } else
-				 KitUtil.MensagemCooldown(player);
-		 }
+		Player player = event.getPlayer();
+		if (event.isSneaking() && Habilidade.getAbility(player).equals(this.getName())
+				&& targetMap.containsKey(player.getUniqueId())) {
+			if (!Cooldown.add(player)) {
+				Player target = Bukkit.getPlayer(targetMap.get(player.getUniqueId()));
+				if (target != null && !target.isDead() && player.getLocation().distance(target.getLocation()) < 200D) {
+					Cooldown.add(player, 3);
+					target.teleport(player.getLocation());
+					player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7O Player Foi Teleportado Até Você");
+					Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(),
+							() -> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu Cooldown Acabou"), 140L);
+				} else
+					player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7O Ultimo Player Hitado Está Loge Demais");
+			} else
+				KitUtil.MensagemCooldown(player);
+		}
 	}
 
 	@EventHandler(priority = EventPriority.NORMAL)

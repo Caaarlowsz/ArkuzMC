@@ -1,32 +1,24 @@
 package com.github.caaarlowsz.arkuzmc.kitpvp.kit;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
-import org.bukkit.metadata.MetadataValue;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.BlockIterator;
-import org.bukkit.util.Vector;
+
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 
 import Essencial.Cooldown;
 import Essencial.KitUtil;
@@ -74,7 +66,8 @@ public final class ArkuzAvatarKit extends ArkuzKit implements Listener {
 						snowball.setVelocity(player.getLocation().getDirection().normalize().multiply(10));
 						snowball.setMetadata("Ar", new FixedMetadataValue(ArkuzKitPvP.getInstance(), true));
 
-						Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(), ()-> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu Cooldown Acabou"), 600L);
+						Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(),
+								() -> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu Cooldown Acabou"), 600L);
 					} else
 						KitUtil.MensagemCooldown(player);
 				}
@@ -101,7 +94,8 @@ public final class ArkuzAvatarKit extends ArkuzKit implements Listener {
 						snowball.setVelocity(player.getLocation().getDirection().normalize().multiply(10));
 						snowball.setMetadata("Água", new FixedMetadataValue(ArkuzKitPvP.getInstance(), true));
 
-						Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(), ()-> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu Cooldown Acabou"), 600L);
+						Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(),
+								() -> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu Cooldown Acabou"), 600L);
 					} else
 						KitUtil.MensagemCooldown(player);
 				}
@@ -128,7 +122,8 @@ public final class ArkuzAvatarKit extends ArkuzKit implements Listener {
 						snowball.setVelocity(player.getLocation().getDirection().normalize().multiply(10));
 						snowball.setMetadata("Terra", new FixedMetadataValue(ArkuzKitPvP.getInstance(), true));
 
-						Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(), ()-> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu Cooldown Acabou"), 600L);
+						Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(),
+								() -> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu Cooldown Acabou"), 600L);
 					} else
 						KitUtil.MensagemCooldown(player);
 				}
@@ -155,7 +150,8 @@ public final class ArkuzAvatarKit extends ArkuzKit implements Listener {
 						snowball.setVelocity(player.getLocation().getDirection().normalize().multiply(10));
 						snowball.setMetadata("Fogo", new FixedMetadataValue(ArkuzKitPvP.getInstance(), true));
 
-						Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(), ()-> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu Cooldown Acabou"), 600L);
+						Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(),
+								() -> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu Cooldown Acabou"), 600L);
 					} else
 						KitUtil.MensagemCooldown(player);
 				}

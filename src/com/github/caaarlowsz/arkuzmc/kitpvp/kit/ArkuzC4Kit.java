@@ -4,23 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.util.Vector;
+
+import com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP;
 
 import Essencial.Cooldown;
 import Essencial.KitUtil;
@@ -40,7 +37,8 @@ public final class ArkuzC4Kit extends ArkuzKit implements Listener {
 		if (Habilidade.getAbility(player).equals(this.getName()) && event.hasItem()) {
 			if (event.getMaterial() == Material.SLIME_BALL && event.getAction().name().contains("RIGHT")) {
 				if (!Cooldown.add(player)) {
-					Item item = player.getWorld().dropItem(player.getLocation().add(0, 2, 0), new ItemStack(Material.TNT));
+					Item item = player.getWorld().dropItem(player.getLocation().add(0, 2, 0),
+							new ItemStack(Material.TNT));
 					item.setVelocity(player.getEyeLocation().getDirection());
 					bombMap.put(player.getUniqueId(), item);
 
@@ -85,7 +83,8 @@ public final class ArkuzC4Kit extends ArkuzKit implements Listener {
 						player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Bomba Explodida");
 					}
 
-					Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(), () -> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu CoolDown Acabou"), 400L);
+					Bukkit.getScheduler().runTaskLater(ArkuzKitPvP.getInstance(),
+							() -> player.sendMessage(ArkuzKitPvP.prefix + " §4➼ §7Seu CoolDown Acabou"), 400L);
 				}
 			}
 
