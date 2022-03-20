@@ -1,5 +1,5 @@
 name: ArkuzMC
-main: com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzPvP
+main: com.github.caaarlowsz.arkuzmc.kitpvp.ArkuzKitPvP
 author: [nukopon]
 version: 1.0
 commands:
