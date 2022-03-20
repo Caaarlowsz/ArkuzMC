@@ -52,7 +52,7 @@ public final class ArkuzSonicKit extends ArkuzKit implements Listener {
 				for (Entity entities : player.getNearbyEntities(8D, 8D, 8D)) {
 					if (entities instanceof Player) {
 						Player players = (Player) entities;
-						players.damage(10D);
+						players.damage(10D, player);
 						players.setVelocity(new Vector(0.1D, 0D, 0.1D));
 						players.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 105, 105), false);
 					}
