@@ -79,10 +79,9 @@ public final class ArkuzKitPvP extends JavaPlugin implements KitPvP {
         this.addKit(new ArkuzArmorKit());
         this.addKit(new ArkuzAvatarKit());
         this.addKit(new ArkuzC4Kit());
+        this.addKit(new ArkuzDeshFireKit());
 
         final PluginManager Eventos = Bukkit.getPluginManager();
-        Eventos.registerEvents(new DeshFire(), this);
-        this.addKit(new ArkuzKit("DeshFire"));
         Eventos.registerEvents(new Fisherman(), this);
         this.addKit(new ArkuzKit("Fisherman"));
         Eventos.registerEvents(new Kangaroo(), this);
@@ -219,7 +218,6 @@ public final class ArkuzKitPvP extends JavaPlugin implements KitPvP {
         XpM.loadMoneyManager();
         this.Eventos();
         this.Comandos();
-        this.Kits();
     }
 
     public void disable() {
