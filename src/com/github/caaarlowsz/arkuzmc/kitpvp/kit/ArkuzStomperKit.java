@@ -28,7 +28,7 @@ public final class ArkuzStomperKit extends ArkuzKit implements Listener {
 						if (event.getDamage() <= 10D)
 							event.setCancelled(true);
 						if (players.isSneaking())
-							players.damage(20D, player);
+							players.damage(2D, player);
 						else {
 							players.damage(event.getDamage(), player);
 							players.sendMessage(
